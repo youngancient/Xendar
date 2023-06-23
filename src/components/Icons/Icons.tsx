@@ -1,4 +1,11 @@
-import { IconStyle, NavMagnifyingGlassStyle } from "@/styles/IconsStyles/icons";
+import { useAppSelector } from "@/redux/hook";
+import { RootState } from "@/redux/store";
+import {
+  IMenu,
+  IconStyle,
+  MenuStyle,
+  NavMagnifyingGlassStyle,
+} from "@/styles/IconsStyles/icons";
 import React, { FunctionComponent } from "react";
 
 export const Heart: FunctionComponent = () => {
@@ -64,22 +71,76 @@ export const Notification: FunctionComponent = () => {
 };
 
 // will use this for both the menu icon and cancel, will recieve props to switch btw both
+export interface IMenuComp {
+  toggleMenu: () => void;
+}
 
-export const Menu: FunctionComponent = () => {
+export const Menu: FunctionComponent<IMenuComp> = ({ toggleMenu }) => {
+  const { isNavOpen } = useAppSelector((state: RootState) => state.data);
+
   return (
-    <svg
-      width="24"
-      height="18"
-      viewBox="0 0 24 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g id="Menu H">
-        <rect id="Top" width="24" height="2" rx="1" fill="#272727" />
-        <rect id="Middle" y="8" width="24" height="2" rx="1" fill="#272727" />
-        <rect id="Bottom" y="16" width="24" height="2" rx="1" fill="#272727" />
-      </g>
-    </svg>
+    <MenuStyle onClick={toggleMenu}>
+      {isNavOpen ? (
+        <svg
+          width="24"
+          height="18"
+          viewBox="0 0 24 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="Menu H">
+            <rect
+              id="Top"
+              x="2.80762"
+              y="16.7782"
+              width="24"
+              height="2"
+              rx="1"
+              transform="rotate(-45 2.80762 16.7782)"
+              fill="#272727"
+            />
+            <rect
+              id="Bottom"
+              x="4.22168"
+              y="-0.192383"
+              width="24"
+              height="2"
+              rx="1"
+              transform="rotate(45 4.22168 -0.192383)"
+              fill="#272727"
+            />
+          </g>
+        </svg>
+      ) : (
+        <svg
+          width="24"
+          height="18"
+          viewBox="0 0 24 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="Menu H">
+            <rect id="Top" width="24" height="2" rx="1" fill="#272727" />
+            <rect
+              id="Middle"
+              y="8"
+              width="24"
+              height="2"
+              rx="1"
+              fill="#272727"
+            />
+            <rect
+              id="Bottom"
+              y="16"
+              width="24"
+              height="2"
+              rx="1"
+              fill="#272727"
+            />
+          </g>
+        </svg>
+      )}
+    </MenuStyle>
   );
 };
 

@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
       <Info />
       <main>
-        hello world
+        hello world fish
       </main>
     </>
   )

@@ -1,6 +1,11 @@
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
+import { menuvariants } from "../../components/Animations/LandingPageVariants";
 
-export const MobileNavStyles = styled.div`
+
+export const MobileNavStyles = styled(motion.div).attrs(() => ({
+  initial: "initial",
+  menuvariants}))`
   position: absolute;
   top: 0;
   left: 0;

@@ -5,8 +5,16 @@ import { Heart, MagnifyingGlass, Menu, Notification } from "../Icons/Icons";
 import Search from "./Search";
 import React, { FunctionComponent } from "react";
 import { LinkStyle } from "@/styles/LinkStyles/Link";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { RootState } from "@/redux/store";
+import { toggleNav } from "@/redux/dataSlice";
 
 const Header: FunctionComponent = () => {
+  const { isNavOpen} = useAppSelector((state: RootState) => state.data);
+  const dispatch = useAppDispatch();
+  const toggleMenu =()=>{
+    dispatch(toggleNav());
+  }
   return (
     <HeaderStyle>
       <div className="logo">
@@ -46,7 +54,7 @@ const Header: FunctionComponent = () => {
 
       <div className="mobile mobile-nav-links">
         <MagnifyingGlass />
-        <Menu />
+        <Menu toggleMenu={toggleMenu} />
       </div>
     </HeaderStyle>
   );

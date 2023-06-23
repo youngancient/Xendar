@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const IconStyle = styled.button`
   background: transparent;
-  cursor : pointer;
+  cursor: pointer;
   position: relative;
   .value {
     display: flex;
@@ -28,8 +28,15 @@ export const IconStyle = styled.button`
   }
 `;
 
+export interface IMenu {
+  onClick: React.MouseEventHandler;
+}
+export const MenuStyle = styled.button<IMenu>`
+  background: transparent;
+  cursor: pointer;
+`;
 export const NavMagnifyingGlassStyle = styled.div`
-  position : absolute;
-  left : 0.5rem;
-  top : 0.65rem;
-`
+  position: absolute;
+  left: 0.5rem;
+  top: 0.65rem;
+`;

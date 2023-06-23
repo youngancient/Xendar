@@ -1,14 +1,27 @@
+import { useAppSelector } from "@/redux/hook";
+import { RootState } from "@/redux/store";
 import { MobileNavStyles } from "@/styles/HeaderStyles/MobileNav";
 import { SideMenuButtonStyle } from "@/styles/HeaderStyles/SideMenuButton";
 import { LinkStyle } from "@/styles/LinkStyles/Link";
 import Image from "next/image";
 import Link from "next/link";
+import React, { FunctionComponent } from "react";
+import { motion } from "framer-motion";
+import { slidevariants } from "../Animations/LandingPageVariants";
 
-const MobileNav = () => {
+
+// setIsNavOpen: Dispatch<SetStateAction<boolean>>;
+const MobileNav:FunctionComponent= () => {
   return (
-    <MobileNavStyles>
+    <MobileNavStyles animate="final">
       <div className="nothing"></div>
-      <div className="sidemenu">
+      <motion.div className="sidemenu"
+      variants={slidevariants}
+      initial = "initial"
+      animate = "final"
+      exit= "exit"
+      key= "hinokami"
+      >
         <div className="one">
           <div className="avatar">
             <Image
@@ -53,7 +66,7 @@ const MobileNav = () => {
               <LinkStyle color="var(--red, #D92D20)">Logout</LinkStyle>
             </Link>
         </div>
-      </div>
+      </motion.div>
     </MobileNavStyles>
   );
 };
