@@ -13,9 +13,11 @@ export const dataSlice = createSlice({
         toggleNav: (state) => {
             state.isNavOpen = !state.isNavOpen;
         },
-
+        closeNav : (state) =>{
+            state.isNavOpen = false;
+        }
     },
 });
 
-export const {toggleNav} = dataSlice.actions;
+export const {toggleNav, closeNav} = dataSlice.actions;
 export default dataSlice.reducer;

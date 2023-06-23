@@ -1,11 +1,13 @@
 import { styled } from "styled-components";
 import { motion } from "framer-motion";
-import { menuvariants } from "../../components/Animations/LandingPageVariants";
+import { menuvariants } from "../../Animations/LandingPageVariants";
 
 
 export const MobileNavStyles = styled(motion.div).attrs(() => ({
   initial: "initial",
-  menuvariants}))`
+  animate : "final",
+  exit : "exit",
+  variants : menuvariants}))`
   position: absolute;
   top: 0;
   left: 0;
@@ -13,6 +15,7 @@ export const MobileNavStyles = styled(motion.div).attrs(() => ({
   height: 90vh;
   display: grid;
   grid-template-columns: 40% 60%;
+  background : 	hsla(0, 0%, 18%, 0.5);
   .one{
     display : flex;
     flex-direction : column;
@@ -26,8 +29,6 @@ export const MobileNavStyles = styled(motion.div).attrs(() => ({
     line-height: 1.5rem;
   }
   .nothing {
-    opacity: 0.5;
-    background: var(--black, #2f2f2f);
   }
   .sidemenu {
     background: var(--background-white, #f5f5f5);

@@ -3,37 +3,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, MagnifyingGlass, Menu, Notification } from "../Icons/Icons";
 import Search from "./Search";
-import React, { FunctionComponent } from "react";
-import { LinkStyle } from "@/styles/LinkStyles/Link";
+import React, { FunctionComponent, useEffect } from "react";
+import { PageLinkStyle } from "@/styles/LinkStyles/Link";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
-import { toggleNav } from "@/redux/dataSlice";
+import { closeNav, toggleNav } from "@/redux/dataSlice";
+import { useRouter } from "next/router";
 
+// configure the visited states, set the mobile nav well
 const Header: FunctionComponent = () => {
-  const { isNavOpen} = useAppSelector((state: RootState) => state.data);
   const dispatch = useAppDispatch();
   const toggleMenu =()=>{
     dispatch(toggleNav());
   }
+  useEffect(()=>{
+    dispatch(closeNav());
+  });
+  const router = useRouter();
   return (
     <HeaderStyle>
       <div className="logo">
+      <Link href={"/"}>     
         <Image
           src={"/assets/logo-two.png"}
           alt="vephla logo"
           width={82}
           height={40}
         />
+        </Link>
       </div>
       <div className="desktop desktop-nav-links">
         <Link href={"/courses"}>
-          <LinkStyle color="var(--grey-500, #525252)">Courses</LinkStyle>
+          <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/courses"}>Courses</PageLinkStyle>
         </Link>
         <Link href={"/about"}>
-          <LinkStyle color="var(--grey-500, #525252)">About Us</LinkStyle>
+          <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/about"}>About Us</PageLinkStyle>
         </Link>
         <Link href={"/contact"}>
-          <LinkStyle color="var(--grey-500, #525252)">Contact Us</LinkStyle>
+          <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/contact"}>Contact Us</PageLinkStyle>
         </Link>
       </div>
       <div className="desktop">

@@ -1,20 +1,26 @@
-import { useAppSelector } from "@/redux/hook";
-import { RootState } from "@/redux/store";
 import { MobileNavStyles } from "@/styles/HeaderStyles/MobileNav";
 import { SideMenuButtonStyle } from "@/styles/HeaderStyles/SideMenuButton";
-import { LinkStyle } from "@/styles/LinkStyles/Link";
+import { PageLinkStyle } from "@/styles/LinkStyles/Link";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FunctionComponent } from "react";
 import { motion } from "framer-motion";
-import { slidevariants } from "../Animations/LandingPageVariants";
+import { slidevariants } from "../../Animations/LandingPageVariants";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { closeNav } from "@/redux/dataSlice";
+import { useRouter } from "next/router";
 
 
 // setIsNavOpen: Dispatch<SetStateAction<boolean>>;
 const MobileNav:FunctionComponent= () => {
+  const dispatch = useAppDispatch();
+  const toggleMenu =()=>{
+    dispatch(closeNav());
+  }
+  const router = useRouter();
   return (
-    <MobileNavStyles animate="final">
-      <div className="nothing"></div>
+    <MobileNavStyles>
+      <div className="nothing" onClick={toggleMenu}></div>
       <motion.div className="sidemenu"
       variants={slidevariants}
       initial = "initial"
@@ -34,13 +40,13 @@ const MobileNav:FunctionComponent= () => {
           </div>
           <div className="sidemenu-links">
             <Link href={"/courses"}>
-              <LinkStyle color="var(--grey-500, #525252)">Courses</LinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/courses"}>Courses</PageLinkStyle>
             </Link>
             <Link href={"/about"}>
-              <LinkStyle color="var(--grey-500, #525252)">About Us</LinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/about"}>About Us</PageLinkStyle>
             </Link>
             <Link href={"/contact"}>
-              <LinkStyle color="var(--grey-500, #525252)">Contact Us</LinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/contact"}>Contact Us</PageLinkStyle>
             </Link>
           </div>
           <div className="sidemenu-links">
@@ -57,13 +63,13 @@ const MobileNav:FunctionComponent= () => {
               </div>
             </SideMenuButtonStyle>
             <Link href={"#"}>
-              <LinkStyle color="var(--grey-500, #525252)">Profile</LinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={false}>Profile</PageLinkStyle>
             </Link>
           </div>
         </div>
         <div className="two">
         <Link href={"#"}>
-              <LinkStyle color="var(--red, #D92D20)">Logout</LinkStyle>
+              <PageLinkStyle color="var(--red, #D92D20)" ispageactive={false}>Logout</PageLinkStyle>
             </Link>
         </div>
       </motion.div>
