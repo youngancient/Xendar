@@ -1,7 +1,8 @@
+import Hero from '@/components/Hero/Hero'
+import Stats from '@/components/Hero/Stats'
 import Head from 'next/head'
-import Image from 'next/image'
 
-
+// our popular courses section is next
 export default function Home() {
   return (
     <>
@@ -11,9 +12,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        hello world
-      </main>
+      <Hero />
+      <Stats />
     </>
   )
 }
