@@ -14,7 +14,7 @@ const Hero: FunctionComponent = () => {
             Let’s help you <strong>Start </strong> <br />
             your career in <strong>Tech</strong>
           </h1>
-          <p>
+          <p className="hero-p">
             Vephla is an E-Learning organization that specializes in helping
             people kickstart their journey into the evolving world of technology
           </p>

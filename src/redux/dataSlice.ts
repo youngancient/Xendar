@@ -1,12 +1,19 @@
+import { AllCourses, FiltersByTime } from "@/Constant/constant";
+import { IFilterButton } from "@/components/Button/FilterButton";
+import { ICourse } from "@/components/CourseCard/CourseCard";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface InitialState{
     isNavOpen : boolean;
     isWishlistOpen : boolean;
+    allCourse : ICourse[];
+    filtersByTime : IFilterButton[];
 }
 const initialState:InitialState ={
     isNavOpen : false,
     isWishlistOpen : false,
+    allCourse : AllCourses,
+    filtersByTime : FiltersByTime,
 }
 export const dataSlice = createSlice({
     name : "data",

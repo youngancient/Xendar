@@ -40,13 +40,13 @@ const MobileNav:FunctionComponent= () => {
           </div>
           <div className="sidemenu-links">
             <Link href={"/courses"}>
-              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/courses"}>Courses</PageLinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={router.pathname === "/courses"}>Courses</PageLinkStyle>
             </Link>
             <Link href={"/about"}>
-              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/about"}>About Us</PageLinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={router.pathname === "/about"}>About Us</PageLinkStyle>
             </Link>
             <Link href={"/contact"}>
-              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/contact"}>Contact Us</PageLinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={router.pathname === "/contact"}>Contact Us</PageLinkStyle>
             </Link>
           </div>
           <div className="sidemenu-links">
@@ -63,13 +63,13 @@ const MobileNav:FunctionComponent= () => {
               </div>
             </SideMenuButtonStyle>
             <Link href={"#"}>
-              <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={false}>Profile</PageLinkStyle>
+              <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={false}>Profile</PageLinkStyle>
             </Link>
           </div>
         </div>
         <div className="two">
         <Link href={"#"}>
-              <PageLinkStyle color="var(--red, #D92D20)" ispageactive={false}>Logout</PageLinkStyle>
+              <PageLinkStyle color="var(--red, #D92D20)" $ispageactive={false}>Logout</PageLinkStyle>
             </Link>
         </div>
       </motion.div>

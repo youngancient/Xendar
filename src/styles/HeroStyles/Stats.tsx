@@ -37,6 +37,7 @@ export const StatStyles = styled.div`
   }
   @media screen and (min-width: 728px) {
     padding: 2rem;
+    margin-top: 1rem;
     .short {
       gap: 0rem;
       flex-direction: row;
@@ -56,5 +57,6 @@ export const StatStyles = styled.div`
     }
   }
   @media screen and (min-width: 998px) {
+    margin-top: 2.5rem;
   }
 `;

@@ -6,15 +6,16 @@ import { showWishlist } from "@/redux/dataSlice";
 
 const exchangeRate: number = 750;
 
+export const convertToNaira = (dollar: number) => {
+  return Math.round(exchangeRate * dollar);
+};
+
 const Wishlist: FunctionComponent = () => {
   // use redux for this
 //   add an overflow-scroll to the component
 // aint done with this ooo
   const [wishlistNotEmpty, setWishlistNotEmpty] = useState(false);
   //   have a function which converts dollar to naira
-  const convertToNaira = (dollar: number) => {
-    return Math.round(exchangeRate * dollar);
-  };
   const [wishList, setWishlist] = useState([
     {
       id: 1,

@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero/Hero'
+import PopularCourses from '@/components/Hero/PopularCourses'
 import Stats from '@/components/Hero/Stats'
 import Head from 'next/head'
 
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <Hero />
       <Stats />
+      <PopularCourses />
     </>
   )
 }

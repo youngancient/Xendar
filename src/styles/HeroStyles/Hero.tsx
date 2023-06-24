@@ -17,7 +17,7 @@ export const HeroStyles = styled.div`
   h1 strong {
     color: var(--purple, #7d26cd);
   }
-  p {
+  .hero-p {
     color: var(--grey-500, #525252);
     text-align: center;
     font-family: DM Sans;
@@ -46,7 +46,7 @@ export const HeroStyles = styled.div`
       line-height: 2.5rem;
       text-align: left;
     }
-    p {
+    .hero-p {
       text-align: left;
       font-size: 1.2rem;
       line-height: 1.5rem;
@@ -78,7 +78,7 @@ export const HeroStyles = styled.div`
       font-size: 3.5rem;
       line-height: 4.5rem;
     }
-    p {
+    .hero-p {
       text-align: left;
       font-size: 1.25rem;
       line-height: 2rem;
