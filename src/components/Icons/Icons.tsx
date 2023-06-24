@@ -1,6 +1,9 @@
-import { useAppSelector } from "@/redux/hook";
+import { showWishlist } from "@/redux/dataSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
+import { TrashContStyle } from "@/styles/HeroStyles/Info";
 import {
+  HeroMagnifyingGlassStyle,
   IMenu,
   IconStyle,
   MenuStyle,
@@ -9,8 +12,15 @@ import {
 import React, { FunctionComponent } from "react";
 
 export const Heart: FunctionComponent = () => {
+  const dispatch = useAppDispatch();
+  const handleMouseLeave = () => {
+    dispatch(showWishlist(false));
+  };
+  const handleMouseOver = () => {
+    dispatch(showWishlist(true));
+  };
   return (
-    <IconStyle>
+    <IconStyle onMouseLeave={handleMouseLeave} onMouseOver={handleMouseOver}>
       <svg
         width="32"
         height="32"
@@ -165,6 +175,29 @@ export const MagnifyingGlass: FunctionComponent = () => {
     </svg>
   );
 };
+export const HeroMagnifyingGlass: FunctionComponent = () => {
+  return (
+    <HeroMagnifyingGlassStyle>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="akar-icons:search">
+          <path
+            id="Vector"
+            d="M21 21L16.514 16.506M19 10.5C19 12.7543 18.1045 14.9163 16.5104 16.5104C14.9163 18.1045 12.7543 19 10.5 19C8.24566 19 6.08365 18.1045 4.48959 16.5104C2.89553 14.9163 2 12.7543 2 10.5C2 8.24566 2.89553 6.08365 4.48959 4.48959C6.08365 2.89553 8.24566 2 10.5 2C12.7543 2 14.9163 2.89553 16.5104 4.48959C18.1045 6.08365 19 8.24566 19 10.5V10.5Z"
+            stroke="#272727"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </g>
+      </svg>
+    </HeroMagnifyingGlassStyle>
+  );
+};
 
 export const NavMagnifyingGlass: FunctionComponent = () => {
   return (
@@ -184,5 +217,66 @@ export const NavMagnifyingGlass: FunctionComponent = () => {
         />
       </svg>
     </NavMagnifyingGlassStyle>
+  );
+};
+
+export const Trash: FunctionComponent = () => {
+  return (
+    <TrashContStyle>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="vuesax/linear/trash">
+          <g id="vuesax/linear/trash_2">
+            <g id="trash">
+              <path
+                id="Vector"
+                d="M17.5 4.98333C14.725 4.70833 11.9333 4.56667 9.15 4.56667C7.5 4.56667 5.85 4.65 4.2 4.81667L2.5 4.98333"
+                stroke="#E6736A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                id="Vector_2"
+                d="M7.08301 4.14167L7.26634 3.05C7.39967 2.25833 7.49967 1.66667 8.90801 1.66667H11.0913C12.4997 1.66667 12.608 2.29167 12.733 3.05833L12.9163 4.14167"
+                stroke="#E6736A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                id="Vector_3"
+                d="M15.7087 7.61667L15.167 16.0083C15.0753 17.3167 15.0003 18.3333 12.6753 18.3333H7.32533C5.00033 18.3333 4.92533 17.3167 4.83366 16.0083L4.29199 7.61667"
+                stroke="#E6736A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                id="Vector_4"
+                d="M8.6084 13.75H11.3834"
+                stroke="#E6736A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                id="Vector_5"
+                d="M7.91699 10.4167H12.0837"
+                stroke="#E6736A"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </TrashContStyle>
   );
 };

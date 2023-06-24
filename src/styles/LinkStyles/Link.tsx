@@ -35,6 +35,7 @@ export const LinkStyle = styled.p<ILinkB>`
   font-family: DM Sans;
   font-weight: 600;
   line-height: 1.5rem;
+  width: fit-content;
   @media screen and (min-width: 728px) {
     font-weight: 700;
     font-size: 1.25rem;

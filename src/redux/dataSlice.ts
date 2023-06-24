@@ -2,9 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface InitialState{
     isNavOpen : boolean;
+    isWishlistOpen : boolean;
 }
 const initialState:InitialState ={
-    isNavOpen : false
+    isNavOpen : false,
+    isWishlistOpen : false,
 }
 export const dataSlice = createSlice({
     name : "data",
@@ -15,9 +17,12 @@ export const dataSlice = createSlice({
         },
         closeNav : (state) =>{
             state.isNavOpen = false;
-        }
+        },
+        showWishlist : (state, {payload}) =>{
+            state.isWishlistOpen = payload;
+        },
     },
 });
 
-export const {toggleNav, closeNav} = dataSlice.actions;
+export const {toggleNav, closeNav, showWishlist } = dataSlice.actions;
 export default dataSlice.reducer;

@@ -10,7 +10,9 @@ import { RootState } from "@/redux/store";
 import { closeNav, toggleNav } from "@/redux/dataSlice";
 import { useRouter } from "next/router";
 
-// configure the visited states, set the mobile nav well
+// What is left to do here is
+// 1. the hover/clicked states of the wishlist and notifications
+// 2. why is my styled component breaking 😭
 const Header: FunctionComponent = () => {
   const dispatch = useAppDispatch();
   const toggleMenu =()=>{

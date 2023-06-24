@@ -1,6 +1,11 @@
 import { styled } from "styled-components";
 
-export const IconStyle = styled.button`
+export interface IHover {
+  onMouseHover ?: React.MouseEventHandler;
+  onMouseLeave ?: React.MouseEventHandler;
+}
+
+export const IconStyle = styled.button<IHover>`
   background: transparent;
   cursor: pointer;
   position: relative;
@@ -34,6 +39,11 @@ export interface IMenu {
 export const MenuStyle = styled.button<IMenu>`
   background: transparent;
   cursor: pointer;
+`;
+export const HeroMagnifyingGlassStyle = styled.div`
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem;
 `;
 export const NavMagnifyingGlassStyle = styled.div`
   position: absolute;

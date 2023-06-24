@@ -14,15 +14,21 @@ a {
 button{
   outline : 0;
   border : none;
+  cursor: pointer;
 }
 html,
 body {
   max-width: 100vw;
   /* overflow-x: hidden; */
 }
-
+img{
+  object-fit: cover;
+}
 @media screen and (min-width: 728px) {
   .mobile{
     display : none;
   }
+}
+@media screen and (min-width: 728px) {
+  
 }
