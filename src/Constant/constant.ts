@@ -11,10 +11,11 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.9,
     noEnrolled: 100,
+    field : "Design",
   },
   {
     name: "Fudamentals of UX",
-    img: "/assets/ui_ux_design.png",
+    img: "/assets/ui_ux.png",
     dollarPrice: 200.99,
     nairaPrice: null,
     level: "Beginner",
@@ -22,6 +23,31 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 5.0,
     noEnrolled: 800,
+    field : "Design",
+  },
+  {
+    name: "Graphics Design",
+    img: "/assets/graphics.png",
+    dollarPrice: 150.49,
+    nairaPrice: null,
+    level: "Beginner",
+    category: "Most Popular",
+    isLoved: false,
+    rating: 4.4,
+    noEnrolled: 300,
+    field : "Design",
+  },
+  {
+    name: "Data Analysis for Newbies",
+    img: "/assets/data_analysis.png",
+    dollarPrice: 250.49,
+    nairaPrice: null,
+    level: "Beginner",
+    category: "New",
+    isLoved: false,
+    rating: 4.6,
+    noEnrolled: 70,
+    field : "Programming",
   },
   {
     name: "Frontend Engineering",
@@ -33,6 +59,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.8,
     noEnrolled: 490,
+    field : "Programming",
   },
   {
     name: "Backend Engineering",
@@ -44,6 +71,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 5.0,
     noEnrolled: 312,
+    field : "Data",
   },
   {
     name: "Database Management",
@@ -55,6 +83,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.7,
     noEnrolled: 72,
+    field : "Programming",
   },
   {
     name: "Figma For Devs",
@@ -66,6 +95,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.9,
     noEnrolled: 122,
+    field : "Design",
   },
   {
     name: "React and Redux",
@@ -77,6 +107,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.8,
     noEnrolled: 50,
+    field : "Programming",
   },
   {
     name: "Become a MERN developer",
@@ -88,6 +119,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.5,
     noEnrolled: 12,
+    field : "Programming",
   },
 ];
 

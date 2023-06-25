@@ -18,6 +18,7 @@ const MobileNav:FunctionComponent= () => {
     dispatch(closeNav());
   }
   const router = useRouter();
+  
   return (
     <MobileNavStyles>
       <div className="nothing" onClick={toggleMenu}></div>

@@ -31,6 +31,7 @@ export const HeroSearchStyles = styled(SearchStyle)`
   @media screen and (min-width: 998px) {
     input {
       width: 20rem;
+      height : 3rem;
     }
     margin-top : 2.5rem;
   }

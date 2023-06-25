@@ -1,3 +1,5 @@
+import { setFilteredByTimeCourses, setFiltersByTime } from "@/redux/dataSlice";
+import { useAppDispatch } from "@/redux/hook";
 import { FilterButtonStyles } from "@/styles/ButtonStyles/ButtonGroup";
 import React, { FunctionComponent } from "react";
 
@@ -6,11 +8,13 @@ export interface IFilterButton{
     isSelected : boolean;
 }
 const FilterButton:FunctionComponent<IFilterButton> = ({filter, isSelected}) => {
+    const dispatch = useAppDispatch();
     const handleFilter =()=>{
-        console.log("e filter o");
+        dispatch(setFiltersByTime(filter));
+        dispatch(setFilteredByTimeCourses());
     }
     return ( 
-        <FilterButtonStyles onClick={handleFilter}>
+        <FilterButtonStyles onClick={handleFilter} $isSelected={isSelected}>
             {filter}
         </FilterButtonStyles>
      );

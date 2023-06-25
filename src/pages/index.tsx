@@ -3,7 +3,8 @@ import PopularCourses from '@/components/Hero/PopularCourses'
 import Stats from '@/components/Hero/Stats'
 import Head from 'next/head'
 
-// our popular courses section is next
+// There's an issue with the mobile nav ooo, make sure u fix it
+
 export default function Home() {
   return (
     <>

@@ -4,13 +4,16 @@ import Image from "next/image";
 import { Trash } from "../Icons/Icons";
 
 export interface IWishlistItem{
-      name: string,
-      img: string,
-      dollarPrice: number,
-      nairaPrice: number,
-      level: string,
+      name: string;
+      img: string;
+      dollarPrice: number;
+      nairaPrice: number;
+      level: string;
 }
-const WishlistItem:FunctionComponent<IWishlistItem> = ({name, img, dollarPrice, nairaPrice, level}) => {
+export interface IExtWishlistItem extends IWishlistItem{
+    isEndOfList : boolean;
+}
+const WishlistItem:FunctionComponent<IExtWishlistItem> = ({name, img, dollarPrice, nairaPrice, level, isEndOfList}) => {
     return ( 
         <WishlistItemStyle>
             <div className="one">
@@ -26,8 +29,9 @@ const WishlistItem:FunctionComponent<IWishlistItem> = ({name, img, dollarPrice, 
             </div>
             <div className="two">
                 <GotoCourse>Go to Course</GotoCourse>
-                <Trash />
+                <Trash name={name}/>
             </div>
+            {!isEndOfList && <hr />}
         </WishlistItemStyle>
      );
 }

@@ -46,9 +46,10 @@ const Hero: FunctionComponent = () => {
             <Image
               alt="hero img"
               src="/assets/hero_mobile.png"
-              width={365}
-              height={254}
-              className="mobile"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="mobile mobile-img"
             />
           </TabOnly>
         </div>

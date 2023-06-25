@@ -1,4 +1,4 @@
-import { ButtonGroupStyles, IFilter } from "@/styles/ButtonStyles/ButtonGroup";
+import { ButtonGroupStyles} from "@/styles/ButtonStyles/ButtonGroup";
 import React, { FunctionComponent } from "react";
 import FilterButton, { IFilterButton } from "./FilterButton";
 

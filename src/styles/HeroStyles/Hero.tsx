@@ -25,8 +25,9 @@ export const HeroStyles = styled.div`
     line-height: 1.5rem;
     margin-top: 1rem;
   }
-  img {
+  .mobile-img {
     width: 100%;
+    height: auto;
   }
   .alink {
     display: flex;
@@ -35,9 +36,6 @@ export const HeroStyles = styled.div`
     margin-bottom: 1.5rem;
   }
   @media screen and (min-width: 728px) {
-    img {
-      width: auto;
-    }
     align-items: center;
     justify-content: center;
     flex-direction: row;
