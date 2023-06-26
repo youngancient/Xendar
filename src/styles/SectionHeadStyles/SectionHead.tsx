@@ -21,7 +21,7 @@ export const SectionHeadStyles = styled.div`
       line-height: 2.5rem;
     }
   }
-  @media screen and (min-width: 728px) {
+  @media screen and (min-width: 998px) {
     margin-top: 2rem;
   }
 `;

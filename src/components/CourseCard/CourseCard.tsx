@@ -87,7 +87,7 @@ const CourseCard: FunctionComponent<ICourse> = ({
           <hr />
           <div className="content-inner">
             <div className="prices">
-              <h4>&#8358;{nairaPrice}</h4>
+              <h4>&#8358;{nairaPrice?.toLocaleString()}</h4>
               <span>${dollarPrice}</span>
             </div>
             <button className="emoji" onClick={toggleFavorite}>

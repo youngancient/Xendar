@@ -1,4 +1,5 @@
-import { StatStyles } from "@/styles/HeroStyles/Stats";
+
+import { StatStyles } from "@/styles/HomepageStyles/Stats";
 import React, { FunctionComponent } from "react";
 
 const Stats: FunctionComponent = () => {

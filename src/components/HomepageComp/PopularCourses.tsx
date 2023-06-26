@@ -1,17 +1,20 @@
-import { PopularCoursesStyles } from "@/styles/HeroStyles/PopularCourses";
 import React, { FunctionComponent, useEffect } from "react";
 import SectionHead from "../SectionHead/SectionHead";
 import ButtonGroup from "../Button/ButtonGroup";
-import { PaddedSectionStyle } from "@/styles/HeroStyles/Section";
+import { PaddedSectionStyle } from "@/styles/HomepageStyles/Section";
 import { CoursesGroupStyle } from "@/styles/HeroStyles/coursesGroup";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { setFilteredByTimeCourses } from "@/redux/dataSlice";
 import CourseCard from "../CourseCard/CourseCard";
 import { convertToNaira } from "../Info/Wishlist";
+import { LinkStyle } from "@/styles/LinkStyles/Link";
+import Link from "next/link";
+import { CenterItemStyle } from "@/styles/HeroStyles/CenterItem";
+import { PopularCoursesStyles } from "@/styles/HomepageStyles/PopularCourses";
 
 const PopularCourses = () => {
-  const { filtersByTime, filteredByTimeCourses,allCourses } = useAppSelector(
+  const { filtersByTime, filteredByTimeCourses, allCourses } = useAppSelector(
     (state: RootState) => state.data
   );
   const dispatch = useAppDispatch();
@@ -50,6 +53,17 @@ const PopularCourses = () => {
           </CoursesGroupStyle>
         </PaddedSectionStyle>
       </div>
+      <CenterItemStyle>
+        <div className="pad">
+          <div className="a">
+            <Link href={"/courses"}>
+              <LinkStyle color="var(--purple, #7d26cd)">
+                View all Courses
+              </LinkStyle>
+            </Link>
+          </div>
+        </div>
+      </CenterItemStyle>
     </PopularCoursesStyles>
   );
 };

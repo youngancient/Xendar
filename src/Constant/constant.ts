@@ -1,4 +1,6 @@
+import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
+import { IReason } from "@/components/HomepageComp/Chooseus";
 
 export const AllCourses: ICourse[] = [
   {
@@ -11,7 +13,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.9,
     noEnrolled: 100,
-    field : "Design",
+    field: "Design",
   },
   {
     name: "Fudamentals of UX",
@@ -23,7 +25,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 5.0,
     noEnrolled: 800,
-    field : "Design",
+    field: "Design",
   },
   {
     name: "Graphics Design",
@@ -35,7 +37,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.4,
     noEnrolled: 300,
-    field : "Design",
+    field: "Design",
   },
   {
     name: "Data Analysis for Newbies",
@@ -47,7 +49,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.6,
     noEnrolled: 70,
-    field : "Programming",
+    field: "Programming",
   },
   {
     name: "Frontend Engineering",
@@ -59,7 +61,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.8,
     noEnrolled: 490,
-    field : "Programming",
+    field: "Programming",
   },
   {
     name: "Backend Engineering",
@@ -71,7 +73,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 5.0,
     noEnrolled: 312,
-    field : "Data",
+    field: "Data",
   },
   {
     name: "Database Management",
@@ -83,7 +85,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.7,
     noEnrolled: 72,
-    field : "Programming",
+    field: "Programming",
   },
   {
     name: "Figma For Devs",
@@ -95,7 +97,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.9,
     noEnrolled: 122,
-    field : "Design",
+    field: "Design",
   },
   {
     name: "React and Redux",
@@ -107,7 +109,7 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.8,
     noEnrolled: 50,
-    field : "Programming",
+    field: "Programming",
   },
   {
     name: "Become a MERN developer",
@@ -119,12 +121,40 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.5,
     noEnrolled: 12,
-    field : "Programming",
+    field: "Programming",
   },
 ];
 
+export const FiltersByTime: IFilterButton[] = [
+  { filter: "Most Popular", isSelected: true },
+  { filter: "New", isSelected: false },
+];
 
-export const FiltersByTime = [
-    { filter: "Most Popular", isSelected : true},
-    { filter: "New", isSelected : false},
- ]
+
+export const Reasons: IReason[] = [
+  {
+    img: "/assets/one.png",
+    head: "Regular Accessments",
+    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+  },
+  {
+    img: "/assets/two.png",
+    head: "On-site & Remote Learning",
+    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+  },
+  {
+    img: "/assets/three.png",
+    head: "Certificate",
+    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+  },
+  {
+    img: "/assets/four.png",
+    head: "Community",
+    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+  },
+  {
+    img: "/assets/five.png",
+    head: "Job Opportunites",
+    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+  },
+];
