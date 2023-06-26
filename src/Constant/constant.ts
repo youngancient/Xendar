@@ -1,6 +1,7 @@
 import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IReason } from "@/components/HomepageComp/Chooseus";
+import { ITestimony } from "@/components/HomepageComp/Testimonials";
 
 export const AllCourses: ICourse[] = [
   {
@@ -65,7 +66,7 @@ export const AllCourses: ICourse[] = [
   },
   {
     name: "Backend Engineering",
-    img: "/assets/fe_engr.png",
+    img: "/assets/backend.png",
     dollarPrice: 400.99,
     nairaPrice: null,
     level: "Intermediate",
@@ -112,7 +113,7 @@ export const AllCourses: ICourse[] = [
     field: "Programming",
   },
   {
-    name: "Become a MERN developer",
+    name: "MERN Fullstack Course",
     img: "/assets/fe_engr.png",
     dollarPrice: 500.49,
     nairaPrice: null,
@@ -123,13 +124,36 @@ export const AllCourses: ICourse[] = [
     noEnrolled: 12,
     field: "Programming",
   },
+  {
+    name: "Blockchain Engineering",
+    img: "/assets/blockchain.png",
+    dollarPrice: 500.49,
+    nairaPrice: null,
+    level: "Beginner",
+    category: "Most Popular",
+    isLoved: false,
+    rating: 4.8,
+    noEnrolled: 500,
+    field: "Programming",
+  },
+  {
+    name: "Cyber Security",
+    img: "/assets/cybersecurity.png",
+    dollarPrice: 400.49,
+    nairaPrice: null,
+    level: "Intermediate",
+    category: "New",
+    isLoved: false,
+    rating: 4.4,
+    noEnrolled: 35,
+    field: "Programming",
+  },
 ];
 
 export const FiltersByTime: IFilterButton[] = [
   { filter: "Most Popular", isSelected: true },
   { filter: "New", isSelected: false },
 ];
-
 
 export const Reasons: IReason[] = [
   {
@@ -156,5 +180,35 @@ export const Reasons: IReason[] = [
     img: "/assets/five.png",
     head: "Job Opportunites",
     text: "We give our students real life accessments to help them improve their knowledge on core areas",
+  },
+];
+
+export const Testimonies: ITestimony[] = [
+  {
+    id : null,
+    img: "/assets/mide.png",
+    name: "Omotosho Mide",
+    position: "Alumni",
+    isActive: false,
+    comment:
+      "Definitely one of the best places to learn. I can say that I’m very confident with my skills in Product Design ",
+  },
+  {
+    id : null,
+    img: "/assets/mike.png",
+    name: "Micheal Ajala",
+    position: "Alumni",
+    isActive: true,
+    comment:
+      "I enjoyed each course from the first week. I got to practise with real world projects andf this made me confident",
+  },
+  {
+    id : null,
+    img: "/assets/tayo.png",
+    name: "Omotayo",
+    position: "Student",
+    isActive: false,
+    comment:
+      "Definitely one of the best places to learn. I can say that I’m very confident with my skills in Product Design",
   },
 ];

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 // welcome comp
 export const WelcomeStyles = styled.div`
@@ -98,6 +98,12 @@ export const ChooseusStyles = styled.div`
       justify-content: space-evenly;
     }
   }
+  @media screen and (min-width: 728px) {
+    .reasons {
+      gap: 2.5rem;
+      justify-content: space-evenly;
+    }
+  }
 `;
 
 export const ReasonStyles = styled.div`
@@ -131,7 +137,7 @@ export const ReasonStyles = styled.div`
   }
   @media screen and (min-width: 728px) {
     gap: 3rem;
-    width: 30%;
+    width: 45%;
     .ele {
       gap: 2rem;
     }
@@ -142,12 +148,109 @@ export const ReasonStyles = styled.div`
       font-size: 1rem;
     }
   }
+  @media screen and (min-width: 998px) {
+    gap: 3rem;
+    width: 30%;
+  }
 `;
 
-
 export const TestimonialStyles = styled.div`
-  margin-top : 0.5rem;
-`
+  margin-top: 0.5rem;
+  background: var(--purple-100, #e5d4f5);
+  .testimonies {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  @media screen and (min-width: 728px) {
+    .testimonies {
+      margin-top: 3rem;
+      flex-direction: row;
+      gap: 0rem;
+    }
+    padding-bottom: 4rem;
+  }
+`;
 
-export const TestimonyStyles = styled.div`
-`
+export interface ITestimonyStyle {
+  $isActive: boolean;
+}
+export const TestimonyStyles = styled.div<ITestimonyStyle>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  .comment {
+    display: flex;
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+    border-radius: 16px;
+    background: var(--off-white, #fefefe);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  .comment p {
+    color: var(--grey-500, #525252);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+  }
+  ${(props) =>
+    props.$isActive &&
+    css`
+      .comment {
+        background: var(--purple, #7d26cd);
+      }
+      .comment p {
+        color: var(--off-white, #fefefe);
+      }
+    `}
+  h4 {
+    color: var(--grey-700, #272727);
+    font-size: 0.875rem;
+    font-family: DM Sans;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
+  span {
+    color: var(--grey-500, #525252);
+    font-size: 0.75rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+  }
+  .below {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  @media screen and (min-width: 728px) {
+    width: 33.3%;
+    .comment {
+      display: flex;
+      padding: 1.5rem 1rem;
+      align-items: flex-start;
+      gap: 1rem;
+      width: 95%;
+    }
+    transition: 0.5s ease-in-out;
+    ${(props) =>
+      props.$isActive &&
+      css`
+        transform: translateY(15%);
+        transition: 0.5s ease-in-out;
+      `}
+  }
+  @media screen and (min-width: 998px) {
+    .comment {
+      display: flex;
+      padding: 2.5rem 1.5rem;
+      align-items: flex-start;
+      gap: 1rem;
+      width: 95%;
+    }
+  }
+`;

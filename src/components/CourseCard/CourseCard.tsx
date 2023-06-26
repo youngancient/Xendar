@@ -1,6 +1,6 @@
 import { CourseCardStyles } from "@/styles/CourseStyles/CourseCard";
 import { DesktopMobile, TabOnly } from "@/styles/HeroStyles/Hero";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, MouseEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   BriefCase,
@@ -11,6 +11,9 @@ import {
 } from "../Icons/Icons";
 import { useAppDispatch } from "@/redux/hook";
 import { toggleLoved } from "@/redux/dataSlice";
+import { motion } from "framer-motion";
+import { msgVariants } from "@/Animations/LandingPageVariants";
+import { useOutsideClick } from "./OutsideClick";
 
 export interface ICourse {
   name: string;
@@ -24,6 +27,7 @@ export interface ICourse {
   noEnrolled: number;
   field: string;
 }
+
 const CourseCard: FunctionComponent<ICourse> = ({
   name,
   level,
@@ -40,6 +44,19 @@ const CourseCard: FunctionComponent<ICourse> = ({
   const toggleFavorite = () => {
     dispatch(toggleLoved(name));
   };
+  const [isheartHovered, setIsheartHovered] = useState(false);
+  const handleOnHover = (e: MouseEvent<HTMLButtonElement>) => {
+    setIsheartHovered(true);
+    console.log("ee work")
+  };
+  const handleNotOnHover = (e: MouseEvent<HTMLButtonElement>) => {
+    setIsheartHovered(false);
+  };
+  // clicking outside the mobile to close the msg div because mouseLeave doesnt work on mobile
+  const ref = useOutsideClick(() => {
+    setIsheartHovered(false);
+  });
+
   return (
     <DesktopMobile>
       <CourseCardStyles>
@@ -83,6 +100,14 @@ const CourseCard: FunctionComponent<ICourse> = ({
                 <span>{rating}</span>
               </div>
             </div>
+            <motion.div
+              className="msg"
+              variants={msgVariants}
+              initial="initial"
+              animate={isheartHovered ? "final" : "exit"}
+            >
+              <span>{isLoved ? "Added to Wishlist" : "Add to Wishlist"}</span>
+            </motion.div>
           </div>
           <hr />
           <div className="content-inner">
@@ -90,7 +115,13 @@ const CourseCard: FunctionComponent<ICourse> = ({
               <h4>&#8358;{nairaPrice?.toLocaleString()}</h4>
               <span>${dollarPrice}</span>
             </div>
-            <button className="emoji" onClick={toggleFavorite}>
+            <button
+              className="emoji"
+              onClick={toggleFavorite}
+              onMouseOver={handleOnHover}
+              onMouseLeave={handleNotOnHover}
+              ref={ref}
+            >
               {isLoved ? <FilledHeart /> : <OutlineHeart />}
             </button>
           </div>

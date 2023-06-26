@@ -1,6 +1,7 @@
-import { AllCourses, FiltersByTime } from "@/Constant/constant";
+import { AllCourses, FiltersByTime, Testimonies } from "@/Constant/constant";
 import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
+import { ITestimony } from "@/components/HomepageComp/Testimonials";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface InitialState {
@@ -9,6 +10,7 @@ export interface InitialState {
   allCourses: ICourse[];
   filtersByTime: IFilterButton[];
   filteredByTimeCourses: ICourse[] | null;
+  testimonies : ITestimony[];
 }
 const initialState: InitialState = {
   isNavOpen: false,
@@ -16,6 +18,7 @@ const initialState: InitialState = {
   allCourses: AllCourses,
   filtersByTime: FiltersByTime,
   filteredByTimeCourses: null,
+  testimonies : Testimonies,
 };
 export const dataSlice = createSlice({
   name: "data",
@@ -50,7 +53,7 @@ export const dataSlice = createSlice({
     toggleLoved: (state, {payload}) => {
         const toggled = state.allCourses.map((ele) => {
             if(payload === ele.name){
-                return {...ele, isLoved : !ele.isLoved}
+                return {...ele, isLoved : !ele.isLoved};
             }else{
                 return {...ele};
             }
@@ -58,14 +61,27 @@ export const dataSlice = createSlice({
         state.allCourses = toggled;
     },
     removeFromFavorite: (state, {payload}) =>{
-        const filtered = state.allCourses.map(ele =>{
+        const toggled = state.allCourses.map(ele =>{
             if(payload === ele.name){
-                return {...ele, isLoved : false}
+                return {...ele, isLoved : false};
             }else{
                 return {...ele};
             }
         });
-        state.allCourses = filtered;
+        state.allCourses = toggled;
+    },
+    setActiveTestimonials :(state, {payload}) =>{
+      const toggled = state.testimonies.map((ele, index) =>{
+        if(payload === index){
+          return {...ele, isActive : true};
+        }else{
+          return {...ele, isActive : false};
+        }
+      });
+      state.testimonies = toggled;
+    },
+    resetActiveTestimonials :(state) =>{
+      state.testimonies = Testimonies;
     }
   },
 });
@@ -77,6 +93,8 @@ export const {
   setFiltersByTime,
   setFilteredByTimeCourses,
   toggleLoved,
-  removeFromFavorite
+  removeFromFavorite,
+  setActiveTestimonials,
+  resetActiveTestimonials
 } = dataSlice.actions;
 export default dataSlice.reducer;

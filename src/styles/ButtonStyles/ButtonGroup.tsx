@@ -30,4 +30,8 @@ export const FilterButtonStyles = styled.button<IFilterStyle>`
   font-size: 0.875rem;
   font-family: DM Sans;
   line-height: 1.5rem;
+  &:hover{
+    background: 	hsla(271, 62%, 90%, 0.3);
+    box-shadow: 0px 0px 2px 1px rgba(125, 38, 205, 0.3);
+  }
 `;

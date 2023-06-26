@@ -3,8 +3,8 @@ import { styled } from "styled-components";
 export const CourseCardStyles = styled.div`
   border-radius: 11.774px;
   background: var(--white, #fff);
-  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.20);
-  .img{
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  .img {
     border-radius: 11.774px 11.774px 0px 0px;
   }
   .content {
@@ -22,6 +22,7 @@ export const CourseCardStyles = styled.div`
     font-family: Poppins;
     display: flex;
     justify-content: space-between;
+    position: relative;
   }
   .icons-inner {
     display: flex;
@@ -41,6 +42,25 @@ export const CourseCardStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .msg {
+    position: absolute;
+    top: 60%;
+    left: 75%;
+    width: fit-content;
+    width: 75px;
+    border-radius: 8px;
+    background: var(--off-white, #fefefe);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    display : flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .msg span{
+    color: var(--grey-500, #525252);
+    font-size: 0.5rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
   }
   h4 {
     color: var(--grey-500, #525252);
@@ -62,10 +82,11 @@ export const CourseCardStyles = styled.div`
   }
   .i span {
     color: var(--grey-400, #747474);
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     font-family: Poppins;
     line-height: 0.75rem;
     font-weight: 700;
+    margin-top: 1px;
   }
   hr {
     border: 0.046rem solid #e5d4f5;
@@ -79,6 +100,15 @@ export const CourseCardStyles = styled.div`
       width: 2rem;
       height: 2rem;
     }
+    .msg{
+      width: 110px;
+      padding: 1px;
+      top: 100%;
+      left: 76%;
+    }
+    .msg span{
+      font-size: 0.75rem;
+    }
     h4 {
       font-size: 1rem;
     }
@@ -87,6 +117,9 @@ export const CourseCardStyles = styled.div`
       font-size: 0.75rem;
       font-family: DM Sans;
       line-height: 1.5rem;
+    }
+    .i span{
+      margin-top: 0px;
     }
     .icons {
       font-family: DM Sans;

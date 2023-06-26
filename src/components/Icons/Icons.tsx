@@ -20,8 +20,8 @@ export const Heart: FunctionComponent = () => {
   const handleMouseOver = () => {
     dispatch(showWishlist(true));
   };
-  const {allCourses} = useAppSelector((state:RootState) => state.data);
-  const favorites = allCourses.filter(ele => ele.isLoved === true);
+  const { allCourses } = useAppSelector((state: RootState) => state.data);
+  const favorites = allCourses.filter((ele) => ele.isLoved === true);
   return (
     <IconStyle onMouseLeave={handleMouseLeave} onMouseOver={handleMouseOver}>
       <svg
@@ -223,14 +223,14 @@ export const NavMagnifyingGlass: FunctionComponent = () => {
   );
 };
 
-interface ITrash{
-  name : string;
+interface ITrash {
+  name: string;
 }
-export const Trash: FunctionComponent<ITrash> = ({name}) => {
+export const Trash: FunctionComponent<ITrash> = ({ name }) => {
   const dispatch = useAppDispatch();
-  const handleDelete =()=>{
+  const handleDelete = () => {
     dispatch(removeFromFavorite(name));
-  }
+  };
   return (
     <TrashContStyle onClick={handleDelete}>
       <svg
@@ -666,5 +666,60 @@ export const RatingIcon = () => {
         </g>
       </svg>
     </DesktopMobile>
+  );
+};
+
+export const BlackQuote = () => {
+  return (
+    <svg
+      width="45"
+      height="24"
+      viewBox="0 0 20 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="&#226;&#128;&#156;"
+        d="M7.02 0.508301L5.7 7.8283H8.1V15.9283H0V7.7083L2.16 0.508301H7.02ZM18.3 0.508301L16.98 7.8283H19.38V15.9283H11.28V7.7083L13.44 0.508301H18.3Z"
+        fill="#272727"
+      />
+    </svg>
+  );
+};
+
+export const WhiteQuote = () => {
+  return (
+    <svg
+      width="45"
+      height="24"
+      viewBox="0 0 20 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="&#226;&#128;&#156;"
+        d="M7.02 0.508301L5.7 7.8283H8.1V15.9283H0V7.7083L2.16 0.508301H7.02ZM18.3 0.508301L16.98 7.8283H19.38V15.9283H11.28V7.7083L13.44 0.508301H18.3Z"
+        fill="#FEFEFE"
+      />
+    </svg>
+  );
+};
+
+export const Union = () => {
+  return (
+    <svg
+      width="10"
+      height="19"
+      viewBox="0 0 10 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M9.99922 5.50742C9.99922 7.83844 8.40381 9.79683 6.24536 10.3502V13.3371C6.99541 13.7685 7.50045 14.5779 7.50045 15.5053C7.50045 16.8858 6.38135 18.0049 5.00088 18.0049C3.62041 18.0049 2.50132 16.8858 2.50132 15.5053C2.50132 14.5823 3.0016 13.7762 3.7458 13.3432V10.3479C1.59194 9.79136 0.000976562 7.83519 0.000976562 5.50742C0.000976562 2.74648 2.23916 0.508301 5.0001 0.508301C7.76104 0.508301 9.99922 2.74648 9.99922 5.50742Z"
+        fill="#7D26CD"
+      />
+    </svg>
   );
 };
