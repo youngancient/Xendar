@@ -1,7 +1,8 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { IHover } from "../IconsStyles/icons";
 import { motion } from "framer-motion";
 import { wishlistvariants } from "@/Animations/LandingPageVariants";
+import { IButton } from "../ButtonStyles/ButtonGroup";
 
 export const InfoStyles = styled.div`
   background: var(--purple-900, #2a0d44);
@@ -33,11 +34,15 @@ export const InfoStyles = styled.div`
   }
 `;
 
-export const WishlistStyles = styled(motion.div).attrs<IHover>(() => ({
+export interface IWishlist extends IHover {
+  length: number;
+}
+export const WishlistStyles = styled(motion.div).attrs<IWishlist>(() => ({
   initial: "initial",
-  animate : "final",
-  exit : "exit",
-  variants : wishlistvariants}))`
+  animate: "final",
+  exit: "exit",
+  variants: wishlistvariants,
+}))`
   position: absolute;
   top: 0;
   left: 72%;
@@ -64,6 +69,17 @@ export const WishlistStyles = styled(motion.div).attrs<IHover>(() => ({
     flex-direction: column;
     gap: 0.75rem;
   }
+  .wishlist::-webkit-scrollbar {
+    display: none;
+  }
+  ${(props) =>
+    props.length > 2 &&
+    css`
+      .wishlist {
+        height: 300px;
+        overflow-y: scroll;
+      }
+    `}
   @media screen and (min-width: 998px) {
     left: 81%;
   }
@@ -107,7 +123,8 @@ export const WishlistItemStyle = styled.div`
     display: flex;
     gap: 0.5rem;
   }
-  h4, h5{
+  h4,
+  h5 {
     color: var(--grey-500, #525252);
     font-size: 0.875rem;
     font-family: DM Sans;
@@ -116,23 +133,26 @@ export const WishlistItemStyle = styled.div`
   p {
     color: var(--grey-400, #747474);
     font-size: 0.75rem;
-    text-align : left;
+    text-align: left;
   }
-  h5{
+  h5 {
     font-size: 0.875rem;
   }
-  span{
+  span {
     color: var(--grey-300, #979797);
     font-size: 0.625rem;
   }
-  .prices{
-    display : flex;
-    gap : 0.5rem;
-    align-items : center;
+  .prices {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  hr {
+    border: 0.046rem solid #e5d4f5;
   }
 `;
 
-export const TrashContStyle = styled.button`
+export const TrashContStyle = styled.button<IButton>`
   border-radius: 4px;
   border: 1px solid var(--red-400, #e6736a);
   display: flex;

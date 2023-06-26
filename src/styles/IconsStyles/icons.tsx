@@ -11,10 +11,10 @@ export const IconStyle = styled.button<IHover>`
   position: relative;
   .value {
     display: flex;
-    width: 16px;
-    height: 16px;
-    padding: 2px;
-    flex-direction: column;
+    min-width: 16px;
+    width: fit-content;
+    min-height: 16px;
+    padding: 0.125rem 0 0 0;
     justify-content: center;
     align-items: center;
     border-radius: 16.667px;
@@ -41,6 +41,11 @@ export const MenuStyle = styled.button<IMenu>`
   cursor: pointer;
 `;
 export const HeroMagnifyingGlassStyle = styled.div`
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem;
+`;
+export const MagnifyingGlassStyle = styled.div`
   position: absolute;
   left: 0.5rem;
   top: 0.75rem;

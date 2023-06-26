@@ -6,21 +6,29 @@ import Search from "./Search";
 import React, { FunctionComponent, useEffect } from "react";
 import { PageLinkStyle } from "@/styles/LinkStyles/Link";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
-import { RootState } from "@/redux/store";
 import { closeNav, toggleNav } from "@/redux/dataSlice";
 import { useRouter } from "next/router";
+import { RootState } from "@/redux/store";
 
 // What is left to do here is
-// 1. the hover/clicked states of the wishlist and notifications
-// 2. why is my styled component breaking 😭
+// 1. Complete the hover/clicked states of the wishlist and notifications
 const Header: FunctionComponent = () => {
   const dispatch = useAppDispatch();
+  const {isNavOpen} = useAppSelector((state:RootState) => state.data);
   const toggleMenu =()=>{
     dispatch(toggleNav());
   }
   useEffect(()=>{
-    dispatch(closeNav());
-  });
+    const handleRouteChange =()=>{
+      // close mobile slidein if the route changes
+      dispatch(closeNav());
+    }
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange); 
+    }
+  },[]);
+
   const router = useRouter();
   return (
     <HeaderStyle>
@@ -36,13 +44,13 @@ const Header: FunctionComponent = () => {
       </div>
       <div className="desktop desktop-nav-links">
         <Link href={"/courses"}>
-          <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/courses"}>Courses</PageLinkStyle>
+          <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={router.pathname === "/courses"}>Courses</PageLinkStyle>
         </Link>
         <Link href={"/about"}>
-          <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/about"}>About Us</PageLinkStyle>
+          <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={router.pathname === "/about"}>About Us</PageLinkStyle>
         </Link>
         <Link href={"/contact"}>
-          <PageLinkStyle color="var(--grey-500, #525252)" ispageactive={router.pathname === "/contact"}>Contact Us</PageLinkStyle>
+          <PageLinkStyle color="var(--grey-500, #525252)" $ispageactive={router.pathname === "/contact"}>Contact Us</PageLinkStyle>
         </Link>
       </div>
       <div className="desktop">

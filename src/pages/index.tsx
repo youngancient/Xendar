@@ -1,8 +1,17 @@
 import Hero from '@/components/Hero/Hero'
-import Stats from '@/components/Hero/Stats'
+import {Chooseus} from '@/components/HomepageComp/Chooseus'
+import PopularCourses from '@/components/HomepageComp/PopularCourses'
+import Stats from '@/components/HomepageComp/Stats'
+import { Testimonials } from '@/components/HomepageComp/Testimonials'
+import Welcome from '@/components/HomepageComp/Welcome'
 import Head from 'next/head'
 
-// our popular courses section is next
+// issues
+// complete the favorite states "add to wishlist" and "added to wishlist"
+// do the hover states for buttons and interactive items
+// Finish the testimonial section this morning -> Faq
+// There's an issue with the mobile nav ooo, make sure u fix it
+
 export default function Home() {
   return (
     <>
@@ -14,6 +23,10 @@ export default function Home() {
       </Head>
       <Hero />
       <Stats />
+      <PopularCourses />
+      <Welcome />
+      <Chooseus />
+      <Testimonials />
     </>
   )
 }

@@ -17,7 +17,7 @@ export const HeroStyles = styled.div`
   h1 strong {
     color: var(--purple, #7d26cd);
   }
-  p {
+  .hero-p {
     color: var(--grey-500, #525252);
     text-align: center;
     font-family: DM Sans;
@@ -25,8 +25,9 @@ export const HeroStyles = styled.div`
     line-height: 1.5rem;
     margin-top: 1rem;
   }
-  img {
+  .mobile-img {
     width: 100%;
+    height: auto;
   }
   .alink {
     display: flex;
@@ -35,9 +36,6 @@ export const HeroStyles = styled.div`
     margin-bottom: 1.5rem;
   }
   @media screen and (min-width: 728px) {
-    img {
-      width: auto;
-    }
     align-items: center;
     justify-content: center;
     flex-direction: row;
@@ -46,7 +44,7 @@ export const HeroStyles = styled.div`
       line-height: 2.5rem;
       text-align: left;
     }
-    p {
+    .hero-p {
       text-align: left;
       font-size: 1.2rem;
       line-height: 1.5rem;
@@ -78,7 +76,7 @@ export const HeroStyles = styled.div`
       font-size: 3.5rem;
       line-height: 4.5rem;
     }
-    p {
+    .hero-p {
       text-align: left;
       font-size: 1.25rem;
       line-height: 2rem;
