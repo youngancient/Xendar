@@ -1,14 +1,16 @@
 import { FooterPaddedSectionStyle } from "@/styles/HomepageStyles/Section";
-import { LinkStyle } from "@/styles/LinkStyles/Link";
+import { FooterLinkStyle, LinkStyle } from "@/styles/LinkStyles/Link";
 import React, { FunctionComponent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FooterStyles } from "@/styles/FooterStyles/Footer";
+import { Facebook, Instagram, Linkedin, Twitter } from "../Icons/Icons";
 
 const Footer: FunctionComponent = () => {
   return (
     <FooterStyles>
       <FooterPaddedSectionStyle>
+        <div className="fl">
         <div className="one">
           <div className="icons">
             <Link href={"/"}>
@@ -19,44 +21,50 @@ const Footer: FunctionComponent = () => {
                 height={40}
               />
             </Link>
+            <div className="socials">
+              <Linkedin />
+              <Facebook />
+              <Instagram />
+              <Twitter />
+            </div>
           </div>
           <div className="pane">
             <h4>Company</h4>
             <div className="links">
               <Link href={"/courses"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Courses
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
               <Link href={"/about"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   About Us
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
               <Link href={"/contact"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Contact Us
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
             </div>
           </div>
           <div className="pane">
-            <h4>Community</h4>
+            <h4>Community</h4> 
             <div className="links">
               <Link href={"#"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Scholarships
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
               <Link href={"#"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Refer a Friend
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
               <Link href={"#"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Free Classes
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
             </div>
           </div>
@@ -64,14 +72,14 @@ const Footer: FunctionComponent = () => {
             <h4>Teaching</h4>
             <div className="links">
               <Link href={"#"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Become a Tutor
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
               <Link href={"#"}>
-                <LinkStyle color="#fff" hovercolor="#fff">
+                <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                   Tutor Help Centre
-                </LinkStyle>
+                </FooterLinkStyle>
               </Link>
             </div>
           </div>
@@ -80,16 +88,17 @@ const Footer: FunctionComponent = () => {
           <p>2022 Mike & Jude Services. All Rights Reserved</p>
           <div className="flat">
             <Link href={"#"}>
-              <LinkStyle color="#fff" hovercolor="#fff">
+              <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                 Privacy Policy
-              </LinkStyle>
+              </FooterLinkStyle>
             </Link>
             <Link href={"#"}>
-              <LinkStyle color="#fff" hovercolor="#fff">
+              <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">
                 Terms and Conditions
-              </LinkStyle>
+              </FooterLinkStyle>
             </Link>
           </div>
+        </div>
         </div>
       </FooterPaddedSectionStyle>
     </FooterStyles>
