@@ -24,17 +24,20 @@ export const PopularCoursesStyles = styled.div`
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
     width: 100%;
   }
-  @media screen and (min-width: 728px) {
-    .inner {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+  
+  @media screen and (min-width: 490px){
+    .a{
+      width :auto;
     }
     .pad{
       width :auto;
       padding: 0;
     }
-    .a{
-      width :auto;
+  }
+  @media screen and (min-width: 728px) {
+    .inner {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
   }
   @media screen and (min-width: 998px) {

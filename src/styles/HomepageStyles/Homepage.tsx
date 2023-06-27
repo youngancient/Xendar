@@ -39,8 +39,8 @@ export const WelcomeStyles = styled.div`
   @media screen and (min-width: 728px) {
     .welcome {
       flex-direction: row;
-      align-items: unset;
-      justify-content: unset;
+      justify-content: center;
+      align-items: center;
       gap: 3rem;
     }
     h3 {
@@ -64,8 +64,6 @@ export const WelcomeStyles = styled.div`
   }
   @media screen and (min-width: 998px) {
     .welcome {
-      justify-content: center;
-      align-items: center;
       flex-direction: row;
       gap: 10.25rem;
     }
@@ -92,6 +90,12 @@ export const ChooseusStyles = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    .reasons {
+      justify-content: space-evenly;
+      gap: 2rem;
+    }
   }
   @media screen and (min-width: 728px) {
     .reasons {
@@ -135,6 +139,9 @@ export const ReasonStyles = styled.div`
     font-size: 0.875rem;
     font-family: DM Sans;
     line-height: 1.5rem;
+  }
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    width: 45%;
   }
   @media screen and (min-width: 728px) {
     gap: 3rem;
@@ -282,6 +289,11 @@ export const CtaStyles = styled.div`
   .a:hover {
     background: var(--purple-600, #6820ab);
   }
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    .cta{
+      gap : 0;
+    }
+  }
   @media screen and (min-width: 728px) {
     background: var(--purple-100, #e5d4f5) url("/assets/cta-bg2.png") no-repeat
       center;
@@ -317,5 +329,10 @@ export const SubscribeStyles = styled(HeroSearchStyles)`
   }
   input:focus{
     border: 1px solid var(--grey-500, #525252);
+  }
+  @media screen and (min-width: 490px) and (max-width: 768px) {
+    input{
+      width: 14rem;
+    }
   }
 `;

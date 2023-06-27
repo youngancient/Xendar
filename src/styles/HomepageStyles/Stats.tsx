@@ -35,7 +35,7 @@ export const StatStyles = styled.div`
   hr{
     display : none;
   }
-  @media screen and (min-width: 728px) {
+  @media screen and (min-width: 490px) {
     padding: 2rem;
     margin-top: 1rem;
     .short {

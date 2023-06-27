@@ -42,8 +42,12 @@ export const MenuStyle = styled.button<IMenu>`
 `;
 export const HeroMagnifyingGlassStyle = styled.div`
   position: absolute;
-  left: 0.5rem;
-  top: 0.75rem;
+  left: 0.55rem;
+  top: 0.85rem;
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    left: 6.75rem;
+    top: 0.85rem;
+  }
 `;
 export const MagnifyingGlassStyle = styled.div`
   position: absolute;

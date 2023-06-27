@@ -68,7 +68,7 @@ const Footer: FunctionComponent = () => {
               </Link>
             </div>
           </div>
-          <div className="pane">
+          <div className="pane m-b">
             <h4>Teaching</h4>
             <div className="links">
               <Link href={"#"}>
