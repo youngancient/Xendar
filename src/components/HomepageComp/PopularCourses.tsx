@@ -21,10 +21,7 @@ const PopularCourses = () => {
   useEffect(() => {
     dispatch(setFilteredByTimeCourses());
   }, [dispatch, allCourses]);
-  // i want to autoselect the post popular button and display all courses based on the parameter
-  // secondly i want to be able to switch it with the New button
-  // I want to display the courses and style them
-  // I want to complete the wishlist feature
+
   return (
     <PopularCoursesStyles>
       <SectionHead
@@ -55,13 +52,13 @@ const PopularCourses = () => {
       </div>
       <CenterItemStyle>
         <div className="pad">
-          <div className="a">
-            <Link href={"/courses"}>
+          <Link href={"/courses"}>
+            <div className="a">
               <LinkStyle color="var(--purple, #7d26cd)">
                 View all Courses
               </LinkStyle>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </CenterItemStyle>
     </PopularCoursesStyles>

@@ -1,6 +1,7 @@
-import { AllCourses, FiltersByTime, Testimonies } from "@/Constant/constant";
+import { AllCourses, Faqs, FiltersByTime, Testimonies } from "@/Constant/constant";
 import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
+import { IFaq } from "@/components/HomepageComp/Faq";
 import { ITestimony } from "@/components/HomepageComp/Testimonials";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -11,6 +12,7 @@ export interface InitialState {
   filtersByTime: IFilterButton[];
   filteredByTimeCourses: ICourse[] | null;
   testimonies : ITestimony[];
+  faqs : IFaq[];
 }
 const initialState: InitialState = {
   isNavOpen: false,
@@ -19,6 +21,7 @@ const initialState: InitialState = {
   filtersByTime: FiltersByTime,
   filteredByTimeCourses: null,
   testimonies : Testimonies,
+  faqs : Faqs,
 };
 export const dataSlice = createSlice({
   name: "data",
@@ -82,6 +85,16 @@ export const dataSlice = createSlice({
     },
     resetActiveTestimonials :(state) =>{
       state.testimonies = Testimonies;
+    },
+    showFaqAnswer : (state, {payload}) =>{
+      const toggled = state.faqs.map((ele, index) => {
+        if(payload === index){
+          return {...ele, showAnswer : !ele.showAnswer};
+        }else{
+          return {...ele};
+        }
+      });
+      state.faqs = toggled;
     }
   },
 });
@@ -95,6 +108,7 @@ export const {
   toggleLoved,
   removeFromFavorite,
   setActiveTestimonials,
-  resetActiveTestimonials
+  resetActiveTestimonials,
+  showFaqAnswer
 } = dataSlice.actions;
 export default dataSlice.reducer;

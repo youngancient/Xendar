@@ -16,6 +16,10 @@ export const HeroStyles = styled.div`
 
   h1 strong {
     color: var(--purple, #7d26cd);
+    width: 200px;
+  }
+  strong span{
+    margin-left: -4px;
   }
   .hero-p {
     color: var(--grey-500, #525252);

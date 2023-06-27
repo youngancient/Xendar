@@ -4,7 +4,6 @@ import SectionHead from "../SectionHead/SectionHead";
 import { ActualPaddedSectionStyle } from "@/styles/HomepageStyles/Section";
 import { Reasons } from "@/Constant/constant";
 import Image from "next/image";
-import Small from "../SectionHead/Small";
 
 
 export const Chooseus:FunctionComponent = () => {

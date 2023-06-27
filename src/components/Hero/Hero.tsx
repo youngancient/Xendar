@@ -4,14 +4,20 @@ import Image from "next/image";
 import HeroSearch from "./HeroSearch";
 import Link from "next/link";
 import { LinkStyle } from "@/styles/LinkStyles/Link";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Hero: FunctionComponent = () => {
+  const [text] = useTypewriter({
+    words: ["Start", "Begin"],
+    loop: true,
+    typeSpeed: 100,
+  });
   return (
     <DesktopMobile>
       <HeroStyles>
         <div className="hero-text">
           <h1>
-            Let’s help you <strong>Start </strong> <br />
+            Let’s help you <strong>{text} <span><Cursor cursorColor="#531989" /></span></strong> <br />
             your career in <strong>Tech</strong>
           </h1>
           <p className="hero-p">
@@ -49,6 +55,7 @@ const Hero: FunctionComponent = () => {
               width={0}
               height={0}
               sizes="100vw"
+              priority={true} 
               className="mobile mobile-img"
             />
           </TabOnly>

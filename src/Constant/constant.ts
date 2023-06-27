@@ -1,6 +1,7 @@
 import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IReason } from "@/components/HomepageComp/Chooseus";
+import { IFaq } from "@/components/HomepageComp/Faq";
 import { ITestimony } from "@/components/HomepageComp/Testimonials";
 
 export const AllCourses: ICourse[] = [
@@ -185,7 +186,7 @@ export const Reasons: IReason[] = [
 
 export const Testimonies: ITestimony[] = [
   {
-    id : null,
+    id: null,
     img: "/assets/mide.png",
     name: "Omotosho Mide",
     position: "Alumni",
@@ -194,21 +195,58 @@ export const Testimonies: ITestimony[] = [
       "Definitely one of the best places to learn. I can say that I’m very confident with my skills in Product Design ",
   },
   {
-    id : null,
+    id: null,
     img: "/assets/mike.png",
     name: "Micheal Ajala",
     position: "Alumni",
     isActive: true,
     comment:
-      "I enjoyed each course from the first week. I got to practise with real world projects andf this made me confident",
+      "I enjoyed each course from the first week. I got to practise with real world projects and this made me confident",
   },
   {
-    id : null,
+    id: null,
     img: "/assets/tayo.png",
     name: "Omotayo",
     position: "Student",
     isActive: false,
     comment:
       "Definitely one of the best places to learn. I can say that I’m very confident with my skills in Product Design",
+  },
+];
+
+
+export const Faqs: IFaq[] = [
+  {
+    id: null,
+    question: "How many months will it take to complete a course?",
+    showAnswer : true,
+    answer:
+      "Each course takes approximately 3-4 months to be complete after which you take a certification test and you’re given a project to work on. Your classes can be extended if you fail to meet the passmark of the certification test.",
+  },
+  {
+    id: null,
+    question: "How long is the demo class each course?",
+    showAnswer : false,
+    answer:
+      "The demo class for each course will last for approximately 7days, you are advised to make the best use of it.",
+  },
+  {
+    id: null,
+    question: "Do I get a recognized a certificate?",
+    answer: "You get a recognized certificate after completely a course",
+    showAnswer : false,
+  },
+  {
+    id: null,
+    question: "Will i automatically get a job after completing a course?",
+    showAnswer : false,
+    answer:
+      "We do not guarantee automatic employment at the completion of a course, but we communities which serve as a talent pool for employers and it's totally open for you to join.",
+  },
+  {
+    id: null,
+    showAnswer : false,
+    question: "Are onsite classes available?",
+    answer: "Our services are fully online but if needs be that you need an onsite, contact our hotlines.",
   },
 ];

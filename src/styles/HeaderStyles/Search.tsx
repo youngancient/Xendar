@@ -16,6 +16,10 @@ export const SearchStyle = styled.div`
     font-family: DM Sans;
     line-height: 1.5rem;
   }
+  input:focus{
+    border: 1px solid var(--grey-500, #525252);
+  }
+
   ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--grey-300, #979797);

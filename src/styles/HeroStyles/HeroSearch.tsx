@@ -11,8 +11,27 @@ export const HeroSearchStyles = styled(SearchStyle)`
     height : 2.8rem;
     padding: 1.2rem 2.2rem;
   }
+  input:focus{
+    border: 1px solid var(--grey-500, #525252);
+  }
   gap : 0.5rem;
-  @media screen and (min-width: 728px) {
+  @media screen and (min-width: 490px) and (max-width: 728px) {
+    position: relative;
+    justify-content: center;
+    height: 2.9rem;
+  }
+  @media screen and (min-width: 490px) {
+    flex-direction: row;
+    align-items: center;
+    gap : 0rem;
+    input {
+      width: 14rem;
+      border-radius: 8px 0px 0px 8px;
+      height: 2.85rem;
+    }
+    margin-top : 1rem;
+  }
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
     gap : 0rem;
@@ -37,7 +56,7 @@ export const HeroSearchStyles = styled(SearchStyle)`
   }
 `;
 
-export const HeroSearchButton = styled.button`
+export const FormButton = styled.button`
   background: var(--purple, #7d26cd);
   box-shadow: 0px 4px 8px 0px rgba(125, 38, 205, 0.3);
   padding: 0.75rem 1rem;
@@ -47,7 +66,13 @@ export const HeroSearchButton = styled.button`
   font-family: DM Sans;
   font-weight: 700;
   line-height: 1.5rem;
-  @media screen and (min-width: 728px) {
+  &:hover{
+    background: var(--purple-600, #6820AB);
+  }
+  @media screen and (min-width: 490px) and (max-width: 768px) {
+    .width: auto;
+  }
+  @media screen and (min-width: 490px) {
     border-radius: 0px 8px 8px 0px;
   }
 `;

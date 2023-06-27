@@ -1,4 +1,7 @@
 import { css, styled } from "styled-components";
+import { HeroSearchStyles } from "../HeroStyles/HeroSearch";
+import { motion } from "framer-motion";
+import { reasonVariants } from "@/Animations/LandingPageVariants";
 
 // welcome comp
 export const WelcomeStyles = styled.div`
@@ -38,8 +41,8 @@ export const WelcomeStyles = styled.div`
   @media screen and (min-width: 728px) {
     .welcome {
       flex-direction: row;
-      align-items: unset;
-      justify-content: unset;
+      justify-content: center;
+      align-items: center;
       gap: 3rem;
     }
     h3 {
@@ -63,8 +66,6 @@ export const WelcomeStyles = styled.div`
   }
   @media screen and (min-width: 998px) {
     .welcome {
-      justify-content: center;
-      align-items: center;
       flex-direction: row;
       gap: 10.25rem;
     }
@@ -92,6 +93,12 @@ export const ChooseusStyles = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
   }
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    .reasons {
+      justify-content: space-evenly;
+      gap: 2rem;
+    }
+  }
   @media screen and (min-width: 728px) {
     .reasons {
       gap: 2.5rem;
@@ -106,7 +113,12 @@ export const ChooseusStyles = styled.div`
   }
 `;
 
-export const ReasonStyles = styled.div`
+export const ReasonStyles = styled(motion.div).attrs(() => ({
+  initial: "initial",
+  whileInView : "final",
+  viewport : {once : true},
+  // animate : "final",
+  variants : reasonVariants}))`
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -134,6 +146,9 @@ export const ReasonStyles = styled.div`
     font-size: 0.875rem;
     font-family: DM Sans;
     line-height: 1.5rem;
+  }
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    width: 45%;
   }
   @media screen and (min-width: 728px) {
     gap: 3rem;
@@ -251,6 +266,84 @@ export const TestimonyStyles = styled.div<ITestimonyStyle>`
       align-items: flex-start;
       gap: 1rem;
       width: 95%;
+    }
+  }
+`;
+
+export const CtaStyles = styled.div`
+  // display: flex;
+  background: var(--purple-100, #e5d4f5) url("/assets/cta-bg1.png") no-repeat
+    center;
+  .pad {
+    display: flex;
+    justify-content: center;
+  }
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .a {
+    display: flex;
+    padding: 0.75rem 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--purple, #7d26cd);
+    box-shadow: 0px 4px 8px 0px rgba(125, 38, 205, 0.3);
+    width: 100%;
+  }
+  .a:hover {
+    background: var(--purple-600, #6820ab);
+  }
+  @media screen and (min-width: 490px) and (max-width: 690px) {
+    .cta {
+      gap: 0;
+    }
+  }
+  @media screen and (min-width: 728px) {
+    background: var(--purple-100, #e5d4f5) url("/assets/cta-bg2.png") no-repeat
+      center;
+    border-radius: 16px;
+    .a {
+      width: auto;
+    }
+  }
+`;
+
+export const NewsletterStyle = styled.div`
+  .fl {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  form {
+    width: 100%;
+  }
+  @media screen and (min-width: 728px) {
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fl{
+      gap: 2rem;
+    }
+  }
+`;
+
+export const SubscribeStyles = styled(HeroSearchStyles)`
+  margin-top: 0;
+  display: flex;
+  input {
+    padding: 1rem;
+  }
+  input:focus {
+    border: 1px solid var(--grey-500, #525252);
+  }
+  @media screen and (min-width: 490px) and (max-width: 768px) {
+    input {
+      width: 14rem;
     }
   }
 `;
