@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { DesktopMobile } from "@/styles/HeroStyles/Hero";
 import { TrashContStyle } from "@/styles/HeroStyles/Info";
+import { FaqArrowStyles } from "@/styles/HomepageStyles/FaqStyles";
 import {
   HeroMagnifyingGlassStyle,
   IMenu,
@@ -715,11 +716,40 @@ export const Union = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9.99922 5.50742C9.99922 7.83844 8.40381 9.79683 6.24536 10.3502V13.3371C6.99541 13.7685 7.50045 14.5779 7.50045 15.5053C7.50045 16.8858 6.38135 18.0049 5.00088 18.0049C3.62041 18.0049 2.50132 16.8858 2.50132 15.5053C2.50132 14.5823 3.0016 13.7762 3.7458 13.3432V10.3479C1.59194 9.79136 0.000976562 7.83519 0.000976562 5.50742C0.000976562 2.74648 2.23916 0.508301 5.0001 0.508301C7.76104 0.508301 9.99922 2.74648 9.99922 5.50742Z"
         fill="#7D26CD"
       />
     </svg>
+  );
+};
+
+export interface IFaqArrow {
+  $showAnswer: boolean;
+}
+export const FaqArrow: FunctionComponent<IFaqArrow> = ({ $showAnswer }) => {
+  return (
+    <FaqArrowStyles $showAnswer={$showAnswer}>
+      <svg
+        width="32"
+        height="33"
+        viewBox="0 0 32 33"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="vuesax/bold/arrow-down">
+          <g id="vuesax/bold/arrow-down_2">
+            <g id="arrow-down">
+              <path
+                id="Vector"
+                d="M23.8935 11.415H15.5868H8.10682C6.82682 11.415 6.18682 12.9617 7.09349 13.8684L14.0002 20.775C15.1068 21.8817 16.9068 21.8817 18.0135 20.775L20.6402 18.1484L24.9202 13.8684C25.8135 12.9617 25.1735 11.415 23.8935 11.415Z"
+                fill="#7D26CD"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </FaqArrowStyles>
   );
 };

@@ -12,6 +12,7 @@ export const SectionHeadStyles = styled.div`
     line-height: 2rem;
     font-family: Raleway;
     font-weight: 700;
+    text-align: center;
   }
   @media screen and (min-width: 728px) {
     margin-top: 1rem;

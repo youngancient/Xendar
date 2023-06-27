@@ -1,4 +1,5 @@
 import { css, styled } from "styled-components";
+import { HeroSearchStyles } from "../HeroStyles/HeroSearch";
 
 // welcome comp
 export const WelcomeStyles = styled.div`
@@ -252,5 +253,69 @@ export const TestimonyStyles = styled.div<ITestimonyStyle>`
       gap: 1rem;
       width: 95%;
     }
+  }
+`;
+
+export const CtaStyles = styled.div`
+  // display: flex;
+  background: var(--purple-100, #e5d4f5) url("/assets/cta-bg1.png") no-repeat
+    center;
+  .pad {
+    display: flex;
+    justify-content: center;
+  }
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .a {
+    display: flex;
+    padding: 0.75rem 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--purple, #7d26cd);
+    box-shadow: 0px 4px 8px 0px rgba(125, 38, 205, 0.3);
+    width: 100%;
+  }
+  .a:hover {
+    background: var(--purple-600, #6820ab);
+  }
+  @media screen and (min-width: 728px) {
+    background: var(--purple-100, #e5d4f5) url("/assets/cta-bg2.png") no-repeat
+      center;
+    border-radius: 16px;
+    .a {
+      width: auto;
+    }
+  }
+`;
+
+export const NewsletterStyle = styled.div`
+  display: flex;
+  border: 2px solid #000;
+  flex-direction: column;
+  gap: 1.5rem;
+  form{
+    width: 100%;
+  }
+  @media screen and (min-width: 728px) {
+    form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    gap: 2rem;
+  }
+`;
+
+export const SubscribeStyles = styled(HeroSearchStyles)`
+  display: flex;
+  input{
+    padding : 1rem;
+  }
+  input:focus{
+    border: 1px solid var(--grey-500, #525252);
   }
 `;

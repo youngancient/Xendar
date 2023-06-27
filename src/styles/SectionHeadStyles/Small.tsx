@@ -10,5 +10,6 @@ export const SmallStyles = styled.h5`
   @media screen and (min-width: 998px) {
     font-size: 1rem;
     margin-top : 2rem;
+    width: 75%;
   }
 `;

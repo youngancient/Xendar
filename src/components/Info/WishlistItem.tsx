@@ -22,7 +22,7 @@ const WishlistItem:FunctionComponent<IExtWishlistItem> = ({name, img, dollarPric
                     <h4>{name}</h4>
                     <p>{level}</p>
                     <div className="prices">
-                        <h5>&#8358;{nairaPrice}</h5>
+                        <h5>&#8358;{nairaPrice.toLocaleString()}</h5>
                         <span>${dollarPrice}</span>
                     </div>
                 </div>

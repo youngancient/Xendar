@@ -6,6 +6,7 @@ export interface ILink {
 }
 export interface ILinkB {
   color: string;
+  hovercolor ?: string;
 }
 
 export const PageLinkStyle = styled.p<ILink>`
@@ -14,6 +15,9 @@ export const PageLinkStyle = styled.p<ILink>`
   font-family: DM Sans;
   font-weight: 600;
   line-height: 1.5rem;
+  &:hover{
+    color: var(--purple-600, #6820AB);
+  }
   @media screen and (min-width: 728px) {
     font-weight: 700;
     font-size: 1.25rem;
@@ -36,6 +40,14 @@ export const LinkStyle = styled.p<ILinkB>`
   font-weight: 600;
   line-height: 1.5rem;
   width: fit-content;
+  &:hover{
+    color: var(--purple-600, #6820AB);
+  }
+  ${props => props.hovercolor && css`
+    &:hover{
+      color: ${props.hovercolor};
+    }
+  `}
   @media screen and (min-width: 728px) {
     font-weight: 700;
     font-size: 1.25rem;
