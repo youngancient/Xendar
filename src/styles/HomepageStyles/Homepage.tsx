@@ -1,5 +1,7 @@
 import { css, styled } from "styled-components";
 import { HeroSearchStyles } from "../HeroStyles/HeroSearch";
+import { motion } from "framer-motion";
+import { reasonVariants } from "@/Animations/LandingPageVariants";
 
 // welcome comp
 export const WelcomeStyles = styled.div`
@@ -111,7 +113,12 @@ export const ChooseusStyles = styled.div`
   }
 `;
 
-export const ReasonStyles = styled.div`
+export const ReasonStyles = styled(motion.div).attrs(() => ({
+  initial: "initial",
+  whileInView : "final",
+  viewport : {once : true},
+  // animate : "final",
+  variants : reasonVariants}))`
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -290,8 +297,8 @@ export const CtaStyles = styled.div`
     background: var(--purple-600, #6820ab);
   }
   @media screen and (min-width: 490px) and (max-width: 690px) {
-    .cta{
-      gap : 0;
+    .cta {
+      gap: 0;
     }
   }
   @media screen and (min-width: 728px) {
@@ -305,33 +312,37 @@ export const CtaStyles = styled.div`
 `;
 
 export const NewsletterStyle = styled.div`
-  display: flex;
-  border: 2px solid #000;
-  flex-direction: column;
-  gap: 1.5rem;
-  form{
+  .fl {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  form {
     width: 100%;
   }
   @media screen and (min-width: 728px) {
-    form{
+    form {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    gap: 2rem;
+    .fl{
+      gap: 2rem;
+    }
   }
 `;
 
 export const SubscribeStyles = styled(HeroSearchStyles)`
+  margin-top: 0;
   display: flex;
-  input{
-    padding : 1rem;
+  input {
+    padding: 1rem;
   }
-  input:focus{
+  input:focus {
     border: 1px solid var(--grey-500, #525252);
   }
   @media screen and (min-width: 490px) and (max-width: 768px) {
-    input{
+    input {
       width: 14rem;
     }
   }

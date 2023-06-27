@@ -90,3 +90,16 @@ export const faqAnswerVariants = {
     },
   },
 };
+export const reasonVariants = {
+  initial: {
+    opacity: 0.3,
+    scale: 0.8,
+  },
+  final: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};

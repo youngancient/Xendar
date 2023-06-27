@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const FooterStyles = styled.footer`
+margin-top: 2.5rem;
   .fl {
     display: flex;
     gap: 1.5rem;
