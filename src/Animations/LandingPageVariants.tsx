@@ -93,7 +93,7 @@ export const faqAnswerVariants = {
 export const reasonVariants = {
   initial: {
     opacity: 0.3,
-    scale: 0.8,
+    scale: 0.9,
   },
   final: {
     opacity: 1,

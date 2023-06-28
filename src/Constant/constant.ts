@@ -78,7 +78,7 @@ export const AllCourses: ICourse[] = [
     field: "Data",
   },
   {
-    name: "Database Management",
+    name: "Database Management for Newbies",
     img: "/assets/fe_engr.png",
     dollarPrice: 380.5,
     nairaPrice: null,
@@ -154,6 +154,14 @@ export const AllCourses: ICourse[] = [
 export const FiltersByTime: IFilterButton[] = [
   { filter: "Most Popular", isSelected: true },
   { filter: "New", isSelected: false },
+];
+export const FiltersByType: IFilterButton[] = [
+  { filter: "All Courses", isSelected: true },
+  { filter: "Design", isSelected: false },
+  { filter: "Programming", isSelected: false },
+  { filter: "Data", isSelected: false },
+  { filter: "Finance", isSelected: false },
+  { filter: "Security", isSelected: false },
 ];
 
 export const Reasons: IReason[] = [

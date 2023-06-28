@@ -1,4 +1,4 @@
-import { AllCourses, Faqs, FiltersByTime, Testimonies } from "@/Constant/constant";
+import { AllCourses, Faqs, FiltersByTime, FiltersByType, Testimonies } from "@/Constant/constant";
 import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IFaq } from "@/components/HomepageComp/Faq";
@@ -10,6 +10,7 @@ export interface InitialState {
   isWishlistOpen: boolean;
   allCourses: ICourse[];
   filtersByTime: IFilterButton[];
+  filtersByType : IFilterButton[];
   filteredByTimeCourses: ICourse[] | null;
   testimonies : ITestimony[];
   faqs : IFaq[];
@@ -19,6 +20,7 @@ const initialState: InitialState = {
   isWishlistOpen: false,
   allCourses: AllCourses,
   filtersByTime: FiltersByTime,
+  filtersByType : FiltersByType,
   filteredByTimeCourses: null,
   testimonies : Testimonies,
   faqs : Faqs,
