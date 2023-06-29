@@ -1,9 +1,17 @@
+import { reasonVariants } from "@/Animations/LandingPageVariants";
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
-export const CourseCardStyles = styled.div`
+export const CourseCardStyles = styled(motion.div).attrs(() => ({
+  initial: "initial",
+  whileInView : "final",
+  viewport : {once : true},
+  variants : reasonVariants}))`
   border-radius: 11.774px;
   background: var(--white, #fff);
   box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width : 164px;
+  height: 100%;
   .img {
     border-radius: 11.774px 11.774px 0px 0px;
   }
@@ -67,7 +75,8 @@ export const CourseCardStyles = styled.div`
     font-size: 0.875rem;
     font-family: DM Sans;
     font-weight: 700;
-    line-height: 1.5rem;
+    line-height: 1rem;
+    word-break: break-all;
   }
   .prices span {
     color: var(--grey-300, #979797);
@@ -92,6 +101,7 @@ export const CourseCardStyles = styled.div`
     border: 0.046rem solid #e5d4f5;
   }
   @media screen and (min-width: 728px) {
+    width: 230px;
     .content {
       padding: 0.75rem 1rem;
       gap: 0.75rem;
@@ -111,6 +121,7 @@ export const CourseCardStyles = styled.div`
     }
     h4 {
       font-size: 1rem;
+      line-height: 1.5rem;
     }
     .prices span,
     .i span {
@@ -124,5 +135,8 @@ export const CourseCardStyles = styled.div`
     .icons {
       font-family: DM Sans;
     }
+  }
+  @media screen and (min-width: 998px) {
+    width: auto;
   }
 `;

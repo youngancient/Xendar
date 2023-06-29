@@ -51,6 +51,7 @@ export const FooterPaddedSectionStyle = styled.div`
   }
 `;
 export const CtaPaddedSectionStyle = styled.div`
+  padding: 1.5rem 0rem 1.5rem 0rem;
   @media screen and (min-width: 728px) {
     padding: 2rem 1.5rem 2rem 1.5rem;
   }

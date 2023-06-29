@@ -10,6 +10,11 @@ export interface IFilterStyle extends IButton {
 export const ButtonGroupStyles = styled.div`
   display: flex;
   gap: 1rem;
+  overflow-x: scroll;
+  // width: 150%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const FilterButtonStyles = styled.button<IFilterStyle>`
@@ -25,13 +30,15 @@ export const FilterButtonStyles = styled.button<IFilterStyle>`
   display: flex;
   padding: 0.25rem 1rem;
   justify-content: center;
+  width: fit-content;
   align-items: center;
   color: var(--grey-500, #525252);
   font-size: 0.875rem;
   font-family: DM Sans;
+  white-space: nowrap;
   line-height: 1.5rem;
-  &:hover{
-    background: 	hsla(271, 62%, 90%, 0.3);
+  &:hover {
+    background: var(--purple-100, #e5d4f5);
     box-shadow: 0px 0px 2px 1px rgba(125, 38, 205, 0.3);
   }
 `;

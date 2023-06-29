@@ -64,22 +64,22 @@ const CourseCard: FunctionComponent<ICourse> = ({
           <Image
             alt={name}
             src={img}
-            width={350}
+            width={340}
             height={226}
             className="desktop img"
           />
           <Image
             alt={name}
             src={img}
-            width={280}
-            height={180}
+            width={230}
+            height={140}
             className="tab img"
           />
           <Image
             alt={name}
             src={img}
-            width={210}
-            height={118}
+            width={164}
+            height={105}
             className="mobile img"
           />
         </TabOnly>

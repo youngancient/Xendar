@@ -58,30 +58,21 @@ export const LinkStyle = styled.p<ILinkB>`
     height: 2.22713rem;
   }
 `;
+export const SocialLinkStyle = styled.p<ILinkB>`
+  color: ${(props) => props.color};
+  font-size: 0.875rem;
+  font-family: DM Sans;
+  font-weight: 600;
+  line-height: 1.5rem;
+  width: fit-content;
+  @media screen and (min-width: 728px) {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    height: 2.22713rem;
+  }
+`;
 
-// export const FooterLinkStyle = styled.a<ILinkB>`
-//   color: ${(props) => props.color};
-//   font-size: 0.875rem;
-//   font-family: DM Sans;
-//   font-weight: 400;
-//   line-height: 1.5rem;
-//   width: fit-content;
-//   &:hover {
-//     color: var(--purple-600, #6820ab);
-//   }
-//   ${(props) =>
-//     props.hovercolor &&
-//     css`
-//       &:hover {
-//         color: ${props.hovercolor};
-//       }
-//     `}
-//   @media screen and (min-width: 728px) {
-//     font-size: 1rem;
-//     line-height: 2rem;
-//     height: 2.22713rem;
-//   }
-// `;
 export const FooterLinkStyle = styled(LinkStyle)`
 font-size: 0.875rem;
   font-weight : 400;

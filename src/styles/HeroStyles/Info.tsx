@@ -51,6 +51,7 @@ export const WishlistStyles = styled(motion.div).attrs<IWishlist>(() => ({
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
   width: 200px;
   padding: 1rem;
+  z-index: 15;
   p {
     color: var(--grey-500, #525252);
     text-align: center;
