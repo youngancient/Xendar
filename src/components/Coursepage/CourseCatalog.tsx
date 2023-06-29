@@ -1,28 +1,41 @@
 import { CourseCardStyles } from "@/styles/CourseStyles/CourseCard";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import ButtonGroup from "../Button/ButtonGroup";
-import { useAppSelector } from "@/redux/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { CourseCatalogStyles } from "@/styles/CoursepageStyles/Coursepage";
 import CourseCard from "../CourseCard/CourseCard";
 import { convertToNaira } from "../Info/Wishlist";
+import { setFilterCoursesByType } from "@/redux/dataSlice";
 
 const CourseCatalog: FunctionComponent = () => {
-  const { filtersByType, allCourses } = useAppSelector(
+  const { filtersByType, filteredByTypeCourses, allCourses } = useAppSelector(
     (state: RootState) => state.data
   );
+  const dispatch = useAppDispatch();
+  //   figure out the filter mechanism later blud
+  useEffect(() => {
+    dispatch(setFilterCoursesByType());
+  }, [dispatch, allCourses]);
 
-//   figure out the filter mechanism later blud
+  const len = filteredByTypeCourses?.length;
+
   return (
     <CourseCatalogStyles>
       <ButtonGroup filters={filtersByType} />
       <div className="info">
-        <p>
-          There are <strong>{allCourses.length} courses</strong> in this category
-        </p>
+        {len && (
+          <p>
+            There {len > 1 ? "are " : "is "}
+            <strong>
+              {len} {len > 1 ? "courses " : "course "}
+            </strong>{" "}
+            in this category
+          </p>
+        )}
       </div>
       <div className="group">
-        {allCourses.map((ele, index) => (
+        {filteredByTypeCourses?.map((ele, index) => (
           <CourseCard
             key={index}
             name={ele.name}

@@ -17,7 +17,6 @@ export const MarginStyle = styled.div`
     }
   }
 `;
-
 export const CourseCatalogStyles = styled.div`
   margin-top: 2rem;
   .info {
@@ -40,28 +39,28 @@ export const CourseCatalogStyles = styled.div`
     row-gap: 1rem;
   }
   @media screen and (max-width: 360px) {
-    .group{
-        justify-content : center;
-        align-items : center;
-        flex-direction: column;
+    .group {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
   @media screen and (min-width: 390px) and (max-width: 490px) {
-    .group{
-        justify-content : space-evenly;
+    .group {
+      justify-content: space-evenly;
     }
   }
   @media screen and (min-width: 490px) {
     .group {
       margin-top: 1.5rem;
-      justify-content: space-between;
+      justify-content: unset;
+      column-gap: 0.5rem;
       row-gap: 2rem;
     }
   }
+  @media screen and (min-width: 820px) {
+    .group {
+      column-gap: 1.5rem;
+    }
+  }
 `;
-
-export const SocialsCompStyles = styled.div`
-  display: flex;
-  flex-direction : column;
-  gap : 2rem;
-`

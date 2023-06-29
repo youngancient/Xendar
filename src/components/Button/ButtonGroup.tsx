@@ -9,7 +9,7 @@ const ButtonGroup:FunctionComponent<IButtonGroup> = ({filters}) => {
     return (  
         <ButtonGroupStyles>
             {filters.map((ele, index)=>(
-                <FilterButton key={index} filter={ele.filter} isSelected={ele.isSelected} />
+                <FilterButton key={index} filter={ele.filter} isSelected={ele.isSelected} filterByType={ele.filterByType} />
             ))}
         </ButtonGroupStyles>
     );

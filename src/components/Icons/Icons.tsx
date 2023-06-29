@@ -900,11 +900,11 @@ export const ColorInstagram = () => {
           y2="6.81361"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FDD074" />
+          <stop stopColor="#FDD074" />
           <stop offset="0.25" stopColor="#F77F34" />
           <stop offset="0.5" stopColor="#DD326E" />
           <stop offset="0.75" stopColor="#D82B7E" />
-          <stop offset="1" stop-color="#A432B1" />
+          <stop offset="1" stopColor="#A432B1" />
         </linearGradient>
       </defs>
     </svg>

@@ -12,6 +12,7 @@ export interface InitialState {
   filtersByTime: IFilterButton[];
   filtersByType : IFilterButton[];
   filteredByTimeCourses: ICourse[] | null;
+  filteredByTypeCourses: ICourse[] | null;
   testimonies : ITestimony[];
   faqs : IFaq[];
 }
@@ -22,6 +23,7 @@ const initialState: InitialState = {
   filtersByTime: FiltersByTime,
   filtersByType : FiltersByType,
   filteredByTimeCourses: null,
+  filteredByTypeCourses: null,
   testimonies : Testimonies,
   faqs : Faqs,
 };
@@ -97,6 +99,27 @@ export const dataSlice = createSlice({
         }
       });
       state.faqs = toggled;
+    },
+    setFiltersByType: (state, { payload }) => {
+      const filtered = state.filtersByType.map((ele) => {
+        if (payload === ele.filter) {
+          return { ...ele, isSelected: true };
+        } else {
+          return { ...ele, isSelected: false };
+        }
+      });
+      state.filtersByType = filtered;
+    },
+    setFilterCoursesByType : (state)=>{
+      const filter = state.filtersByType.find(ele => ele.isSelected === true);
+      if(filter?.filter === "All Courses"){
+        state.filteredByTypeCourses = state.allCourses;
+      }else{
+        const filtered = state.allCourses.filter((ele) => {
+          return ele.field === filter?.filter;
+        })
+        state.filteredByTypeCourses =  filtered;
+      }
     }
   },
 });
@@ -111,6 +134,8 @@ export const {
   removeFromFavorite,
   setActiveTestimonials,
   resetActiveTestimonials,
-  showFaqAnswer
+  showFaqAnswer,
+  setFiltersByType,
+  setFilterCoursesByType,
 } = dataSlice.actions;
 export default dataSlice.reducer;

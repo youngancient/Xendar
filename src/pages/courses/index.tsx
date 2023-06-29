@@ -7,7 +7,6 @@ import { ActualPaddedSectionStyle } from "@/styles/HomepageStyles/Section";
 const Courses = () => {
   return (
     <>
-    
       <CenterItemStyle>
         <BigSectionHead
           bigtext="Check out the courses we offer"

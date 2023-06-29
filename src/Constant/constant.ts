@@ -1,3 +1,4 @@
+import { ITeamMember } from "@/components/Aboutpage/AboutPage";
 import { IFilterButton } from "@/components/Button/FilterButton";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IReason } from "@/components/HomepageComp/Chooseus";
@@ -51,10 +52,10 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.6,
     noEnrolled: 70,
-    field: "Programming",
+    field: "Data",
   },
   {
-    name: "Frontend Engineering",
+    name: "Frontend Engineering Course",
     img: "/assets/fe_engr.png",
     dollarPrice: 305.99,
     nairaPrice: null,
@@ -66,11 +67,11 @@ export const AllCourses: ICourse[] = [
     field: "Programming",
   },
   {
-    name: "Backend Engineering",
-    img: "/assets/backend.png",
-    dollarPrice: 400.99,
+    name: "Data Analysis for Experts",
+    img: "/assets/data_analysis.png",
+    dollarPrice: 450.99,
     nairaPrice: null,
-    level: "Intermediate",
+    level: "Expert",
     category: "Most Popular",
     isLoved: false,
     rating: 5.0,
@@ -79,7 +80,7 @@ export const AllCourses: ICourse[] = [
   },
   {
     name: "Database Management for Newbies",
-    img: "/assets/fe_engr.png",
+    img: "/assets/database.jpg",
     dollarPrice: 380.5,
     nairaPrice: null,
     level: "Beginner",
@@ -91,7 +92,7 @@ export const AllCourses: ICourse[] = [
   },
   {
     name: "Figma For Devs",
-    img: "/assets/fe_engr.png",
+    img: "/assets/figma.png",
     dollarPrice: 300.49,
     nairaPrice: null,
     level: "Intermediate",
@@ -103,7 +104,7 @@ export const AllCourses: ICourse[] = [
   },
   {
     name: "React and Redux",
-    img: "/assets/fe_engr.png",
+    img: "/assets/react_redux.png",
     dollarPrice: 200.49,
     nairaPrice: null,
     level: "Beginner",
@@ -114,8 +115,8 @@ export const AllCourses: ICourse[] = [
     field: "Programming",
   },
   {
-    name: "MERN Fullstack Course",
-    img: "/assets/fe_engr.png",
+    name: "The Ultimate MERN Fullstack Course",
+    img: "/assets/mern.png",
     dollarPrice: 500.49,
     nairaPrice: null,
     level: "Intermediate",
@@ -138,6 +139,18 @@ export const AllCourses: ICourse[] = [
     field: "Programming",
   },
   {
+    name: "Tokenization",
+    img: "/assets/blockchain.png",
+    dollarPrice: 500.49,
+    nairaPrice: null,
+    level: "Beginner",
+    category: "Most Popular",
+    isLoved: false,
+    rating: 4.9,
+    noEnrolled: 500,
+    field: "Finance",
+  },
+  {
     name: "Cyber Security",
     img: "/assets/cybersecurity.png",
     dollarPrice: 400.49,
@@ -147,7 +160,19 @@ export const AllCourses: ICourse[] = [
     isLoved: false,
     rating: 4.4,
     noEnrolled: 35,
-    field: "Programming",
+    field: "Security",
+  },
+  {
+    name: "Ethical Hacking 101",
+    img: "/assets/hacking.jpg",
+    dollarPrice: 200.49,
+    nairaPrice: null,
+    level: "Beginner",
+    category: "New",
+    isLoved: false,
+    rating: 4.9,
+    noEnrolled: 75,
+    field: "Security",
   },
 ];
 
@@ -156,12 +181,12 @@ export const FiltersByTime: IFilterButton[] = [
   { filter: "New", isSelected: false },
 ];
 export const FiltersByType: IFilterButton[] = [
-  { filter: "All Courses", isSelected: true },
-  { filter: "Design", isSelected: false },
-  { filter: "Programming", isSelected: false },
-  { filter: "Data", isSelected: false },
-  { filter: "Finance", isSelected: false },
-  { filter: "Security", isSelected: false },
+  { filter: "All Courses", isSelected: true, filterByType: true },
+  { filter: "Design", isSelected: false, filterByType: true },
+  { filter: "Programming", isSelected: false, filterByType: true },
+  { filter: "Data", isSelected: false, filterByType: true },
+  { filter: "Finance", isSelected: false, filterByType: true },
+  { filter: "Security", isSelected: false, filterByType: true },
 ];
 
 export const Reasons: IReason[] = [
@@ -222,19 +247,18 @@ export const Testimonies: ITestimony[] = [
   },
 ];
 
-
 export const Faqs: IFaq[] = [
   {
     id: null,
     question: "How many months will it take to complete a course?",
-    showAnswer : true,
+    showAnswer: true,
     answer:
       "Each course takes approximately 3-4 months to be complete after which you take a certification test and you’re given a project to work on. Your classes can be extended if you fail to meet the passmark of the certification test.",
   },
   {
     id: null,
     question: "How long is the demo class each course?",
-    showAnswer : false,
+    showAnswer: false,
     answer:
       "The demo class for each course will last for approximately 7days, you are advised to make the best use of it.",
   },
@@ -242,19 +266,41 @@ export const Faqs: IFaq[] = [
     id: null,
     question: "Do I get a recognized a certificate?",
     answer: "You get a recognized certificate after completely a course",
-    showAnswer : false,
+    showAnswer: false,
   },
   {
     id: null,
     question: "Will i automatically get a job after completing a course?",
-    showAnswer : false,
+    showAnswer: false,
     answer:
       "We do not guarantee automatic employment at the completion of a course, but we communities which serve as a talent pool for employers and it's totally open for you to join.",
   },
   {
     id: null,
-    showAnswer : false,
+    showAnswer: false,
     question: "Are onsite classes available?",
-    answer: "Our services are fully online but if needs be that you need an onsite, contact our hotlines.",
+    answer:
+      "Our services are fully online but if needs be that you need an onsite, contact our hotlines.",
+  },
+];
+
+export const TeamMembers: ITeamMember[] = [
+  {
+    name: "Dev. Tobi Jacobs",
+    image: "/assets/tobi.png",
+    post: "CEO",
+    desc: "Michael has built a reputation in the design community",
+  },
+  {
+    name: "Dev. Richard Michael",
+    image: "/assets/richard.png",
+    post: "Head of Development",
+    desc: "Michael has built a reputation in the design community",
+  },
+  {
+    name: "Dev. Micheal Ajala",
+    image: "/assets/mike-team.png",
+    post: "Head of Design",
+    desc: "Michael has built a reputation in the design community",
   },
 ];
