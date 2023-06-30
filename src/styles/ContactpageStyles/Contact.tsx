@@ -1,29 +1,47 @@
 import { styled } from "styled-components";
+import { XtraSmall } from "../SectionHeadStyles/Small";
 
 export const ContactStyles = styled.div`
-  border: 2px solid #000;
+  // border: 2px solid #000;
   .main {
     display: flex;
   }
   form {
     padding: 1rem;
     width: 100%;
-  }
-  .form-ele{
     display: flex;
     flex-direction: column;
-    gap : 0.75rem;
+    gap: 1rem;
+    border-radius: 1rem;
+    background: var(--off-white, #fefefe);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05);
   }
-  @media screen and (min-width: 490px) {
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-ele {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  @media screen and (min-width: 490px) and (max-width: 728px) {
     form {
-      padding: 2rem;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: 728px) {
+    .main{
+      border-radius: 0rem 1.5rem 1.5rem 0rem;
     }
     .img img {
       border-radius: 1.5rem 0rem 0rem 1.5rem;
     }
     .img,
     form {
-      border: 2px solid #000;
       width: 50%;
       display: flex;
       justify-content: center;
@@ -31,7 +49,9 @@ export const ContactStyles = styled.div`
     form {
       flex-direction: column;
       border-radius: 0rem 1.5rem 1.5rem 0rem;
-      background: var(--off-white, #fefefe);
+      // background: var(--off-white, #fefefe);  
+      box-shadow: none;
+      padding: 2rem;
     }
   }
   @media screen and (min-width: 998px) {
@@ -50,18 +70,87 @@ export const FormLabelStyles = styled.div`
   line-height: 1.5rem;
 `;
 export const InputStyles = styled.div`
-  padding: 0.75rem 1rem;
+  input {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--grey-200, #bababa);
+    color: var(--grey-500, #525252);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+    width: 100%;
+  }
+  input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-300, #979797);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+    opacity: 1;
+  }
+
+  input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--grey-300, #979797);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+  }
+
+  input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--grey-300, #979797);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+  }
+  input:focus {
+    border: 1px solid var(--grey-500, #525252);
+  }
 `;
 export const TextareaStyles = styled.div`
-  textarea{
+  textarea {
     padding: 0.75rem 1rem;
     height: 10rem;
     width: 100%;
     outline: 0;
-    border: none;                                         
+    border: none;
+    border-radius: 0.5rem;
+    border: 1px solid var(--grey-200, #bababa);
+    color: var(--grey-500, #525252);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
   }
   textarea::-webkit-scrollbar {
     display: none;
+  }
+  textarea::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-300, #979797);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+    opacity: 1;
+  }
+
+  textarea:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--grey-300, #979797);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+  }
+
+  textarea::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--grey-300, #979797);
+    font-size: 1rem;
+    font-family: DM Sans;
+    line-height: 1.5rem;
+  }
+  textarea:focus {
+    border: 1px solid var(--grey-500, #525252);
   }
 `;
 export const ReachoutStyles = styled.div`
@@ -82,6 +171,46 @@ export const ReachoutStyles = styled.div`
     }
   }
 `;
+
+export const ErrorStyles = styled(XtraSmall)`
+  color: red;
+  text-align: left;
+  padding-left: 0.25rem;
+`;
+export const FormBtnStyles = styled.button`
+  padding: 0.75rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 0.5rem;
+  background: var(--purple, #7d26cd);
+  box-shadow: 0px 4px 8px 0px rgba(125, 38, 205, 0.3);
+  color: var(--off-white, #fefefe);
+  font-size: 1rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  width: 100%;
+  &:hover {
+    background: var(--purple-600, #6820ab);
+  }
+`;
+export interface IContactBtn{
+  $submitted : boolean;
+}
+export const ContactPageBtnStyles = styled(FormBtnStyles)<IContactBtn>`
+  background: ${props => props.$submitted ? "hsla(271, 69%, 48%,0.6)" : "var(--purple, #7d26cd)"};
+  gap: 0.5rem;
+`
+
+export const SmallsvgStyles = styled.div`
+  width: 1rem;
+  height: 1rem;
+  svg{
+    fill: #fff;
+  }
+`
 
 export const ReachoutCompStyles = styled.div`
   display: flex;

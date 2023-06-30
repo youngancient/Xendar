@@ -16,7 +16,8 @@ import {
 } from "@/styles/IconsStyles/icons";
 import React, { FunctionComponent, ReactNode } from "react";
 import { motion } from "framer-motion";
-
+import { XtraSmall } from "@/styles/SectionHeadStyles/Small";
+import { SmallsvgStyles } from "@/styles/ContactpageStyles/Contact";
 
 export const Heart: FunctionComponent = () => {
   const dispatch = useAppDispatch();
@@ -938,7 +939,6 @@ export interface ISvg {
   svg: string;
 }
 export const ContactSvg: FunctionComponent<ISvg> = ({ svg }) => {
-  
   return (
     <ContactSvgStyle>
       {svg === "email" && (
@@ -956,7 +956,7 @@ export const ContactSvg: FunctionComponent<ISvg> = ({ svg }) => {
             repeatDelay: 1,
           }}
           animate={{
-            y: ["2px", "0px", "-3px", "3px"], 
+            y: ["2px", "0px", "-3px", "3px"],
           }}
         >
           <g id="vuesax/bold/sms">
@@ -987,7 +987,7 @@ export const ContactSvg: FunctionComponent<ISvg> = ({ svg }) => {
             repeatDelay: 1,
           }}
           animate={{
-            y: ["2px", "0px", "-3px", "3px"], 
+            y: ["2px", "0px", "-3px", "3px"],
           }}
         >
           <g id="vuesax/bold/call">
@@ -1023,7 +1023,7 @@ export const ContactSvg: FunctionComponent<ISvg> = ({ svg }) => {
             repeatDelay: 1,
           }}
           animate={{
-            y: ["2px", "0px", "-3px", "3px"], 
+            y: ["2px", "0px", "-3px", "3px"],
           }}
         >
           <path
@@ -1033,5 +1033,53 @@ export const ContactSvg: FunctionComponent<ISvg> = ({ svg }) => {
         </motion.svg>
       )}
     </ContactSvgStyle>
+  );
+};
+
+export const Checked: FunctionComponent = () => {
+  return (
+    <SmallsvgStyles>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z" />
+      </svg>
+    </SmallsvgStyles>
+  );
+};
+export const Error: FunctionComponent = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Icons">
+        <path
+          id="Vector"
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke="#D92D20"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Vector_2"
+          d="M15 9L9 15"
+          stroke="#D92D20"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Vector_3"
+          d="M9 9L15 15"
+          stroke="#D92D20"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
   );
 };
