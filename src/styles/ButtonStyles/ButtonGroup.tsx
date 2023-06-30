@@ -42,3 +42,14 @@ export const FilterButtonStyles = styled.button<IFilterStyle>`
     box-shadow: 0px 0px 2px 1px rgba(125, 38, 205, 0.3);
   }
 `;
+
+export const ContactBtnStyles = styled.button<IButton>`
+  display: flex;
+  color: var(--purple, #7d26cd);
+  font-size: 1rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  background: transparent;
+`;

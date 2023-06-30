@@ -39,4 +39,5 @@ export const XtraSmall = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
+  text-align: center;
 `;

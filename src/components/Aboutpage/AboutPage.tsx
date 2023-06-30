@@ -13,12 +13,20 @@ import {
 import SectionHead from "../SectionHead/SectionHead";
 import { TeamMembers } from "@/Constant/constant";
 import { SmallNoMargin, XtraSmall } from "@/styles/SectionHeadStyles/Small";
+import { motion } from "framer-motion";
+import { behindVariants } from "@/Animations/LandingPageVariants";
+
 
 export const AboutHero: FunctionComponent = () => {
   return (
     <DesktopMobile>
       <AboutHeroStyles>
-        <div className="behind desktop"></div>
+        <motion.div className="behind desktop"
+        variants={behindVariants}
+        initial = "initial"
+        whileInView= "final"
+        viewport={{ once: true }}
+        ></motion.div>
         <ActualPaddedSectionStyle>
           <div className="main">
             <div className="hero-text">

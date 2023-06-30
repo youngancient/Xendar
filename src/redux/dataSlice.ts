@@ -1,9 +1,11 @@
 import { AllCourses, Faqs, FiltersByTime, FiltersByType, Testimonies } from "@/Constant/constant";
 import { IFilterButton } from "@/components/Button/FilterButton";
+import { IContactForm } from "@/components/Contactpage/Contact";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IFaq } from "@/components/HomepageComp/Faq";
 import { ITestimony } from "@/components/HomepageComp/Testimonials";
 import { createSlice } from "@reduxjs/toolkit";
+
 
 export interface InitialState {
   isNavOpen: boolean;
@@ -15,6 +17,8 @@ export interface InitialState {
   filteredByTypeCourses: ICourse[] | null;
   testimonies : ITestimony[];
   faqs : IFaq[];
+  contactForm : IContactForm | null;
+  isContactFormSubmitted : boolean;
 }
 const initialState: InitialState = {
   isNavOpen: false,
@@ -26,6 +30,8 @@ const initialState: InitialState = {
   filteredByTypeCourses: null,
   testimonies : Testimonies,
   faqs : Faqs,
+  contactForm : null,
+  isContactFormSubmitted : false,
 };
 export const dataSlice = createSlice({
   name: "data",
@@ -120,6 +126,10 @@ export const dataSlice = createSlice({
         })
         state.filteredByTypeCourses =  filtered;
       }
+    },
+    setContactForm : (state, {payload}) =>{
+      state.contactForm = payload;
+      state.isContactFormSubmitted = true;
     }
   },
 });
@@ -137,5 +147,6 @@ export const {
   showFaqAnswer,
   setFiltersByType,
   setFilterCoursesByType,
+  setContactForm
 } = dataSlice.actions;
 export default dataSlice.reducer;

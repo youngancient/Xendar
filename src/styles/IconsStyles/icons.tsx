@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export interface IHover {
-  onMouseHover ?: React.MouseEventHandler;
-  onMouseLeave ?: React.MouseEventHandler;
+  onMouseHover?: React.MouseEventHandler;
+  onMouseLeave?: React.MouseEventHandler;
 }
 
 export const IconStyle = styled.button<IHover>`
@@ -58,4 +58,14 @@ export const NavMagnifyingGlassStyle = styled.div`
   position: absolute;
   left: 0.5rem;
   top: 0.65rem;
+`;
+
+export const ContactSvgStyle = styled.div`
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4rem;
+  background: var(--purple-100, #e5d4f5);
 `;
