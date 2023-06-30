@@ -103,3 +103,23 @@ export const reasonVariants = {
     },
   },
 };
+
+// about us page
+
+export const behindVariants = {
+  initial: {
+    opacity: 0.3,
+    x: "-300px",
+  },
+  final: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      type: "spring",
+      stiffness : 300,
+    },
+  },
+}
+
+
