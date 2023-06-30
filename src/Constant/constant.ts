@@ -1,5 +1,6 @@
 import { ITeamMember } from "@/components/Aboutpage/AboutPage";
 import { IFilterButton } from "@/components/Button/FilterButton";
+import { IReachout } from "@/components/Contactpage/Reachout";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IReason } from "@/components/HomepageComp/Chooseus";
 import { IFaq } from "@/components/HomepageComp/Faq";
@@ -304,3 +305,28 @@ export const TeamMembers: ITeamMember[] = [
     desc: "Michael has built a reputation in the design community",
   },
 ];
+
+export const Contacts: IReachout[] = [
+  {
+    name: "Email",
+    deet: "vephlagroup@gmail.com",
+    note: "You can send us an email and we’ll get back to you.",
+    svg: "email",
+    link : "mailto:judetochyokoye@gmail.com"
+  },
+  {
+    name: "Call",
+    deet: "+234 813 556 7894",
+    note: "You can call us anytime, anyday",
+    svg: "phone",
+    link : "tel:08149756765"
+  },
+  {
+    name: "Visit",
+    deet: "Unilag, Akoka, Lagos",
+    note: "  Mon-Thur:  8:00AM - 4:00PM Fri :  8:00AM - 1:30PM",
+    svg: "location",
+    link : "https://maps.google.com?q=6.5158,3.3898"
+  },
+];
+

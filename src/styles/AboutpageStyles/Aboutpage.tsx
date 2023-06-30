@@ -8,7 +8,7 @@ export const AboutHeroStyles = styled.div`
     height: auto;
   }
   img {
-    border-radius: 1rem;
+    border-radius: 1.5rem;
   }
   .main {
     display: flex;
@@ -47,7 +47,7 @@ export const AboutHeroStyles = styled.div`
       top: 0;
       right: 0;
       background: var(--purple-100, #e5d4f5);
-      border-radius: 1rem;
+      border-radius: 1.5rem;
     }
     .behind {
       width: 350px;
