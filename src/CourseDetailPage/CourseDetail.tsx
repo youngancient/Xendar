@@ -29,9 +29,12 @@ import {
   OverviewStyles,
   RegularSmallStyles,
   RequirementStyles,
+  ReviewListStyle,
   ReviewStyles,
   SideCardStyles,
   SyllabusStyles,
+  TutorHeadStyle,
+  TutorListStyle,
   TutorsStyles,
 } from "@/styles/CoursepageStyles/CourseDetail";
 import { DesktopMobile, ImprovedDesktopMobile } from "@/styles/HeroStyles/Hero";
@@ -51,6 +54,8 @@ import {
   FavEmojiButton,
   ICourse,
   IModule,
+  IReview,
+  ITutor,
 } from "@/components/CourseCard/CourseCard";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
@@ -240,8 +245,8 @@ export const CourseDetailComp = () => {
                     {openTab?.num === 2 && (
                       <Requirement list={course.requirements} />
                     )}
-                    {openTab?.num === 3 && <Tutor />}
-                    {openTab?.num === 4 && <Reviews />}
+                    {openTab?.num === 3 && <Tutors tutorlist={course.tutors} />}
+                    {openTab?.num === 4 && <Reviews reviewList={course.reviews} />}
                   </div>
                 </div>
                 <div className="mobile">
@@ -275,19 +280,11 @@ export const CourseDetailComp = () => {
                     {/* finish the tutors and reviews later */}
                     <Drawer sometext="Tutors" defaultOpen={false}>
                       <div className=""></div>
-                      <DetailSmallStyles color="var(--grey-400, #747474)">
-                        {course.desc}
-                      </DetailSmallStyles>
-                      <DetailHeadStyles>Skills you’ll learn</DetailHeadStyles>
-                      <ListComp list={course.skills} />
+                      <TutorList tutorlist={course.tutors} />
                     </Drawer>
                     <Drawer sometext="Reviews" defaultOpen={false}>
                       <div className=""></div>
-                      <DetailSmallStyles color="var(--grey-400, #747474)">
-                        {course.desc}
-                      </DetailSmallStyles>
-                      <DetailHeadStyles>Skills you’ll learn</DetailHeadStyles>
-                      <ListComp list={course.skills} />
+                      <ReviewList reviewList={course.reviews} />
                     </Drawer>
                   </div>
                 </div>
@@ -512,25 +509,83 @@ export const Requirement: FunctionComponent<IListComp> = ({ list }) => {
 };
 
 // finish the tutors and reviews later
-export const Tutor: FunctionComponent = () => {
+export const Tutors: FunctionComponent<ITutorList> = ({ tutorlist }) => {
   return (
     <HeightControlStyles>
       <TutorsStyles>
         <DetailHeadStyles>Tutors</DetailHeadStyles>
+        <TutorList tutorlist={tutorlist} />
       </TutorsStyles>
     </HeightControlStyles>
   );
 };
-export const Reviews: FunctionComponent = () => {
+
+interface ITutorList {
+  tutorlist: ITutor[];
+}
+export const TutorList: FunctionComponent<ITutorList> = ({ tutorlist }) => {
+  return (
+    <TutorListStyle>
+      {tutorlist.map((ele, index) => (
+        <div className="tutor" key={index}>
+          <Image alt={ele.name} src={ele.img} width={88} height={88} />
+          <div className="tutor-deet">
+            <TutorHeadStyle>{ele.name}</TutorHeadStyle>
+            <span>{ele.job}</span>
+            <TutorHeadStyle fontWeight={400} fontSize="0.875rem">
+              {ele.email}
+            </TutorHeadStyle>
+          </div>
+        </div>
+      ))}
+    </TutorListStyle>
+  );
+};
+
+export const Reviews: FunctionComponent<IReviewList> = ({reviewList}) => {
   return (
     <HeightControlStyles>
       <ReviewStyles>
         <DetailHeadStyles>Reviews</DetailHeadStyles>
+        <ReviewList reviewList={reviewList} />
       </ReviewStyles>
     </HeightControlStyles>
   );
 };
 
+interface IReviewList {
+  reviewList: IReview[];
+}
+export const ReviewList: FunctionComponent<IReviewList> = ({ reviewList }) => {
+  return (
+    <ReviewListStyle>
+      {reviewList.map((ele, index) => (
+        <div className="review" key={index}>
+          <Image alt={ele.name} src={ele.img} width={48} height={48} />
+          <div className="review-deet">
+            <TutorHeadStyle>{ele.name}</TutorHeadStyle>
+            <span>{ele.post}</span>
+            <TutorHeadStyle
+              fontWeight={400}
+              fontSize="0.875rem"
+              color="var(--grey-400, #747474)"
+            >
+              {ele.review}
+            </TutorHeadStyle>
+            <div className="icons">
+              <div className="like">
+
+              </div>
+              <div className="comment">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </ReviewListStyle>
+  );
+};
 export interface IDrawer {
   sometext: string;
   children: ReactNode;
@@ -557,7 +612,7 @@ export const Drawer: FunctionComponent<IDrawer> = ({
       <div className="drawer-control" onClick={handleClick}>
         <DrawerHeadStyles
           color="var(--grey-500, #525252)"
-          fontweight={isMobile ? 400 : 700}
+          fontWeight={isMobile ? 400 : 700}
         >
           {sometext}
         </DrawerHeadStyles>

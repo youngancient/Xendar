@@ -316,14 +316,14 @@ export const SideCardStyles = styled.div`
 
 interface IVarDetails {
   color?: string;
-  fontweight?: number;
+  fontWeight?: number;
 }
 export const DetailSmallStyles = styled.p<IVarDetails>`
   color: ${(props) => (props.color ? props.color : "var(--grey-400, #747474)")};
   font-size: 0.875rem;
   font-family: DM Sans;
   font-style: normal;
-  font-weight: ${(props) => (props.fontweight ? props.fontweight : 400)};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   line-height: 1.5rem;
   @media screen and (min-width: 728px) {
     font-size: 1rem;
@@ -354,13 +354,13 @@ export const DetailH3Styles = styled.h3`
 `;
 export const DetailHeadStyles = styled.h3`
   color: var(--grey-700, #272727);
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-family: Raleway;
   font-style: normal;
   font-weight: 700;
   line-height: 2rem;
   @media screen and (min-width: 728px) {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 `;
 
@@ -467,20 +467,100 @@ export const TutorsStyles = styled(motion.div).attrs(() => ({
   exit: "exit",
   variants: switchEleVariants,
 }))`
-  @media screen and (min-width: 728px) {
+  @media screen and (min-width: 490px) {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 `;
+export const TutorListStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  img {
+    border-radius: 6.25rem;
+  }
+  .tutor {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  span {
+    color: var(--grey-300, #979797);
+    font-family: DM Sans;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  .tutor-deet {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  @media screen and (min-width: 490px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
+
+
+interface ITutorHeadStyle{
+  fontSize ?: string;
+  color ?: string;
+  fontWeight ?: number;
+}
+export const TutorHeadStyle = styled.h5<ITutorHeadStyle>`
+color: ${props => props.color ? props.color : "var(--grey-700, #272727)"};
+font-family: DM Sans;
+font-size: ${props => props.fontSize ? props.fontSize : "1rem"};
+font-style: normal;
+font-weight: ${props => props.fontWeight ? props.fontWeight : 700};
+line-height: 2rem;
+`
 export const ReviewStyles = styled(motion.div).attrs(() => ({
   initial: "initial",
   animate: "final",
   exit: "exit",
   variants: switchEleVariants,
 }))`
-  @media screen and (min-width: 728px) {
+  @media screen and (min-width: 490px) {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+export const ReviewListStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  img {
+    border-radius: 6.25rem;
+  }
+  .review {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  span {
+    color: var(--grey-300, #979797);
+    font-family: DM Sans;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+  .review-deet {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  @media screen and (min-width: 490px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 
