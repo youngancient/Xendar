@@ -9,6 +9,15 @@ export const MarginStyle = styled.div`
     font-weight: 700;
     line-height: 2rem;
   }
+  h3 .sh{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sh span{
+    color: var(--purple, #7d26cd);
+  }
   @media screen and (min-width: 728px) {
     margin-top: 2rem;
     h3 {

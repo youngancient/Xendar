@@ -18,6 +18,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.9,
     noEnrolled: 100,
     field: "Design",
+    id: 1,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "User Research and Analysis",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 700,
   },
   {
     name: "Fudamentals of UX",
@@ -30,6 +129,105 @@ export const AllCourses: ICourse[] = [
     rating: 5.0,
     noEnrolled: 800,
     field: "Design",
+    id: 2,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 750,
   },
   {
     name: "Graphics Design",
@@ -42,6 +240,104 @@ export const AllCourses: ICourse[] = [
     rating: 4.4,
     noEnrolled: 300,
     field: "Design",
+    id: 3,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "Corel Draw",
+      "Photoshop",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "User Research and Analysis",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design a flier",
+          "Design an e-learning website logo",
+          "Design a billboard poster",
+          "Design a real estate advertisement ad poster",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 100,
   },
   {
     name: "Data Analysis for Newbies",
@@ -54,9 +350,108 @@ export const AllCourses: ICourse[] = [
     rating: 4.6,
     noEnrolled: 70,
     field: "Data",
+    id: 4,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 5,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Microsoft Excel",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Microsoft Access",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "SQL databases and Querying",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 90,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 80,
+        comments: 150,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 400,
   },
   {
-    name: "Frontend Engineering Course",
+    name: "Frontend Engineering",
     img: "/assets/fe_engr.png",
     dollarPrice: 305.99,
     nairaPrice: null,
@@ -66,6 +461,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.8,
     noEnrolled: 490,
     field: "Programming",
+    id: 5,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "HTML",
+      "Cascading style sheet",
+      "Javascript",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma to code",
+      "React",
+    ],
+    duration: 6,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "HMTL, The Backbone of the Web",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "CSS, Beauty of the web",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Responsive Web Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Code an nft landing page",
+          "Develop an e-learning website",
+          "Redesign twitter user dashboard",
+          "Develop an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 4,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 700,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 7,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 800,
   },
   {
     name: "Data Analysis for Experts",
@@ -78,9 +572,108 @@ export const AllCourses: ICourse[] = [
     rating: 5.0,
     noEnrolled: 312,
     field: "Data",
+    id: 6,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/tayo.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/tayo.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/mide.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/mike.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 430,
   },
   {
-    name: "Database Management for Newbies",
+    name: "Database Management",
     img: "/assets/database.jpg",
     dollarPrice: 380.5,
     nairaPrice: null,
@@ -90,6 +683,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.7,
     noEnrolled: 72,
     field: "Programming",
+    id: 7,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/tayo.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/tayo.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 720,
   },
   {
     name: "Figma For Devs",
@@ -102,6 +794,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.9,
     noEnrolled: 122,
     field: "Design",
+    id: 8,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 170,
   },
   {
     name: "React and Redux",
@@ -114,6 +905,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.8,
     noEnrolled: 50,
     field: "Programming",
+    id: 9,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 70,
   },
   {
     name: "The Ultimate MERN Fullstack Course",
@@ -126,6 +1016,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.5,
     noEnrolled: 12,
     field: "Programming",
+    id: 10,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/tayo.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/tayo.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/mide.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/mike.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 500,
   },
   {
     name: "Blockchain Engineering",
@@ -138,6 +1127,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.8,
     noEnrolled: 500,
     field: "Programming",
+    id: 11,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 1000,
   },
   {
     name: "Tokenization",
@@ -150,6 +1238,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.9,
     noEnrolled: 500,
     field: "Finance",
+    id: 12,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 340,
   },
   {
     name: "Cyber Security",
@@ -162,6 +1349,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.4,
     noEnrolled: 35,
     field: "Security",
+    id: 13,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 350,
   },
   {
     name: "Ethical Hacking 101",
@@ -174,6 +1460,105 @@ export const AllCourses: ICourse[] = [
     rating: 4.9,
     noEnrolled: 75,
     field: "Security",
+    id: 14,
+    desc: "A UI (User Interface) design deals with the application's graphical layout, which includes buttons, screen layout, animations, transitions, micro-interactions while UX (User Experience) design deals with how users interact with the system, how smooth and intuitive the experience is, to help users have a positive experience. In this course, we’ll teach you how to become a UI/UX Designer in 3 months and become ready to be an intern or start entry level jobs as a designer. To know more about UI/UX design, click here to read a detailed article on UI/UX design.",
+    skills: [
+      "Visual Design",
+      "Wireframing & Prototyping",
+      "Interaction Design",
+      "User Research",
+      "Mobile App & Responsive Web Design",
+      "Userability Testing",
+      "Figma",
+      "Adobe XD",
+    ],
+    duration: 3,
+    tutors: [
+      {
+        name: "Dominic Torredo",
+        job: "Software Engineer @Altschool",
+        email: "torredo@gmail.com",
+        img: "/assets/mide.png",
+      },
+      {
+        name: "Ekundayo Musk",
+        job: "Software Engineer @Twitter",
+        email: "elonekundayomusk@gmail.com",
+        img: "/assets/mike.png",
+      },
+    ],
+    requirements: [
+      "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
+      "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
+      "You’re required to have a laptop with a minimum of 4gb ram to take this course comfortably.",
+    ],
+    syllabus: [
+      {
+        title: "Visual Design",
+        number: 1,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+
+      {
+        title: "Visual Design",
+        number: 2,
+        topics: [
+          "User Research and Analysis",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Web and Mobile App Design",
+        number: 3,
+        topics: [
+          "Introduction to Design and Design Principles",
+          "Style Guides and Design Systems",
+          "Wireframing and Prototyping",
+          "Mini project",
+        ],
+      },
+      {
+        title: "Project Phase ",
+        number: 4,
+        topics: [
+          "Design an nft landing page",
+          "Design an e-learning website",
+          "Redesign twitter user dashboard",
+          "Design an e-commerce website",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        name: "Omotayo",
+        post: "Alumni",
+        review:
+          "This course is one of the best options you can get to begin your career journey as a UI/UX designer. I am grateful and excited that I chose this course to start with, and I would definitely recommend it to anyone. Thank you so much for putting this course together.",
+        likes: 50,
+        comments: 51,
+        img: "/assets/tayo.png",
+        daysAgo: 1,
+      },
+      {
+        name: "Tolulope",
+        post: "Student",
+        review:
+          "Extremely comprehensive course! My goal was to learn Figma, but you learn soo much more about the entire design process and even some web development basics. The instructors are doing a great job of showing their train fo thought and make it very easy to follow along with all Figma examples. Definitely worth it!",
+        likes: 70,
+        comments: 151,
+        img: "/assets/tayo.png",
+        daysAgo: 3,
+      },
+    ],
+    isEnrolled: false,
+    totalReviews: 570,
   },
 ];
 
@@ -312,21 +1697,33 @@ export const Contacts: IReachout[] = [
     deet: "vephlagroup@gmail.com",
     note: "You can send us an email and we’ll get back to you.",
     svg: "email",
-    link : "mailto:judetochyokoye@gmail.com"
+    link: "mailto:judetochyokoye@gmail.com",
   },
   {
     name: "Call",
     deet: "+234 813 556 7894",
     note: "You can call us anytime, anyday",
     svg: "phone",
-    link : "tel:08149756765"
+    link: "tel:08149756765",
   },
   {
     name: "Visit",
     deet: "Unilag, Akoka, Lagos",
     note: "  Mon-Thur:  8:00AM - 4:00PM Fri :  8:00AM - 1:30PM",
     svg: "location",
-    link : "https://maps.google.com?q=6.5158,3.3898"
+    link: "https://maps.google.com?q=6.5158,3.3898",
   },
 ];
 
+export interface ITab {
+  num: number;
+  name: string;
+  isSelected: boolean;
+}
+export const Tabs: ITab[] = [
+  { num: 0, name: "OVERVIEW", isSelected: true },
+  { num: 1, name: "SYLLABUS", isSelected: false },
+  { num: 2, name: "REQUIREMENTS", isSelected: false },
+  { num: 3, name: "TUTORS", isSelected: false },
+  { num: 4, name: "REVIEWS", isSelected: false },
+];

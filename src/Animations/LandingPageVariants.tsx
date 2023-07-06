@@ -117,9 +117,50 @@ export const behindVariants = {
     transition: {
       duration: 1,
       type: "spring",
-      stiffness : 300,
+      stiffness: 300,
     },
   },
-}
+};
 
+export const welcomeTextVariants = {
+  initial: {
+    opacity: 0.3,
+    x: "-100px",
+  },
+  final: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+  farLeft: {
+    opacity: 0.3,
+    x: "-100px",
+  },
+  farRight: {
+    opacity: 0.3,
+    x: "100px",
+  },
+};
 
+export const switchEleVariants = {
+  initial: {
+    opacity: 0,
+    y: 10,
+  },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -10,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

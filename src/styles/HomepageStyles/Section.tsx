@@ -12,6 +12,18 @@ export const PaddedSectionStyle = styled.div`
     padding: 4rem 4.5rem 4rem 4.5rem;
   }
 `;
+export const CourseDetailSectionStyle = styled.div`
+  padding: 1rem 1rem 0 1rem;
+  @media screen and (min-width: 728px) {
+    padding: 1rem 1.5rem 0 1.5rem;
+  }
+  @media screen and (min-width: 820px) {
+    padding: 1.5rem 2rem 0 2rem;
+  }
+  @media screen and (min-width: 998px) {
+    padding: 1.5rem 4.5rem 4rem 4.5rem;
+  }
+`;
 export const ReachoutSectionStyle = styled.div`
   padding: 0 1rem 0 1rem;
   @media screen and (min-width: 728px) {

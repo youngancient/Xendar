@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { XtraSmall } from "../SectionHeadStyles/Small";
 
 export const ContactStyles = styled.div`
@@ -34,7 +34,7 @@ export const ContactStyles = styled.div`
   }
 
   @media screen and (min-width: 728px) {
-    .main{
+    .main {
       border-radius: 0rem 1.5rem 1.5rem 0rem;
     }
     .img img {
@@ -49,7 +49,7 @@ export const ContactStyles = styled.div`
     form {
       flex-direction: column;
       border-radius: 0rem 1.5rem 1.5rem 0rem;
-      // background: var(--off-white, #fefefe);  
+      // background: var(--off-white, #fefefe);
       box-shadow: none;
       padding: 2rem;
     }
@@ -177,6 +177,12 @@ export const ErrorStyles = styled(XtraSmall)`
   text-align: left;
   padding-left: 0.25rem;
 `;
+export const CenterErrorForMinitab = styled(ErrorStyles)`
+  @media screen and (min-width: 490px) and (max-width: 720px) {
+    text-align: center;
+  }
+`;
+
 export const FormBtnStyles = styled.button`
   padding: 0.75rem 0.5rem;
   justify-content: center;
@@ -196,21 +202,49 @@ export const FormBtnStyles = styled.button`
     background: var(--purple-600, #6820ab);
   }
 `;
-export interface IContactBtn{
-  $submitted : boolean;
+export const TransparentFormBtnStyles = styled.button`
+  padding: 0.75rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 0.5rem;
+  background: var(--white, #FFF);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  color: var(--purple, #7d26cd);
+  font-size: 1rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  width: 100%;
+  &:hover {
+    border: 2px solid var(--purple-600, #6820ab);
+    color: var(--purple-600, #6820ab);
+  }
+`;
+export interface IContactBtn {
+  $submitted: boolean;
 }
 export const ContactPageBtnStyles = styled(FormBtnStyles)<IContactBtn>`
-  background: ${props => props.$submitted ? "hsla(271, 69%, 48%,0.6)" : "var(--purple, #7d26cd)"};
+  background: ${(props) =>
+    props.$submitted ? "hsla(271, 69%, 48%,0.7)" : "var(--purple, #7d26cd)"};
   gap: 0.5rem;
-`
+  ${(props) =>
+    props.$submitted &&
+    css`
+      &:hover {
+        background: hsla(271, 69%, 48%, 0.7);
+      }
+    `}
+`;
 
 export const SmallsvgStyles = styled.div`
   width: 1rem;
   height: 1rem;
-  svg{
+  svg {
     fill: #fff;
   }
-`
+`;
 
 export const ReachoutCompStyles = styled.div`
   display: flex;

@@ -1,4 +1,10 @@
-import { removeFromFavorite, showWishlist } from "@/redux/dataSlice";
+import {
+  removeFromFavorite,
+  setFilterCoursesBySearch,
+  setFilterCoursesByType,
+  setFilterSearchedCoursesByType,
+  showWishlist,
+} from "@/redux/dataSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { SocialStyles } from "@/styles/FooterStyles/Footer";
@@ -234,6 +240,10 @@ export const Trash: FunctionComponent<ITrash> = ({ name }) => {
   const dispatch = useAppDispatch();
   const handleDelete = () => {
     dispatch(removeFromFavorite(name));
+    // when a favorite is removed, we update all other half states
+    dispatch(setFilterCoursesByType());
+    dispatch(setFilterCoursesBySearch());
+    dispatch(setFilterSearchedCoursesByType());
   };
   return (
     <TrashContStyle onClick={handleDelete}>
@@ -524,6 +534,132 @@ export const BriefCase = () => {
     </DesktopMobile>
   );
 };
+export const BigBriefCase = () => {
+  return (
+    <DesktopMobile>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 16 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="desktop"
+      >
+        <g id="vuesax/linear/briefcase">
+          <g id="vuesax/linear/briefcase_2">
+            <g id="briefcase">
+              <path
+                id="Vector"
+                d="M5.33338 15.4402H10.6667C13.3467 15.4402 13.8267 14.3669 13.9667 13.0602L14.4667 7.72689C14.6467 6.10023 14.18 4.77356 11.3334 4.77356H4.66671C1.82005 4.77356 1.35338 6.10023 1.53338 7.72689L2.03338 13.0602C2.17338 14.3669 2.65338 15.4402 5.33338 15.4402Z"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_2"
+                d="M5.3335 4.77354V4.24021C5.3335 3.06021 5.3335 2.10687 7.46683 2.10687H8.5335C10.6668 2.10687 10.6668 3.06021 10.6668 4.24021V4.77354"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_3"
+                d="M9.33317 9.44023V10.1069C9.33317 10.1136 9.33317 10.1136 9.33317 10.1202C9.33317 10.8469 9.3265 11.4402 7.99984 11.4402C6.67984 11.4402 6.6665 10.8536 6.6665 10.1269V9.44023C6.6665 8.77356 6.6665 8.77356 7.33317 8.77356H8.6665C9.33317 8.77356 9.33317 8.77356 9.33317 9.44023Z"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_4"
+                d="M14.4335 8.10687C12.8935 9.22687 11.1335 9.89354 9.3335 10.1202"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_5"
+                d="M1.74658 8.28687C3.24658 9.31353 4.93992 9.93353 6.66658 10.1269"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 10 11"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="mobile"
+      >
+        <g id="vuesax/linear/briefcase">
+          <g id="vuesax/linear/briefcase_2">
+            <g id="briefcase">
+              <path
+                id="Vector"
+                d="M3.33367 9.36662H6.667C8.342 9.36662 8.642 8.69578 8.7295 7.87912L9.042 4.54578C9.1545 3.52912 8.86283 2.69995 7.08367 2.69995H2.917C1.13783 2.69995 0.846168 3.52912 0.958668 4.54578L1.27117 7.87912C1.35867 8.69578 1.65867 9.36662 3.33367 9.36662Z"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_2"
+                d="M3.33398 2.69993V2.3666C3.33398 1.6291 3.33398 1.03326 4.66732 1.03326H5.33398C6.66732 1.03326 6.66732 1.6291 6.66732 2.3666V2.69993"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_3"
+                d="M5.83268 5.61662V6.03328C5.83268 6.03745 5.83268 6.03745 5.83268 6.04162C5.83268 6.49578 5.82852 6.86662 4.99935 6.86662C4.17435 6.86662 4.16602 6.49995 4.16602 6.04578V5.61662C4.16602 5.19995 4.16602 5.19995 4.58268 5.19995H5.41602C5.83268 5.19995 5.83268 5.19995 5.83268 5.61662Z"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_4"
+                d="M9.02148 4.78326C8.05898 5.48326 6.95898 5.89993 5.83398 6.0416"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_5"
+                d="M1.09131 4.89575C2.02881 5.53742 3.08714 5.92492 4.16631 6.04575"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </DesktopMobile>
+  );
+};
 
 export const EnrolledIcon = () => {
   return (
@@ -625,6 +761,106 @@ export const EnrolledIcon = () => {
     </DesktopMobile>
   );
 };
+export const BigEnrolledIcon = () => {
+  return (
+    <DesktopMobile>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 17 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="desktop"
+      >
+        <g id="vuesax/linear/profile-2user">
+          <g id="vuesax/linear/profile-2user_2">
+            <g id="profile-2user">
+              <path
+                id="Vector"
+                d="M6.33327 8.02021C6.2666 8.01354 6.1866 8.01354 6.11327 8.02021C4.5266 7.96687 3.2666 6.66687 3.2666 5.06687C3.2666 3.43354 4.5866 2.10687 6.2266 2.10687C7.85993 2.10687 9.1866 3.43354 9.1866 5.06687C9.17993 6.66687 7.91993 7.96687 6.33327 8.02021Z"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_2"
+                d="M11.1667 3.44025C12.4601 3.44025 13.5001 4.48691 13.5001 5.77358C13.5001 7.03358 12.5001 8.06025 11.2534 8.10691C11.2001 8.10025 11.1401 8.10025 11.0801 8.10691"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_3"
+                d="M3.00004 10.4802C1.38671 11.5602 1.38671 13.3202 3.00004 14.3936C4.83337 15.6202 7.84004 15.6202 9.67337 14.3936C11.2867 13.3136 11.2867 11.5536 9.67337 10.4802C7.84671 9.26025 4.84004 9.26025 3.00004 10.4802Z"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_4"
+                d="M12.4531 14.1069C12.9331 14.0069 13.3865 13.8135 13.7598 13.5269C14.7998 12.7469 14.7998 11.4602 13.7598 10.6802C13.3931 10.4002 12.9465 10.2135 12.4731 10.1069"
+                stroke="#747474"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 10 11"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="mobile"
+      >
+        <g id="vuesax/linear/profile-2user">
+          <g id="vuesax/linear/profile-2user_2">
+            <g id="profile-2user">
+              <path
+                id="Vector"
+                d="M3.81608 4.7291C3.77441 4.72493 3.72441 4.72493 3.67858 4.7291C2.68691 4.69576 1.89941 3.88326 1.89941 2.88326C1.89941 1.86243 2.72441 1.03326 3.74941 1.03326C4.77025 1.03326 5.59941 1.86243 5.59941 2.88326C5.59525 3.88326 4.80775 4.69576 3.81608 4.7291Z"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_2"
+                d="M6.83737 1.86664C7.6457 1.86664 8.2957 2.5208 8.2957 3.32497C8.2957 4.11247 7.6707 4.75414 6.89154 4.78331C6.8582 4.77914 6.8207 4.77914 6.7832 4.78331"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_3"
+                d="M1.73281 6.26664C0.724479 6.94164 0.724479 8.04164 1.73281 8.71247C2.87865 9.47914 4.75781 9.47914 5.90365 8.71247C6.91198 8.03747 6.91198 6.93747 5.90365 6.26664C4.76198 5.50414 2.88281 5.50414 1.73281 6.26664Z"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="Vector_4"
+                d="M7.6416 8.53326C7.9416 8.47076 8.22493 8.34993 8.45827 8.17076C9.10827 7.68326 9.10827 6.8791 8.45827 6.3916C8.2291 6.2166 7.94994 6.09993 7.6541 6.03326"
+                stroke="#747474"
+                strokeWidth="0.9375"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </DesktopMobile>
+  );
+};
 
 export const RatingIcon = () => {
   return (
@@ -652,6 +888,52 @@ export const RatingIcon = () => {
       <svg
         width="10"
         height="11"
+        viewBox="0 0 10 11"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="mobile"
+      >
+        <g id="vuesax/bold/star">
+          <g id="vuesax/bold/star_2">
+            <g id="star">
+              <path
+                id="Vector"
+                d="M5.72104 1.66243L6.45437 3.12909C6.55437 3.33326 6.82104 3.52909 7.04604 3.56659L8.37521 3.78743C9.22521 3.92909 9.42521 4.54576 8.81271 5.15409L7.77937 6.18743C7.60437 6.36243 7.50854 6.69993 7.56271 6.94159L7.85854 8.22076C8.09187 9.23326 7.55437 9.62493 6.65854 9.09576L5.41271 8.35826C5.18771 8.22493 4.81687 8.22493 4.58771 8.35826L3.34187 9.09576C2.45021 9.62493 1.90854 9.22909 2.14187 8.22076L2.43771 6.94159C2.49187 6.69993 2.39604 6.36243 2.22104 6.18743L1.18771 5.15409C0.579373 4.54576 0.775206 3.92909 1.62521 3.78743L2.95437 3.56659C3.17521 3.52909 3.44187 3.33326 3.54187 3.12909L4.27521 1.66243C4.67521 0.866593 5.32521 0.866593 5.72104 1.66243Z"
+                fill="#F9FD22"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </DesktopMobile>
+  );
+};
+export const BigRatingIcon = () => {
+  return (
+    <DesktopMobile>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 16 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="desktop"
+      >
+        <g id="vuesax/bold/star">
+          <g id="vuesax/bold/star_2">
+            <g id="star">
+              <path
+                id="Vector"
+                d="M9.15327 3.11357L10.3266 5.46024C10.4866 5.7869 10.9133 6.10024 11.2733 6.16024L13.3999 6.51357C14.7599 6.74024 15.0799 7.7269 14.0999 8.70024L12.4466 10.3536C12.1666 10.6336 12.0133 11.1736 12.0999 11.5602L12.5733 13.6069C12.9466 15.2269 12.0866 15.8536 10.6533 15.0069L8.65994 13.8269C8.29994 13.6136 7.70661 13.6136 7.33994 13.8269L5.34661 15.0069C3.91994 15.8536 3.05327 15.2202 3.42661 13.6069L3.89994 11.5602C3.98661 11.1736 3.83327 10.6336 3.55327 10.3536L1.89994 8.70024C0.926606 7.7269 1.23994 6.74024 2.59994 6.51357L4.72661 6.16024C5.07994 6.10024 5.50661 5.7869 5.66661 5.46024L6.83994 3.11357C7.47994 1.84024 8.51994 1.84024 9.15327 3.11357Z"
+                fill="#F9FD22"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+      <svg
+        width="24"
+        height="24"
         viewBox="0 0 10 11"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -748,6 +1030,35 @@ export const FaqArrow: FunctionComponent<IFaqArrow> = ({ $showAnswer }) => {
                 id="Vector"
                 d="M23.8935 11.415H15.5868H8.10682C6.82682 11.415 6.18682 12.9617 7.09349 13.8684L14.0002 20.775C15.1068 21.8817 16.9068 21.8817 18.0135 20.775L20.6402 18.1484L24.9202 13.8684C25.8135 12.9617 25.1735 11.415 23.8935 11.415Z"
                 fill="#7D26CD"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </FaqArrowStyles>
+  );
+};
+export const ThinArrow: FunctionComponent<IFaqArrow> = ({ $showAnswer }) => {
+  return (
+    <FaqArrowStyles $showAnswer={$showAnswer}>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="vuesax/linear/arrow-up">
+          <g id="vuesax/linear/arrow-up_2">
+            <g id="arrow-up">
+              <path
+                id="Vector"
+                d="M16.6004 12.5418L11.1671 7.10845C10.5254 6.46678 9.47539 6.46678 8.83372 7.10845L3.40039 12.5418"
+                stroke="#7D26CD"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
           </g>
@@ -1059,26 +1370,89 @@ export const Error: FunctionComponent = () => {
           id="Vector"
           d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
           stroke="#D92D20"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_2"
           d="M15 9L9 15"
           stroke="#D92D20"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_3"
           d="M9 9L15 15"
           stroke="#D92D20"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
+      </g>
+    </svg>
+  );
+};
+
+export const ArrowRight = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="vuesax/linear/arrow-right">
+        <g id="vuesax/linear/arrow-right_2">
+          <g id="arrow-right">
+            <path
+              id="Vector"
+              d="M5.94 13.28L10.2867 8.93333C10.8 8.42 10.8 7.58 10.2867 7.06667L5.94 2.72"
+              stroke="#979797"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+export const Clock = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="vuesax/linear/clock">
+        <g id="vuesax/linear/clock_2">
+          <g id="clock">
+            <path
+              id="Vector"
+              d="M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C17.52 2 22 6.48 22 12Z"
+              stroke="#525252"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              id="Vector_2"
+              d="M15.71 15.18L12.61 13.33C12.07 13.01 11.63 12.24 11.63 11.61V7.51"
+              stroke="#525252"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </g>
+        </g>
       </g>
     </svg>
   );

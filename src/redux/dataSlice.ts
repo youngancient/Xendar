@@ -4,6 +4,7 @@ import { IContactForm } from "@/components/Contactpage/Contact";
 import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IFaq } from "@/components/HomepageComp/Faq";
 import { ITestimony } from "@/components/HomepageComp/Testimonials";
+import { convertToNaira } from "@/components/Info/Wishlist";
 import { createSlice } from "@reduxjs/toolkit";
 
 
@@ -18,7 +19,11 @@ export interface InitialState {
   testimonies : ITestimony[];
   faqs : IFaq[];
   contactForm : IContactForm | null;
-  isContactFormSubmitted : boolean;
+  searchQuery : string | null;
+  filteredBySearchCourses : ICourse[] | null;
+  filteredSearchCoursesByType : ICourse[] | null;
+  isSearching : boolean;
+  course : ICourse | null;
 }
 const initialState: InitialState = {
   isNavOpen: false,
@@ -31,7 +36,11 @@ const initialState: InitialState = {
   testimonies : Testimonies,
   faqs : Faqs,
   contactForm : null,
-  isContactFormSubmitted : false,
+  searchQuery : null,
+  isSearching : false,
+  filteredBySearchCourses : null,
+  filteredSearchCoursesByType : null,
+  course: null,
 };
 export const dataSlice = createSlice({
   name: "data",
@@ -127,9 +136,61 @@ export const dataSlice = createSlice({
         state.filteredByTypeCourses =  filtered;
       }
     },
+    resetFiltersByType: (state) =>{
+      // reset filter if the filter was not on all-courses
+      const filter = state.filtersByType.find(ele => ele.isSelected === true);
+      if(filter?.filter !== "All Courses"){
+        state.filtersByType = FiltersByType
+      }
+    },
+    setFilterCoursesBySearch : (state)=>{
+      const searchResult = state.allCourses.filter(ele =>{
+        if(state.searchQuery !== null){
+          return ele.name.toLowerCase().includes(state.searchQuery.toLowerCase());
+        }
+      });
+      state.filteredBySearchCourses = searchResult;
+      state.filteredSearchCoursesByType = searchResult;
+    },
+    setFilterSearchedCoursesByType : (state)=>{
+      const filter = state.filtersByType.find(ele => ele.isSelected === true);
+      if(filter?.filter === "All Courses"){
+        state.filteredSearchCoursesByType= state.filteredBySearchCourses;
+      }else{
+        if(state.filteredBySearchCourses !== null){
+          const filtered = state.filteredBySearchCourses.filter((ele) => {
+            return ele.field === filter?.filter;
+          })
+          state.filteredSearchCoursesByType =  filtered;
+        }
+      }
+    },
     setContactForm : (state, {payload}) =>{
       state.contactForm = payload;
-      state.isContactFormSubmitted = true;
+    },
+    setSearchQuery : (state, {payload}) =>{
+      state.searchQuery = payload;
+      state.isSearching = true;
+    },
+    resetSearchQuery : (state) =>{
+      state.searchQuery = null;
+      state.isSearching = false;
+    },
+    getCourseById: (state,{payload}) =>{
+      const getCourse = state.allCourses.find(ele => 
+        ele.id === parseInt(payload)
+      );
+      if(getCourse){
+        state.course = getCourse;
+      }
+    },
+    getCourseByName : (state, {payload})=>{
+      const getCourse = state.allCourses.find(ele => 
+        ele.name === payload
+      );
+      if(getCourse){
+        state.course = getCourse;
+      }
     }
   },
 });
@@ -147,6 +208,13 @@ export const {
   showFaqAnswer,
   setFiltersByType,
   setFilterCoursesByType,
-  setContactForm
+  setContactForm,
+  setSearchQuery,
+  resetFiltersByType,
+  setFilterCoursesBySearch,
+  setFilterSearchedCoursesByType,
+  resetSearchQuery,
+  getCourseById,
+  getCourseByName
 } = dataSlice.actions;
 export default dataSlice.reducer;
