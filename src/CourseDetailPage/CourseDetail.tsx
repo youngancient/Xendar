@@ -36,8 +36,13 @@ import {
   TutorHeadStyle,
   TutorListStyle,
   TutorsStyles,
+  VideoStyles,
 } from "@/styles/CoursepageStyles/CourseDetail";
-import { DesktopMobile, ImprovedDesktopMobile } from "@/styles/HeroStyles/Hero";
+import {
+  DesktopMobile,
+  ImprovedDesktopMobile,
+  TabOnly,
+} from "@/styles/HeroStyles/Hero";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -66,6 +71,9 @@ import {
   msgVariants,
   switchEleVariants,
 } from "@/Animations/LandingPageVariants";
+import ReactPlayer from "react-player";
+import { ErrorMsg } from "@/components/Coursepage/Error";
+import { PageErrorStyles } from "@/styles/HomepageStyles/Error";
 
 // work here
 export const CourseDetailComp = () => {
@@ -86,14 +94,17 @@ export const CourseDetailComp = () => {
   }, [allCourses, dispatch, router.query]);
   const [isheartHovered, setIsheartHovered] = useState(false);
   const openTab = tabs.find((ele) => ele.isSelected === true);
-  // set out a day to fix the responsiveness
+
+  // the nav-switch on tab isn't scrolling😭 - fix it!
+  // work on the error /  empty states
+
   return (
     <>
       {course && (
         <ImprovedDesktopMobile>
           <CourseDetailCompStyles>
             <MainCardStyles>
-              <VideoComp />
+              <VideoComp url={course.introVideo} />
               <div className="name">
                 <DetailH3Styles>{course.name}</DetailH3Styles>
                 <div className="mobile emojix">
@@ -246,7 +257,9 @@ export const CourseDetailComp = () => {
                       <Requirement list={course.requirements} />
                     )}
                     {openTab?.num === 3 && <Tutors tutorlist={course.tutors} />}
-                    {openTab?.num === 4 && <Reviews reviewList={course.reviews} />}
+                    {openTab?.num === 4 && (
+                      <Reviews reviewList={course.reviews} />
+                    )}
                   </div>
                 </div>
                 <div className="mobile">
@@ -308,13 +321,36 @@ export const CourseDetailComp = () => {
           </CourseDetailCompStyles>
         </ImprovedDesktopMobile>
       )}
-      {!course && <>No such course</>}
+      {!course && (
+        <PageErrorStyles>
+          <ErrorMsg errormsg={`No Match Found | ${router.query.name}`} />
+        </PageErrorStyles>
+      )}
     </>
   );
 };
 
-export const VideoComp = () => {
-  return <>manage video shi here</>;
+interface IVideo {
+  url: string;
+}
+export const VideoComp: FunctionComponent<IVideo> = ({ url }) => {
+  return (
+    <ImprovedDesktopMobile>
+      <VideoStyles>
+        <TabOnly>
+          <div className="desktop">
+            <ReactPlayer width="100%" height="300px" url={url} />
+          </div>
+          <div className="tab">
+            <ReactPlayer width="100%" height="200px" url={url} />
+          </div>
+        </TabOnly>
+        <div className="mobile">
+          <ReactPlayer width="100%" height="200px" url={url} />
+        </div>
+      </VideoStyles>
+    </ImprovedDesktopMobile>
+  );
 };
 
 export interface ISideCard {
@@ -542,7 +578,7 @@ export const TutorList: FunctionComponent<ITutorList> = ({ tutorlist }) => {
   );
 };
 
-export const Reviews: FunctionComponent<IReviewList> = ({reviewList}) => {
+export const Reviews: FunctionComponent<IReviewList> = ({ reviewList }) => {
   return (
     <HeightControlStyles>
       <ReviewStyles>
@@ -573,12 +609,8 @@ export const ReviewList: FunctionComponent<IReviewList> = ({ reviewList }) => {
               {ele.review}
             </TutorHeadStyle>
             <div className="icons">
-              <div className="like">
-
-              </div>
-              <div className="comment">
-
-              </div>
+              <div className="like"></div>
+              <div className="comment"></div>
             </div>
           </div>
         </div>

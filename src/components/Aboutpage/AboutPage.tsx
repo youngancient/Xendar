@@ -16,16 +16,16 @@ import { SmallNoMargin, XtraSmall } from "@/styles/SectionHeadStyles/Small";
 import { motion } from "framer-motion";
 import { behindVariants } from "@/Animations/LandingPageVariants";
 
-
 export const AboutHero: FunctionComponent = () => {
   return (
     <DesktopMobile>
       <AboutHeroStyles>
-        <motion.div className="behind desktop"
-        variants={behindVariants}
-        initial = "initial"
-        whileInView= "final"
-        viewport={{ once: true }}
+        <motion.div
+          className="behind desktop"
+          variants={behindVariants}
+          initial="initial"
+          whileInView="final"
+          viewport={{ once: true }}
         ></motion.div>
         <ActualPaddedSectionStyle>
           <div className="main">
@@ -113,31 +113,31 @@ export const TeamMemberComp: FunctionComponent<ITeamMember> = ({
 }) => {
   return (
     <TeamMemberStyles>
-        <TeamTabOnly>
-          <Image
-            alt={name}
-            src={image}
-            width={384}
-            height={456}
-            className="desktop"
-          />
-          <Image
-            alt={name}
-            src={image}
-            width={384}
-            height={456}
-            className="tab"
-          />
-          <Image
-            alt={name}
-            src={image}
-            width={0}
-            height={0}
-            sizes="100vw"
-            priority={true}
-            className="mobile mobile-img"
-          />
-        </TeamTabOnly>
+      <TeamTabOnly>
+        <Image
+          alt={name}
+          src={image}
+          width={384}
+          height={456}
+          className="desktop"
+        />
+        <Image
+          alt={name}
+          src={image}
+          width={384}
+          height={456}
+          className="tab"
+        />
+        <Image
+          alt={name}
+          src={image}
+          width={0}
+          height={0}
+          sizes="100vw"
+          priority={true}
+          className="mobile mobile-img"
+        />
+      </TeamTabOnly>
       <div className="deet">
         <h4>{name}</h4>
         <XtraSmall>{post}</XtraSmall>

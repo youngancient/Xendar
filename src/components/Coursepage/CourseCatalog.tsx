@@ -4,13 +4,15 @@ import ButtonGroup from "../Button/ButtonGroup";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { CourseCatalogStyles } from "@/styles/CoursepageStyles/Coursepage";
-import {CourseCard} from "../CourseCard/CourseCard";
+import { CourseCard } from "../CourseCard/CourseCard";
 import { convertToNaira } from "../Info/Wishlist";
 import {
   resetFiltersByType,
   setFilterCoursesBySearch,
   setFilterCoursesByType,
 } from "@/redux/dataSlice";
+import { DetailH3Styles } from "@/styles/CoursepageStyles/CourseDetail";
+import { ErrorMsg } from "./Error";
 
 const CourseCatalog: FunctionComponent = () => {
   const {
@@ -23,8 +25,6 @@ const CourseCatalog: FunctionComponent = () => {
     isSearching,
   } = useAppSelector((state: RootState) => state.data);
   const dispatch = useAppDispatch();
-  // fix the zero element issue
-  // work on the header search bar
   const [lengthOfList, setLengthOfList] = useState(0);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const CourseCatalog: FunctionComponent = () => {
     } else {
       dispatch(setFilterCoursesByType());
     }
-  }, [dispatch, isSearching]);
+  }, [dispatch, isSearching, searchQuery]);
 
   useEffect(() => {
     if (isSearching && filteredSearchCoursesByType) {
@@ -43,18 +43,24 @@ const CourseCatalog: FunctionComponent = () => {
     if (!isSearching && filteredByTypeCourses) {
       setLengthOfList(filteredByTypeCourses?.length);
     }
-  }, [isSearching, filteredSearchCoursesByType, filteredByTypeCourses]);
+  }, [
+    isSearching,
+    filteredSearchCoursesByType,
+    filteredByTypeCourses,
+    searchQuery,
+  ]);
 
   // fix the course card arguments issue
   return (
     <CourseCatalogStyles>
       <ButtonGroup filters={filtersByType} />
       <div className="info">
-        {lengthOfList && (
+        {lengthOfList > 0 && (
           <p>
             There {lengthOfList > 1 ? "are " : "is "}
             <strong>
-              {lengthOfList > 0 ? lengthOfList : <></>} {lengthOfList > 1 ? "courses " : "course "}
+              {lengthOfList > 0 && lengthOfList}{" "}
+              {lengthOfList > 1 ? "courses " : "course "}
             </strong>{" "}
             in this category
           </p>
@@ -85,6 +91,7 @@ const CourseCatalog: FunctionComponent = () => {
               reviews={ele.reviews}
               isEnrolled={ele.isEnrolled}
               totalReviews={ele.totalReviews}
+              introVideo={ele.introVideo}
             />
           ))}
         {isSearching &&
@@ -111,12 +118,13 @@ const CourseCatalog: FunctionComponent = () => {
               reviews={ele.reviews}
               isEnrolled={ele.isEnrolled}
               totalReviews={ele.totalReviews}
+              introVideo={ele.introVideo}
             />
           ))}
-          {/* fix the zero element issue */}
-          {isSearching && filteredSearchCoursesByType?.length === 0 &&
-          <>No element</>
-          }
+        {/* fix the zero element issue */}
+        {isSearching && filteredSearchCoursesByType?.length === 0 && (
+          <ErrorMsg errormsg="No Match Found" />
+        )}
       </div>
     </CourseCatalogStyles>
   );

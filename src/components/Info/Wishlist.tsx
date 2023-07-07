@@ -37,6 +37,7 @@ const Wishlist: FunctionComponent = () => {
           {wishList.map((ele, index) => (
             <WishlistItem
               key={index}
+              id={ele.id}
               name={ele.name}
               level={ele.level}
               dollarPrice={ele.dollarPrice}

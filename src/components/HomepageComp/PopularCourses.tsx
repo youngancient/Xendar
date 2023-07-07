@@ -55,6 +55,7 @@ const PopularCourses = () => {
                 reviews={ele.reviews}
                 isEnrolled={ele.isEnrolled}
                 totalReviews={ele.totalReviews}
+                introVideo={ele.introVideo}
               />
             ))}
           </CoursesGroupStyle>

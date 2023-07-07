@@ -209,6 +209,7 @@ export const TransparentFormBtnStyles = styled.button`
   display: flex;
   border-radius: 0.5rem;
   background: var(--white, #FFF);
+  border: 2px solid #fff;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
   color: var(--purple, #7d26cd);
   font-size: 1rem;

@@ -55,6 +55,7 @@
     reviews : IReview[];
     isEnrolled: boolean;
     totalReviews: number;
+    introVideo : string;
   }
 
   export interface IModule{

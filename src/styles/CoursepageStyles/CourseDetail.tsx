@@ -167,6 +167,7 @@ export const MainCardStyles = styled.div`
     .nav-switch-cont {
       width: 100%;
       overflow-x: scroll;
+      position: relative;
     }
     .details-nav-switch {
       width: 150%;
@@ -202,6 +203,10 @@ export const MainCardStyles = styled.div`
     }
   }
 `;
+
+export const VideoStyles = styled.div`
+  cursor: pointer;
+`;
 export const SideCardStyles = styled.div`
   @media screen and (min-width: 728px) {
     display: flex;
@@ -225,7 +230,6 @@ export const SideCardStyles = styled.div`
       display: flex;
       gap: 0.75rem;
       position: relative;
-      // border: 2px solid #000;
     }
     .name-r {
       max-width: 80%;
@@ -505,20 +509,19 @@ export const TutorListStyle = styled.div`
   }
 `;
 
-
-interface ITutorHeadStyle{
-  fontSize ?: string;
-  color ?: string;
-  fontWeight ?: number;
+interface ITutorHeadStyle {
+  fontSize?: string;
+  color?: string;
+  fontWeight?: number;
 }
 export const TutorHeadStyle = styled.h5<ITutorHeadStyle>`
-color: ${props => props.color ? props.color : "var(--grey-700, #272727)"};
-font-family: DM Sans;
-font-size: ${props => props.fontSize ? props.fontSize : "1rem"};
-font-style: normal;
-font-weight: ${props => props.fontWeight ? props.fontWeight : 700};
-line-height: 2rem;
-`
+  color: ${(props) => (props.color ? props.color : "var(--grey-700, #272727)")};
+  font-family: DM Sans;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "1rem")};
+  font-style: normal;
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 700)};
+  line-height: 2rem;
+`;
 export const ReviewStyles = styled(motion.div).attrs(() => ({
   initial: "initial",
   animate: "final",
