@@ -39,13 +39,13 @@ export const ContactComp: FunctionComponent = () => {
       msg: "",
     },
   });
-  const { isContactFormSubmitted } = useAppSelector(
-    (state: RootState) => state.data
-  );
+  
+  const [isContactFormSubmitted, setIsContactFormSubmitted] = useState(false);
   const dispatch = useAppDispatch();
   const handleContactForm = (data: IContactForm) => {
     reset();
     dispatch(setContactForm(data));
+    setIsContactFormSubmitted(true);
   };
   return (
     <ContactStyles>

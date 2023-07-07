@@ -5,6 +5,8 @@ import { LinkStyle } from "@/styles/LinkStyles/Link";
 import Link from "next/link";
 import { ActualPaddedSectionStyle } from "@/styles/HomepageStyles/Section";
 import { WelcomeStyles } from "@/styles/HomepageStyles/Homepage";
+import { motion } from "framer-motion";
+import { welcomeTextVariants } from "@/Animations/LandingPageVariants";
 
 const Welcome: FunctionComponent = () => {
   return (
@@ -32,7 +34,12 @@ const Welcome: FunctionComponent = () => {
                 </TabOnly>
               </div>
               <div className="one">
-                <div className="texts">
+                <motion.div className="texts"
+                variants={welcomeTextVariants}
+                initial = "initial"
+                whileInView= "final"
+                viewport={{once : true }}
+                >
                   <h3>Welcome to Vephla’s E-learning Website</h3>
                   <p className="small">
                     In Vephla, we guide you with the best available teaching and
@@ -44,7 +51,7 @@ const Welcome: FunctionComponent = () => {
                       Get Started
                     </LinkStyle>
                   </Link>
-                </div>
+                </motion.div>
               </div>
             </div>
           </ActualPaddedSectionStyle>
@@ -52,7 +59,12 @@ const Welcome: FunctionComponent = () => {
         <div className="mobile">
           <ActualPaddedSectionStyle>
             <div className="welcome">
-              <h3>Welcome to Vephla’s E-learning Website</h3>
+              <motion.h3
+              variants={welcomeTextVariants}
+              initial = "farLeft"
+              whileInView="final"
+              viewport={{once : true}}
+              >Welcome to Vephla’s E-learning Website</motion.h3>
               <Image
                 src="/assets/welcome-mobile.png"
                 alt="welcome"
@@ -61,11 +73,16 @@ const Welcome: FunctionComponent = () => {
                 sizes="100vw"
                 className="fill-img mobile"
               />
-              <p className="small">
+              <motion.p className="small"
+              variants={welcomeTextVariants}
+              initial = "farRight"
+              whileInView="final"
+              viewport={{once : true}}
+              >
                 In Vephla, we guide you with the best available teaching and
                 mentoring needed in your tech career and also give you the
                 necessary resources to get better.{" "}
-              </p>
+              </motion.p>
               <Link href={"/courses"}>
                 <LinkStyle color="var(--purple, #7d26cd)">
                   Get Started

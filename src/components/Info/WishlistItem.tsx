@@ -2,9 +2,11 @@ import { GotoCourse, WishlistItemStyle } from "@/styles/HeroStyles/Info";
 import React, { FunctionComponent } from "react";
 import Image from "next/image";
 import { Trash } from "../Icons/Icons";
+import { useRouter } from "next/router";
 
 export interface IWishlistItem{
       name: string;
+      id: number | null;
       img: string;
       dollarPrice: number;
       nairaPrice: number;
@@ -13,7 +15,17 @@ export interface IWishlistItem{
 export interface IExtWishlistItem extends IWishlistItem{
     isEndOfList : boolean;
 }
-const WishlistItem:FunctionComponent<IExtWishlistItem> = ({name, img, dollarPrice, nairaPrice, level, isEndOfList}) => {
+const WishlistItem:FunctionComponent<IExtWishlistItem> = ({name, img, dollarPrice, nairaPrice, level, isEndOfList, id}) => {
+    const router = useRouter();
+    const goToCourse = () => {
+      const slug = name.replaceAll("/", "-");
+      const path = `/courses/${slug}`;
+      // push the id
+      router.push({
+        pathname : path,
+        query : {id: id}
+      },path);
+    };
     return ( 
         <WishlistItemStyle>
             <div className="one">
@@ -28,7 +40,7 @@ const WishlistItem:FunctionComponent<IExtWishlistItem> = ({name, img, dollarPric
                 </div>
             </div>
             <div className="two">
-                <GotoCourse>Go to Course</GotoCourse>
+                <GotoCourse onClick={goToCourse}>Go to Course</GotoCourse>
                 <Trash name={name}/>
             </div>
             {!isEndOfList && <hr />}

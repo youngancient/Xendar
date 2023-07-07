@@ -55,7 +55,7 @@ const Hero: FunctionComponent = () => {
               width={0}
               height={0}
               sizes="100vw"
-              priority={true} 
+              priority={true}               
               className="mobile mobile-img"
             />
           </TabOnly>

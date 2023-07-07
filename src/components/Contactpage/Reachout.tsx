@@ -62,12 +62,12 @@ export const ReachoutComp: FunctionComponent<IReachout> = ({
   );
 };
 
-export interface IContactBtn {
+export interface IContactCard {
   svg: string;
   link: string;
   deet: string;
 }
-export const ContactBtn: FunctionComponent<IContactBtn> = ({
+export const ContactBtn: FunctionComponent<IContactCard> = ({
   svg,
   link,
   deet,

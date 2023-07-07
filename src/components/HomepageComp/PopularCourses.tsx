@@ -6,7 +6,7 @@ import { CoursesGroupStyle } from "@/styles/HeroStyles/coursesGroup";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { setFilteredByTimeCourses } from "@/redux/dataSlice";
-import CourseCard from "../CourseCard/CourseCard";
+import { CourseCard } from "../CourseCard/CourseCard";
 import { convertToNaira } from "../Info/Wishlist";
 import { LinkStyle } from "@/styles/LinkStyles/Link";
 import Link from "next/link";
@@ -45,6 +45,17 @@ const PopularCourses = () => {
                 img={ele.img}
                 nairaPrice={convertToNaira(ele.dollarPrice)}
                 noEnrolled={ele.noEnrolled}
+                id={ele.id}
+                duration={ele.duration}
+                desc={ele.desc}
+                skills={ele.skills}
+                syllabus={ele.syllabus}
+                requirements={ele.requirements}
+                tutors={ele.tutors}
+                reviews={ele.reviews}
+                isEnrolled={ele.isEnrolled}
+                totalReviews={ele.totalReviews}
+                introVideo={ele.introVideo}
               />
             ))}
           </CoursesGroupStyle>

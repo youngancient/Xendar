@@ -85,6 +85,8 @@ export const HeroStyles = styled.div`
       font-size: 1.25rem;
       line-height: 2rem;
       margin-top: 1.5rem;
+      // this is subject to change
+      // width: 78%;
     }
     .alink {
       margin-top: 2.5rem;
@@ -95,6 +97,27 @@ export const HeroStyles = styled.div`
 export const DesktopMobile = styled.div`
   .desktop {
     display: none;
+  }
+  @media screen and (min-width: 728px) {
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+`;
+export const ImprovedDesktopMobile = styled.div`
+  .desktop {
+    display: none;
+  }
+  @media screen and (min-width: 490px) and (max-width: 728px) {
+    .mobile{
+      display: none;
+    }
+    .desktop{
+      display: block;
+    }
   }
   @media screen and (min-width: 728px) {
     .desktop {

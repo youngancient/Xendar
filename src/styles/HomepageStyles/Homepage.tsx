@@ -117,7 +117,6 @@ export const ReasonStyles = styled(motion.div).attrs(() => ({
   initial: "initial",
   whileInView : "final",
   viewport : {once : true},
-  // animate : "final",
   variants : reasonVariants}))`
   padding: 2rem;
   display: flex;
@@ -320,11 +319,15 @@ export const NewsletterStyle = styled.div`
   form {
     width: 100%;
   }
+  .error p{
+    text-align: center;
+  }
   @media screen and (min-width: 728px) {
     form {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction :column;
     }
     .fl{
       gap: 2rem;
@@ -337,6 +340,7 @@ export const SubscribeStyles = styled(HeroSearchStyles)`
   display: flex;
   input {
     padding: 1rem;
+    color: var(--grey-500, #525252);
   }
   input:focus {
     border: 1px solid var(--grey-500, #525252);
