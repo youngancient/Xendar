@@ -227,9 +227,8 @@ export const NotificationItemStyles = styled.div`
   .list {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     justify-content: space-between;
-    flex-wrap: wrap;
   }
   p {
     color: var(--grey-500, #525252);
@@ -246,6 +245,10 @@ export const NotificationItemStyles = styled.div`
       width: 100%;
       display: flex;
       justify-content: flex-end;
+    }
+    .list{
+      flex-wrap: wrap;
+      gap: 0.75rem;
     }
   }
 `;
