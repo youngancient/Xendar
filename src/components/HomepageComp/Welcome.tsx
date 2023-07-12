@@ -40,9 +40,9 @@ const Welcome: FunctionComponent = () => {
                 whileInView= "final"
                 viewport={{once : true }}
                 >
-                  <h3>Welcome to Vephla’s E-learning Website</h3>
+                  <h3>Welcome to Xendar’s E-learning Website</h3>
                   <p className="small">
-                    In Vephla, we guide you with the best available teaching and
+                    In Xendar, we guide you with the best available teaching and
                     mentoring needed in your tech career and also give you the
                     necessary resources to get better.{" "}
                   </p>
@@ -64,7 +64,7 @@ const Welcome: FunctionComponent = () => {
               initial = "farLeft"
               whileInView="final"
               viewport={{once : true}}
-              >Welcome to Vephla’s E-learning Website</motion.h3>
+              >Welcome to Xendar’s E-learning Website</motion.h3>
               <Image
                 src="/assets/welcome-mobile.png"
                 alt="welcome"
@@ -79,7 +79,7 @@ const Welcome: FunctionComponent = () => {
               whileInView="final"
               viewport={{once : true}}
               >
-                In Vephla, we guide you with the best available teaching and
+                In Xendar, we guide you with the best available teaching and
                 mentoring needed in your tech career and also give you the
                 necessary resources to get better.{" "}
               </motion.p>

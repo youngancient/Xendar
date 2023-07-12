@@ -199,6 +199,7 @@ export const TeamTabOnly = styled.div`
   }
 `;
 
+// finish up the styles
 export const TeamStyle = styled.div`
   margin-top: 1.5rem;
   .team{
@@ -221,6 +222,7 @@ export const TeamStyle = styled.div`
     margin-top: 2.5rem;
     .team{
       gap : 4.5rem;
+      justify-content: space-evenly;
     }
   }
 `;

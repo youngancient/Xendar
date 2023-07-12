@@ -113,3 +113,7 @@ export const SubscribeButton = styled(FormButton)<IContactBtn>`
       }
     `}
 `;
+
+export const PaymentButtonStyles = styled(FormButton)`
+      border-radius : 0.5rem;
+`

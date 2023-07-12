@@ -61,15 +61,21 @@ export const ContactStyles = styled.div`
   }
 `;
 
-export const FormLabelStyles = styled.div`
-  color: var(--grey-500, #525252);
+export interface IFormLabel {
+  color?: string;
+}
+export const FormLabelStyles = styled.div<IFormLabel>`
+  color: ${(props) => (props.color ? props.color : "var(--grey-500, #525252)")};
   font-size: 0.875rem;
   font-family: DM Sans;
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
 `;
-export const InputStyles = styled.div`
+interface IMaskInput {
+  placeholderfont?: string;
+}
+export const InputStyles = styled.div<IMaskInput>`
   input {
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -85,6 +91,12 @@ export const InputStyles = styled.div`
     color: var(--grey-300, #979797);
     font-size: 1rem;
     font-family: DM Sans;
+    ${(props) =>
+      props.placeholderfont &&
+      css`
+        font-family: verdana;
+        font-size: 2rem;
+      `};
     line-height: 1.5rem;
     opacity: 1;
   }
@@ -95,6 +107,12 @@ export const InputStyles = styled.div`
     font-size: 1rem;
     font-family: DM Sans;
     line-height: 1.5rem;
+    ${(props) =>
+      props.placeholderfont &&
+      css`
+        font-family: verdana;
+        font-size: 2rem;
+      `}
   }
 
   input::-ms-input-placeholder {
@@ -103,6 +121,12 @@ export const InputStyles = styled.div`
     font-size: 1rem;
     font-family: DM Sans;
     line-height: 1.5rem;
+    ${(props) =>
+      props.placeholderfont &&
+      css`
+        font-family: verdana;
+        font-size: 2rem;
+      `}
   }
   input:focus {
     border: 1px solid var(--grey-500, #525252);
@@ -189,7 +213,7 @@ export const FormBtnStyles = styled.button`
   align-items: center;
   display: flex;
   border-radius: 0.5rem;
-  background: var(--purple, #7d26cd);
+  background: ${(props )=> props.disabled ? "hsla(271, 69%, 48%,0.7)": "var(--purple, #7d26cd)" };
   box-shadow: 0px 4px 8px 0px rgba(125, 38, 205, 0.3);
   color: var(--off-white, #fefefe);
   font-size: 1rem;
@@ -208,9 +232,9 @@ export const TransparentFormBtnStyles = styled.button`
   align-items: center;
   display: flex;
   border-radius: 0.5rem;
-  background: var(--white, #FFF);
-  border: 2px solid #fff;
+  background: var(--white, #fff);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  border: 2px solid #fff;
   color: var(--purple, #7d26cd);
   font-size: 1rem;
   font-family: DM Sans;
@@ -222,6 +246,11 @@ export const TransparentFormBtnStyles = styled.button`
     border: 2px solid var(--purple-600, #6820ab);
     color: var(--purple-600, #6820ab);
   }
+  ${(props )=> props.disabled && css`
+    background: hsla(0,0%,60%,0.1);
+    box-shadow: none;                 
+    border: 2px solid var(--purple-600, #6820ab);                    
+  `};
 `;
 export interface IContactBtn {
   $submitted: boolean;

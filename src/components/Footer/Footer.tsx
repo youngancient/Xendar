@@ -16,7 +16,7 @@ const Footer: FunctionComponent = () => {
             <Link href={"/"}>
               <Image
                 src={"/assets/logo-one.png"}
-                alt="vephla logo"
+                alt="Xendar logo"
                 width={82}
                 height={40}
               />

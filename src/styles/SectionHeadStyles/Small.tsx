@@ -41,3 +41,4 @@ export const XtraSmall = styled.p`
   line-height: 1.5rem;
   text-align: center;
 `;
+

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { XtraSmall } from "../SectionHeadStyles/Small";
 import { switchEleVariants } from "@/Animations/LandingPageVariants";
 import { motion } from "framer-motion";
@@ -122,6 +122,11 @@ export const MainCardStyles = styled.div`
     flex-direction: column;
     gap: 0.25rem;
   }
+  .btns p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .switch-elements-mobile {
     margin-top: 2rem;
     display: flex;
@@ -204,10 +209,40 @@ export const MainCardStyles = styled.div`
   }
 `;
 
-export const VideoStyles = styled.div`
+export interface IVideoStyles {
+  $isLoading: boolean;
+}
+export const VideoStyles = styled.div<IVideoStyles>`
+  position: relative;
   cursor: pointer;
+  height: 200px;
+  .load {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 0;
+    align-items: center;
+    ${(props) =>
+      props.$isLoading &&
+      css`
+        background: hsla(0, 0%, 60%, 0.1);
+      `}
+  }
+  @media screen and (min-width: 490px) and (max-width: 728px) {
+    height: 300px;
+  }
+  @media screen and (min-width: 998px) {
+    height: 300px;
+  }
 `;
-export const SideCardStyles = styled.div`
+
+interface ISideCardStyle {
+  $isEnrollBtnDisabled?: boolean;
+}
+export const SideCardStyles = styled.div<ISideCardStyle>`
   @media screen and (min-width: 728px) {
     display: flex;
     flex-direction: column;
@@ -302,6 +337,13 @@ export const SideCardStyles = styled.div`
       top: -70%;
       left: -120%;
     }
+    ${(props) =>
+      props.$isEnrollBtnDisabled &&
+      css`
+        .btns {
+          margin-top: 1rem;
+        }
+      `}
   }
 
   @media screen and (min-width: 998px) {

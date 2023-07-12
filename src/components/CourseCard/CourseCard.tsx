@@ -34,6 +34,8 @@
   import { useRouter } from "next/router";
   import { RootState } from "@/redux/store";
 
+
+  // I am gonna add two more attributes here and methods to update them in redux
   export interface ICourse {
     id : number|null;
     name: string;
@@ -53,7 +55,6 @@
     requirements : string[];
     tutors : ITutor[];
     reviews : IReview[];
-    isEnrolled: boolean;
     totalReviews: number;
     introVideo : string;
   }
@@ -94,14 +95,18 @@
     const [isheartHovered, setIsheartHovered] = useState(false);
     const router = useRouter();
     const showDetail = () => {
-      const slug = name.replaceAll("/", "-");
-      const path = `/courses/${slug}`;
+      // omor this worked like magic: for escaping symbols in urls
+      const path = "/courses/" + encodeURIComponent(name);
       // push the id
       router.push({
         pathname : path,
         query : {id: id}
       },path);
     };
+    // todo
+    // 1. work on the redux state course.isenrolled, update it as payment is completed
+    // 2. based on the updated value, display components
+    // 3. work on the try for free
     return (
       <DesktopMobile>
         <CourseCardStyles>

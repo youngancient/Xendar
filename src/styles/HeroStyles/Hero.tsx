@@ -65,7 +65,7 @@ export const HeroStyles = styled.div`
       padding: 1.5rem;
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
     }
   }
   @media screen and (min-width: 998px) {

@@ -74,7 +74,7 @@ export const WelcomeStyles = styled.div`
       justify-content: right;
     }
     h3 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       line-height: 3rem;
     }
     .texts {

@@ -5,9 +5,10 @@ import { useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { AnimatePresence } from "framer-motion";
 import Wishlist from "./Wishlist";
+import { NotificationList } from "./Notifications";
 
 const Info: FunctionComponent = () => {
-  const { isNavOpen, isWishlistOpen } = useAppSelector((state: RootState) => state.data);
+  const { isNavOpen, isWishlistOpen, isNotificationOpen } = useAppSelector((state: RootState) => state.data);
   
   return (
     <InfoStyles>
@@ -19,6 +20,9 @@ const Info: FunctionComponent = () => {
         {/* add animation to this component */}
         <AnimatePresence>
           {isWishlistOpen && <Wishlist />}
+        </AnimatePresence>
+        <AnimatePresence>
+          {isNotificationOpen && <NotificationList />}
         </AnimatePresence>
       </div>
     </InfoStyles>

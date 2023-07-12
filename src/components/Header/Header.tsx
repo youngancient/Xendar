@@ -36,7 +36,7 @@ const Header: FunctionComponent = () => {
       <Link href={"/"}>     
         <Image
           src={"/assets/logo-two.png"}
-          alt="vephla logo"
+          alt="Xendar logo"
           width={82}
           height={40}
         />
