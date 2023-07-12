@@ -32,10 +32,10 @@ export const HeaderStyle = styled.header`
       justify-content: center;
       gap: 1rem;
     }
-    .icons{
+    .icons {
       display: flex;
       align-items: center;
-      gap : 0.5rem;
+      gap: 0.5rem;
     }
     .desktop-nav-links {
       display: flex;
@@ -46,14 +46,14 @@ export const HeaderStyle = styled.header`
   }
   @media screen and (min-width: 998px) {
     padding: 1rem 4.5rem;
-    .icons{
-        gap : 1rem;
+    .icons {
+      gap: 1rem;
     }
     .icons-group {
-        gap : 2rem;
+      gap: 2rem;
     }
     .desktop-nav-links {
-        gap: 1.5rem;
+      gap: 1.5rem;
     }
   }
 `;

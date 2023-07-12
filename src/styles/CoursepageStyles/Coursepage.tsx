@@ -46,6 +46,7 @@ export const CourseCatalogStyles = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 1rem;
+    min-height: 40vh;
   }
   @media screen and (max-width: 360px) {
     .group {

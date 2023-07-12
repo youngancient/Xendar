@@ -1,13 +1,10 @@
-import { ITab, Tabs } from "@/Constant/constant";
+import { IEnrolledCourse, ITab, Tabs } from "@/Constant/constant";
 import {
   BigBriefCase,
   BigEnrolledIcon,
   BigRatingIcon,
-  BriefCase,
   Clock,
-  EnrolledIcon,
   FaqArrow,
-  RatingIcon,
   ThinArrow,
 } from "@/components/Icons/Icons";
 import {
@@ -65,23 +62,29 @@ import {
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { RootState } from "@/redux/store";
 import { convertToNaira } from "@/components/Info/Wishlist";
-import { getCourseById, getCourseByName } from "@/redux/dataSlice";
+import {
+  getCourseById,
+  getCourseByName,
+  setShowPaymentModaL,
+  setShowTryFreeModaL,
+} from "@/redux/dataSlice";
 import {
   faqAnswerVariants,
   msgVariants,
-  switchEleVariants,
 } from "@/Animations/LandingPageVariants";
 import ReactPlayer from "react-player";
 import { ErrorMsg } from "@/components/Coursepage/Error";
 import { PageErrorStyles } from "@/styles/HomepageStyles/Error";
+import { Loader, Payment } from "@/components/Payments/Payments";
 
-// work here
+export interface IPaymentFunc {
+  value: boolean;
+}
 export const CourseDetailComp = () => {
   const [tabs, setTabs] = useState(Tabs);
   const router = useRouter();
-  const { allCourses, course } = useAppSelector(
-    (state: RootState) => state.data
-  );
+  const { allCourses, course, user, showPaymentModal, showTryFreeModal } =
+    useAppSelector((state: RootState) => state.data);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -95,8 +98,15 @@ export const CourseDetailComp = () => {
   const [isheartHovered, setIsheartHovered] = useState(false);
   const openTab = tabs.find((ele) => ele.isSelected === true);
 
-  // the nav-switch on tab isn't scrolling😭 - fix it!
-  // work on the error /  empty states
+  const handleClickPayments = (value: boolean) => {
+    dispatch(setShowPaymentModaL(value));
+  };
+  const userCourse = user?.enrolledCourses?.find(
+    (ele) => ele.courseId === course?.id
+  );
+  const handleClickTryFree = (value: boolean) => {
+    dispatch(setShowTryFreeModaL(value));
+  };
 
   return (
     <>
@@ -174,61 +184,108 @@ export const CourseDetailComp = () => {
                     </div>
                   </div>
                   <div className="mobile">
-                    <div className="discount">
-                      <RegularSmallStyles color="#525252">
-                        Got a discount code, click{" "}
-                        <Link href="#" className="link">
-                          here
-                        </Link>
-                      </RegularSmallStyles>
-                    </div>
-                    <div className="prices">
-                      <h6>
-                        &#8358;
-                        {course.nairaPrice === null
-                          ? convertToNaira(course.dollarPrice).toLocaleString()
-                          : course.nairaPrice.toLocaleString()}
-                      </h6>
-                      <DetailSmallStyles>
-                        approx ${course.dollarPrice}
-                      </DetailSmallStyles>
-                    </div>
+                    {!userCourse?.isPaid && (
+                      <>
+                        <div className="discount">
+                          <RegularSmallStyles color="#525252">
+                            Got a discount code, click{" "}
+                            <Link href="#" className="link">
+                              here
+                            </Link>
+                          </RegularSmallStyles>
+                        </div>
+                        <div className="prices">
+                          <h6>
+                            &#8358;
+                            {course.nairaPrice === null
+                              ? convertToNaira(
+                                  course.dollarPrice
+                                ).toLocaleString()
+                              : course.nairaPrice.toLocaleString()}
+                          </h6>
+                          <DetailSmallStyles>
+                            approx ${course.dollarPrice}
+                          </DetailSmallStyles>
+                        </div>
+                      </>
+                    )}
                     <div className="btns">
-                      <FormBtnStyles>Enroll Now</FormBtnStyles>
-                      <BoldXtraSmallStyles color="var(--grey-700, #272727)">
-                        Or
-                      </BoldXtraSmallStyles>
-                      <TransparentFormBtnStyles>
-                        Try for 1 week for Free
-                      </TransparentFormBtnStyles>
+                      <FormBtnStyles
+                        onClick={() => handleClickPayments(true)}
+                        disabled={userCourse?.isPaid}
+                      >
+                        {userCourse?.isPaid ? <>Enrolled</> : <>Enroll Now</>}
+                      </FormBtnStyles>
+                      {!userCourse?.isPaid && (
+                        <>
+                          <BoldXtraSmallStyles color="var(--grey-700, #272727)">
+                            Or
+                          </BoldXtraSmallStyles>
+                          <TransparentFormBtnStyles
+                            onClick={() => handleClickTryFree(true)}
+                            disabled={userCourse?.isFree}
+                          >
+                            {userCourse?.isFree ? (
+                              <>Enrolled in Free Trial!</>
+                            ) : (
+                              <>Try for 1 week for Free</>
+                            )}
+                          </TransparentFormBtnStyles>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
                 <div className="minitab">
-                  <div className="discount">
-                    <RegularSmallStyles color="#525252">
-                      Got a discount code, click{" "}
-                      <Link href="#" className="link">
-                        here
-                      </Link>
-                    </RegularSmallStyles>
-                  </div>
-                  <div className="prices">
-                    <h6>
-                      &#8358;
-                      {course.nairaPrice === null
-                        ? convertToNaira(course.dollarPrice).toLocaleString()
-                        : course.nairaPrice.toLocaleString()}
-                    </h6>
-                    <DetailSmallStyles>
-                      approx ${course.dollarPrice}
-                    </DetailSmallStyles>
-                  </div>
+                  {!userCourse?.isPaid && (
+                    <>
+                      <div className="discount">
+                        <RegularSmallStyles color="#525252">
+                          Got a discount code, click{" "}
+                          <Link href="#" className="link">
+                            here
+                          </Link>
+                        </RegularSmallStyles>
+                      </div>
+                      <div className="prices">
+                        <h6>
+                          &#8358;
+                          {course.nairaPrice === null
+                            ? convertToNaira(
+                                course.dollarPrice
+                              ).toLocaleString()
+                            : course.nairaPrice.toLocaleString()}
+                        </h6>
+                        <DetailSmallStyles>
+                          approx ${course.dollarPrice}
+                        </DetailSmallStyles>
+                      </div>
+                    </>
+                  )}
                   <div className="btns">
-                    <FormBtnStyles>Enroll Now</FormBtnStyles>
-                    <TransparentFormBtnStyles>
-                      Try for 1 week for Free
-                    </TransparentFormBtnStyles>
+                    <FormBtnStyles
+                      onClick={() => handleClickPayments(true)}
+                      disabled={userCourse?.isPaid}
+                    >
+                      {userCourse?.isPaid ? <>Enrolled</> : <>Enroll Now</>}
+                    </FormBtnStyles>
+                    {!userCourse?.isPaid && (
+                      <>
+                        <BoldXtraSmallStyles color="var(--grey-700, #272727)">
+                          Or
+                        </BoldXtraSmallStyles>
+                        <TransparentFormBtnStyles
+                          onClick={() => handleClickTryFree(true)}
+                          disabled={userCourse?.isFree}
+                        >
+                          {userCourse?.isFree ? (
+                            <>Enrolled in Free Trial!</>
+                          ) : (
+                            <>Try for 1 week for Free</>
+                          )}
+                        </TransparentFormBtnStyles>
+                      </>
+                    )}
                   </div>
                 </div>
                 <div className="desktop nav-switch-cont">
@@ -313,9 +370,11 @@ export const CourseDetailComp = () => {
                 }
                 dollarPrice={course.dollarPrice}
                 img={course.img}
-                isEnrolled={course.isEnrolled}
                 level={course.level}
                 isLoved={course.isLoved}
+                handleMakePayments={() => handleClickPayments(true)}
+                handleTryFree={() => handleClickTryFree(true)}
+                userCourse={userCourse}
               />
             </div>
           </CourseDetailCompStyles>
@@ -326,6 +385,10 @@ export const CourseDetailComp = () => {
           <ErrorMsg errormsg={`No Match Found | ${router.query.name}`} />
         </PageErrorStyles>
       )}
+      <AnimatePresence>
+        {showPaymentModal && <Payment isFreeTrial={false} />}
+        {showTryFreeModal && <Payment isFreeTrial={true} />}
+      </AnimatePresence>
     </>
   );
 };
@@ -334,19 +397,40 @@ interface IVideo {
   url: string;
 }
 export const VideoComp: FunctionComponent<IVideo> = ({ url }) => {
+  // attach a loading state here
+  const [isLoading, setLoading] = useState(true);
+  const ready = () => {
+    setLoading(false);
+  };
   return (
     <ImprovedDesktopMobile>
-      <VideoStyles>
+      <VideoStyles $isLoading={isLoading}>
+        {isLoading && (
+          <div className="load">
+            <Loader size="small" />
+            <TutorHeadStyle>Loading...</TutorHeadStyle>
+          </div>
+        )}
         <TabOnly>
           <div className="desktop">
-            <ReactPlayer width="100%" height="300px" url={url} />
+            <ReactPlayer
+              width="100%"
+              height="300px"
+              url={url}
+              onReady={ready}
+            />
           </div>
           <div className="tab">
-            <ReactPlayer width="100%" height="200px" url={url} />
+            <ReactPlayer
+              width="100%"
+              height="200px"
+              url={url}
+              onReady={ready}
+            />
           </div>
         </TabOnly>
         <div className="mobile">
-          <ReactPlayer width="100%" height="200px" url={url} />
+          <ReactPlayer width="100%" height="200px" url={url} onReady={ready} />
         </div>
       </VideoStyles>
     </ImprovedDesktopMobile>
@@ -359,8 +443,10 @@ export interface ISideCard {
   nairaPrice: number;
   dollarPrice: number;
   level: string;
-  isEnrolled: boolean;
   isLoved: boolean;
+  handleMakePayments: (value: boolean) => void;
+  handleTryFree: (value: boolean) => void;
+  userCourse: IEnrolledCourse | undefined;
 }
 export const SideCard: FunctionComponent<ISideCard> = ({
   name,
@@ -369,10 +455,13 @@ export const SideCard: FunctionComponent<ISideCard> = ({
   img,
   isLoved,
   level,
+  handleMakePayments,
+  handleTryFree,
+  userCourse,
 }) => {
   const [isheartHovered, setIsheartHovered] = useState(false);
   return (
-    <SideCardStyles>
+    <SideCardStyles $isEnrollBtnDisabled={userCourse?.isPaid}>
       <Image alt={name} src={img} width={0} height={0} sizes="100vw" />
       <div className="name">
         <div className="inner">
@@ -401,26 +490,51 @@ export const SideCard: FunctionComponent<ISideCard> = ({
           <DetailSmallStyles>{level}</DetailSmallStyles>
         </div>
       </div>
-      <div className="discount">
-        <RegularSmallStyles color="#525252">
-          Got a discount code, click{" "}
-          <Link href="#" className="link">
-            here
-          </Link>
-        </RegularSmallStyles>
-      </div>
-      <div className="prices">
-        <h6>&#8358;{nairaPrice?.toLocaleString()}</h6>
-        <DetailSmallStyles>approx ${dollarPrice}</DetailSmallStyles>
-      </div>
+      {!userCourse?.isPaid && (
+        <>
+          <div className="discount">
+            <RegularSmallStyles color="#525252">
+              Got a discount code, click{" "}
+              <Link href="#" className="link">
+                here
+              </Link>
+            </RegularSmallStyles>
+          </div>
+          <div className="prices">
+            <h6>
+              &#8358;
+              {nairaPrice === null
+                ? convertToNaira(dollarPrice).toLocaleString()
+                : nairaPrice.toLocaleString()}
+            </h6>
+            <DetailSmallStyles>approx ${dollarPrice}</DetailSmallStyles>
+          </div>
+        </>
+      )}
       <div className="btns">
-        <FormBtnStyles>Enroll Now</FormBtnStyles>
-        <BoldXtraSmallStyles color="var(--grey-700, #272727)">
-          Or
-        </BoldXtraSmallStyles>
-        <TransparentFormBtnStyles>
-          Try for 1 week for Free
-        </TransparentFormBtnStyles>
+        <FormBtnStyles
+          onClick={() => handleMakePayments(true)}
+          disabled={userCourse?.isPaid}
+        >
+          {userCourse?.isPaid ? <>Enrolled</> : <>Enroll Now</>}
+        </FormBtnStyles>
+        {!userCourse?.isPaid && (
+          <>
+            <BoldXtraSmallStyles color="var(--grey-700, #272727)">
+              Or
+            </BoldXtraSmallStyles>
+            <TransparentFormBtnStyles
+              onClick={() => handleTryFree(true)}
+              disabled={userCourse?.isFree}
+            >
+              {userCourse?.isFree ? (
+                <>Enrolled in Free Trial!</>
+              ) : (
+                <>Try for 1 week for Free</>
+              )}
+            </TransparentFormBtnStyles>
+          </>
+        )}
       </div>
     </SideCardStyles>
   );

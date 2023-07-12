@@ -5,6 +5,7 @@ import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IReason } from "@/components/HomepageComp/Chooseus";
 import { IFaq } from "@/components/HomepageComp/Faq";
 import { ITestimony } from "@/components/HomepageComp/Testimonials";
+import { IPlan } from "@/components/Payments/Payments";
 
 export const AllCourses: ICourse[] = [
   {
@@ -115,9 +116,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 700,
-    introVideo : "https://youtu.be/BOt3MNB71gI",
+    introVideo: "https://youtu.be/BOt3MNB71gI",
   },
   {
     name: "Fudamentals of UX",
@@ -227,9 +228,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 750,
-    introVideo : "https://youtu.be/BOt3MNB71gI",
+    introVideo: "https://youtu.be/BOt3MNB71gI",
   },
   {
     name: "Graphics Design",
@@ -338,9 +339,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 100,
-    introVideo : "https://youtu.be/WONZVnlam6U",
+    introVideo: "https://youtu.be/WONZVnlam6U",
   },
   {
     name: "Data Analysis for Newbies",
@@ -450,9 +451,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 400,
-    introVideo : "https://youtu.be/SfE3aO3LWi0",
+    introVideo: "https://youtu.be/SfE3aO3LWi0",
   },
   {
     name: "Frontend Engineering",
@@ -562,9 +563,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 7,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 800,
-    introVideo : "https://youtu.be/zJSY8tbf_ys",
+    introVideo: "https://youtu.be/zJSY8tbf_ys",
   },
   {
     name: "Data Analysis for Experts",
@@ -674,9 +675,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 430,
-    introVideo : "https://youtu.be/SfE3aO3LWi0",
+    introVideo: "https://youtu.be/SfE3aO3LWi0",
   },
   {
     name: "Database Management",
@@ -786,9 +787,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 720,
-    introVideo : "https://youtu.be/mqprM5YUdpk",
+    introVideo: "https://youtu.be/mqprM5YUdpk",
   },
   {
     name: "Figma For Devs",
@@ -898,9 +899,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 170,
-    introVideo : "https://youtu.be/hbN9RGcQFNU",
+    introVideo: "https://youtu.be/hbN9RGcQFNU",
   },
   {
     name: "React and Redux",
@@ -1010,9 +1011,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 70,
-    introVideo : "https://youtu.be/_shA5Xwe8_4",
+    introVideo: "https://youtu.be/_shA5Xwe8_4",
   },
   {
     name: "The Ultimate MERN Fullstack Course",
@@ -1122,9 +1123,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 500,
-    introVideo : "https://youtu.be/7CqJlxBYj-M",
+    introVideo: "https://youtu.be/7CqJlxBYj-M",
   },
   {
     name: "Blockchain Engineering",
@@ -1234,9 +1235,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 1000,
-    introVideo : "https://youtu.be/kHybf1aC-jE",
+    introVideo: "https://youtu.be/kHybf1aC-jE",
   },
   {
     name: "Tokenization",
@@ -1346,9 +1347,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 340,
-    introVideo : "https://youtu.be/x9_DvOwiqM8",
+    introVideo: "https://youtu.be/x9_DvOwiqM8",
   },
   {
     name: "Cyber Security",
@@ -1458,9 +1459,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 350,
-    introVideo : "https://youtu.be/_DVVNOGYtmU",
+    introVideo: "https://youtu.be/_DVVNOGYtmU",
   },
   {
     name: "Ethical Hacking 101",
@@ -1570,9 +1571,9 @@ export const AllCourses: ICourse[] = [
         daysAgo: 3,
       },
     ],
-    isEnrolled: false,
+
     totalReviews: 570,
-    introVideo : "https://youtu.be/wrxicEWGcfI",
+    introVideo: "https://youtu.be/wrxicEWGcfI",
   },
 ];
 
@@ -1689,13 +1690,13 @@ export const TeamMembers: ITeamMember[] = [
     name: "Dev. Tobi Jacobs",
     image: "/assets/tobi.png",
     post: "CEO",
-    desc: "Michael has built a reputation in the design community",
+    desc: "Tobi has built a reputation in the startup ecosystem",
   },
   {
     name: "Dev. Richard Michael",
     image: "/assets/richard.png",
     post: "Head of Development",
-    desc: "Michael has built a reputation in the design community",
+    desc: "Michael has built a reputation in the dev community",
   },
   {
     name: "Dev. Micheal Ajala",
@@ -1708,7 +1709,7 @@ export const TeamMembers: ITeamMember[] = [
 export const Contacts: IReachout[] = [
   {
     name: "Email",
-    deet: "vephlagroup@gmail.com",
+    deet: "Xendargroup@gmail.com",
     note: "You can send us an email and we’ll get back to you.",
     svg: "email",
     link: "mailto:judetochyokoye@gmail.com",
@@ -1741,3 +1742,15 @@ export const Tabs: ITab[] = [
   { num: 3, name: "TUTORS", isSelected: false },
   { num: 4, name: "REVIEWS", isSelected: false },
 ];
+
+export interface IEnrolledCourse {
+  courseId: number;
+  isFree: boolean;
+  isPaid: boolean;
+  plan : IPlan;
+}
+export interface IUser {
+  name: string;
+  email: string;
+  enrolledCourses: IEnrolledCourse[] | null;
+}

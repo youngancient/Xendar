@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 export const FooterStyles = styled.footer`
+width: 100vw;
 margin-top: 2.5rem;
   .fl {
     display: flex;

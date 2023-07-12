@@ -21,7 +21,7 @@ const Hero: FunctionComponent = () => {
             your career in <strong>Tech</strong>
           </h1>
           <p className="hero-p">
-            Vephla is an E-Learning organization that specializes in helping
+            Xendar is an E-Learning organization that specializes in helping
             people kickstart their journey into the evolving world of technology
           </p>
           <HeroSearch />

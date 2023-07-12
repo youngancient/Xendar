@@ -53,7 +53,6 @@ const PopularCourses = () => {
                 requirements={ele.requirements}
                 tutors={ele.tutors}
                 reviews={ele.reviews}
-                isEnrolled={ele.isEnrolled}
                 totalReviews={ele.totalReviews}
                 introVideo={ele.introVideo}
               />

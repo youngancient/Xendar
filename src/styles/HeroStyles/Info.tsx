@@ -45,11 +45,11 @@ export const WishlistStyles = styled(motion.div).attrs<IWishlist>(() => ({
 }))`
   position: absolute;
   top: 0;
-  left: 72%;
+  left: 70%;
   border-radius: 8px;
   background: var(--background-white, #f5f5f5);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 200px;
+  width: 240px;
   padding: 1rem;
   z-index: 15;
   p {
@@ -82,7 +82,7 @@ export const WishlistStyles = styled(motion.div).attrs<IWishlist>(() => ({
       }
     `}
   @media screen and (min-width: 998px) {
-    left: 81%;
+    left: 79%;
   }
 `;
 
@@ -160,4 +160,92 @@ export const TrashContStyle = styled.button<IButton>`
   padding: 0.25rem;
   justify-content: center;
   align-items: center;
+`;
+
+export const NotificationListStyle = styled(motion.div).attrs<IWishlist>(
+  () => ({
+    initial: "initial",
+    animate: "final",
+    exit: "exit",
+    variants: wishlistvariants,
+  })
+)`
+  position: absolute;
+  top: 0;
+  left: 72%;
+  border-radius: 8px;
+  background: var(--background-white, #f5f5f5);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  z-index: 15;
+  display: flex;
+  min-width: 215px;
+  flex-direction: column;
+  gap: 0.75rem;
+  .empty {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    color: var(--grey-500, #525252);
+    font-size: 0.75rem;
+    font-family: DM Sans;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .svg{
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    border: 2px solid green;
+    fill: green;
+  }
+  ${(props) =>
+    props.length > 2 &&
+    css`
+      max-height: 300px;
+      overflow-y: scroll;
+    `}
+  @media screen and (min-width: 820px) {
+    min-width: 230px;
+  }
+  @media screen and (min-width: 998px) {
+    left: 81%;
+    min-width: 300px;
+  }
+`;
+
+export const NotificationItemStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  p {
+    color: var(--grey-500, #525252);
+    font-size: 0.75rem;
+    font-family: DM Sans;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
+  hr {
+    border: 0.046rem solid #e5d4f5;
+  }
+  @media screen and (min-width: 490px) and (max-width: 820px) {
+    .trash{
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 `;

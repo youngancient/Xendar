@@ -31,10 +31,10 @@ export const AboutHero: FunctionComponent = () => {
           <div className="main">
             <div className="hero-text">
               <h1>
-                Welcome to <strong>Vephla’s</strong> E-learning Website
+                Welcome to <strong>Xendar’s</strong> E-learning Website
               </h1>
               <p className="desktop hero-p">
-                In Vephla, we guide you with the best available teaching and
+                In Xendar, we guide you with the best available teaching and
                 mentoring needed in your tech career and also give you the
                 necessary resources to get better.{" "}
               </p>
@@ -78,7 +78,7 @@ export const AboutHero: FunctionComponent = () => {
               </TabOnly>
             </div>
             <p className="mobile hero-p">
-              In Vephla, we guide you with the best available teaching and
+              In Xendar, we guide you with the best available teaching and
               mentoring needed in your tech career and also give you the
               necessary resources to get better.{" "}
             </p>
