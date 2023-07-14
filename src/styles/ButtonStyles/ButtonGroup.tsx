@@ -91,7 +91,7 @@ export const TransparentFormBtnStyles = styled.button`
   width: 100%;
   &:hover {
     color: var(--purple-600, #6820ab);
-    border: 2px solid var(--purple-600, #6820ab);  
+    border: 1px solid var(--purple-600, #6820ab);  
   }
   ${(props )=> props.disabled && css`
     box-shadow: none;                 
