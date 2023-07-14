@@ -232,7 +232,7 @@ export const TransparentFormBtnStyles = styled.button`
   align-items: center;
   display: flex;
   border-radius: 0.5rem;
-  background: var(--white, #fff);
+  background: transparent;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
   border: 2px solid #fff;
   color: var(--purple, #7d26cd);
@@ -242,8 +242,8 @@ export const TransparentFormBtnStyles = styled.button`
   font-weight: 700;
   line-height: 1.5rem;
   width: 100%;
+  border: 2px solid var(--purple-600, #6820ab);
   &:hover {
-    border: 2px solid var(--purple-600, #6820ab);
     color: var(--purple-600, #6820ab);
   }
   ${(props )=> props.disabled && css`
