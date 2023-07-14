@@ -226,25 +226,14 @@ export const FormBtnStyles = styled.button`
     background: var(--purple-600, #6820ab);
   }
 `;
-export const TransparentFormBtnStyles = styled.button`
-  padding: 0.75rem 0.5rem;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  border-radius: 0.5rem;
+export const TransparentFormBtnStyles = styled(FormBtnStyles)`
   background: hsla(0,0%,60%,0.1);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
-  border: 2px solid #fff;
+  border: 2px solid var(--purple-600, #6820ab);  
   color: var(--purple, #7d26cd);
-  font-size: 1rem;
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-  width: 100%;
   &:hover {
     color: var(--purple-600, #6820ab);
-    border: 2px solid var(--purple-600, #6820ab);  
+    background: transparent;
   }
   ${(props )=> props.disabled && css`
     box-shadow: none;                 
