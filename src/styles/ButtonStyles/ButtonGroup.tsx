@@ -73,3 +73,29 @@ export const ContactBtnStyles = styled.button<IButton>`
   line-height: 1.5rem;
   background: transparent;
 `;
+
+export const TransparentFormBtnStyles = styled.button`
+  padding: 0.75rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  color: var(--purple, #7d26cd);
+  font-size: 1rem;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  width: 100%;
+  &:hover {
+    color: var(--purple-600, #6820ab);
+    border: 1px solid var(--purple-600, #6820ab);  
+  }
+  ${(props )=> props.disabled && css`
+    box-shadow: none;                 
+    background: hsla(0,0%,60%,0.1);
+    border: 2px solid var(--purple-600, #6820ab);                    
+  `};
+`;

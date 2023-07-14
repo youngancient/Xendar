@@ -9,7 +9,6 @@ import {
 } from "@/components/Icons/Icons";
 import {
   FormBtnStyles,
-  TransparentFormBtnStyles,
 } from "@/styles/ContactpageStyles/Contact";
 import {
   BoldXtraSmallStyles,
@@ -76,6 +75,7 @@ import ReactPlayer from "react-player";
 import { ErrorMsg } from "@/components/Coursepage/Error";
 import { PageErrorStyles } from "@/styles/HomepageStyles/Error";
 import { Loader, Payment } from "@/components/Payments/Payments";
+import { TransparentFormBtnStyles } from "@/styles/ButtonStyles/ButtonGroup";
 
 export interface IPaymentFunc {
   value: boolean;
@@ -763,7 +763,7 @@ export const Drawer: FunctionComponent<IDrawer> = ({
           {sometext}
         </DrawerHeadStyles>
         {!isMobile && <FaqArrow $showAnswer={showDetail} />}
-        {isMobile && <ThinArrow $showAnswer={!showDetail} />}
+        {isMobile && <ThinArrow $showAnswer={showDetail} />}
       </div>
       <div className="mom">
         <AnimatePresence>
