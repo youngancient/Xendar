@@ -149,7 +149,7 @@ export const dataSlice = createSlice({
         if (payload === index) {
           return { ...ele, showAnswer: !ele.showAnswer };
         } else {
-          return { ...ele };
+          return { ...ele , showAnswer : false};
         }
       });
       state.faqs = toggled;

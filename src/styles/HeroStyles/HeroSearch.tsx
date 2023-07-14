@@ -12,6 +12,7 @@ export const HeroSearchStyles = styled(SearchStyle)`
     height: 2.8rem;
     padding: 1.2rem 2.2rem;
     color: var(--grey-500, #525252);
+    position: relative;
   }
   input:focus {
     border: 1px solid var(--grey-500, #525252);

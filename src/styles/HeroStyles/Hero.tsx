@@ -44,7 +44,7 @@ export const HeroStyles = styled.div`
     justify-content: center;
     flex-direction: row;
     h1 {
-      font-size: 2rem;
+      font-size: 1.9rem;
       line-height: 2.5rem;
       text-align: left;
     }

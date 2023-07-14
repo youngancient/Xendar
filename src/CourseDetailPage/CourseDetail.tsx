@@ -763,7 +763,7 @@ export const Drawer: FunctionComponent<IDrawer> = ({
           {sometext}
         </DrawerHeadStyles>
         {!isMobile && <FaqArrow $showAnswer={showDetail} />}
-        {isMobile && <ThinArrow $showAnswer={showDetail} />}
+        {isMobile && <ThinArrow $showAnswer={!showDetail} />}
       </div>
       <div className="mom">
         <AnimatePresence>
