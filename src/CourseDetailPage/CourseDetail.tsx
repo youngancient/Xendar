@@ -523,7 +523,7 @@ export const SideCard: FunctionComponent<ISideCard> = ({
             <BoldXtraSmallStyles color="var(--grey-700, #272727)">
               Or
             </BoldXtraSmallStyles>
-            <TransparentFormBtnStyles
+            <FormBtnStyles
               onClick={() => handleTryFree(true)}
               disabled={userCourse?.isFree}
             >
@@ -532,7 +532,7 @@ export const SideCard: FunctionComponent<ISideCard> = ({
               ) : (
                 <>Try for 1 week for Free</>
               )}
-            </TransparentFormBtnStyles>
+            </FormBtnStyles>
           </>
         )}
       </div>
