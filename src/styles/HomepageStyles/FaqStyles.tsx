@@ -75,6 +75,6 @@ export const FaqArrowStyles = styled.div<IFaqArrow>`
     props.$showAnswer &&
     css`
       transform: rotateZ(180deg);
-      transition : 0.75s;
+      transition : 0.3s;
     `}
 `;

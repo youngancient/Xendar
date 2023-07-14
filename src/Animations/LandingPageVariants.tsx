@@ -5,13 +5,13 @@ export const menuvariants = {
   final: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration:0.3,
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: 1,
+      duration:0.3,
     },
   },
 };
@@ -23,13 +23,13 @@ export const slidevariants = {
   final: {
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.6,
     },
   },
   exit: {
     x: "100vw",
     transition: {
-      duration: 2,
+      duration: 0.6,
     },
   },
 };
@@ -73,20 +73,21 @@ export const msgVariants = {
 export const faqAnswerVariants = {
   initial: {
     opacity: 0.3,
-    y: "-20%",
+    height: 0,
+    overflow: "hidden",
   },
   final: {
     opacity: 1,
-    y: 0,
+    height: "auto",
     transition: {
-      duration: 0.5,
+      type : "linear",
     },
   },
   exit: {
     opacity: 0,
-    y: "-20%",
+    height: 0,
     transition: {
-      duration: 0.5,
+      type : "linear",
     },
   },
 };

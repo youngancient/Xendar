@@ -42,11 +42,23 @@ export const MenuStyle = styled.button<IMenu>`
 `;
 export const HeroMagnifyingGlassStyle = styled.div`
   position: absolute;
-  left: 0.55rem;
-  top: 0.85rem;
-  @media screen and (min-width: 490px) and (max-width: 690px) {
-    left: 6.75rem;
-    top: 0.85rem;
+  z-index: 1;
+  left: 0.65rem;
+  top: 0.75rem;
+  @media screen and (min-width: 490px){
+    top: 30%;
+  }
+  @media screen and (min-width: 500px) and (max-width: 550px) {
+    left: 20%;
+  }
+  @media screen and (min-width: 550px) and (max-width: 620px) {
+    left: 22%;
+  }
+  @media screen and (min-width: 620px) and (max-width: 680px) {
+    left: 26%;
+  }
+  @media screen and (min-width: 680px) and (max-width: 727px) {
+    left: 29%;
   }
 `;
 export const MagnifyingGlassStyle = styled.div`
