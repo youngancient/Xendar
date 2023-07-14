@@ -80,9 +80,8 @@ export const TransparentFormBtnStyles = styled.button`
   align-items: center;
   display: flex;
   border-radius: 0.5rem;
-  background: hsla(0,0%,60%,0.1);
+  background: #fff;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
-  border: 2px solid #fff;
   color: var(--purple, #7d26cd);
   font-size: 1rem;
   font-family: DM Sans;
@@ -96,6 +95,7 @@ export const TransparentFormBtnStyles = styled.button`
   }
   ${(props )=> props.disabled && css`
     box-shadow: none;                 
+    background: hsla(0,0%,60%,0.1);
     border: 2px solid var(--purple-600, #6820ab);                    
   `};
 `;
