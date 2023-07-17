@@ -36,3 +36,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Technologies Used
+This is my first personal Next Js project!!!😎😂 I made use of Next, Typescript, styled components and framer motion for animations of course.
+
+## Contributors
+
+I collaborated with a wonderful product designer to make this. Thanks so much @MichealAjala.
+Check him out on Behance: https://www.behance.net/michaelakintola
