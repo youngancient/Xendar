@@ -4,7 +4,7 @@ import React, { FunctionComponent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FooterStyles } from "@/styles/FooterStyles/Footer";
-import { Facebook, Instagram, Linkedin, Twitter } from "../Icons/Icons";
+import { Facebook, FooterLogo, Instagram, Linkedin, Twitter } from "../Icons/Icons";
 
 const Footer: FunctionComponent = () => {
   return (
@@ -14,12 +14,7 @@ const Footer: FunctionComponent = () => {
         <div className="one">
           <div className="icons">
             <Link href={"/"}>
-              <Image
-                src={"/assets/logo-one.png"}
-                alt="Xendar logo"
-                width={82}
-                height={40}
-              />
+              <FooterLogo />
             </Link>
             <div className="socials">
               <Linkedin />
@@ -85,7 +80,7 @@ const Footer: FunctionComponent = () => {
           </div>
         </div>
         <div className="two">
-          <p>2022 Mike & Jude Services. All Rights Reserved</p>
+          <p>2023 Xendar Services. All Rights Reserved</p>
           <div className="flat">
             <Link href={"#"}>
               <FooterLinkStyle color="var(--off-white, #F9F7F7)" hovercolor="#fff">

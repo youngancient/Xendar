@@ -72,13 +72,20 @@ export const HeroStyles = styled.div`
     .hero-text {
       padding: 4.5rem;
     }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
     img {
       width: auto;
     }
+    img{
+      width: 100%;
+      object-fit: cover;
+      height :100%;
+    }
     flex-direction: row;
     h1 {
-      font-size: 3.5rem;
-      line-height: 4.5rem;
+      font-size: 3vw;
+      line-height: 4rem;
     }
     .hero-p {
       text-align: left;
@@ -86,7 +93,7 @@ export const HeroStyles = styled.div`
       line-height: 2rem;
       margin-top: 1.5rem;
       // this is subject to change
-      // width: 78%;
+      width: 78%;
     }
     .alink {
       margin-top: 2.5rem;

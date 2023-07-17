@@ -63,18 +63,22 @@ export const WelcomeStyles = styled.div`
       justify-content: center;
       gap: 0.75rem;
     }
+    .one img{
+      width: 100%;
+    }
   }
-  @media screen and (min-width: 998px) {
+  @media  screen and (min-width: 998px) {
     .welcome {
       flex-direction: row;
-      gap: 10.25rem;
+      gap: 10rem;
+      // gap: 6vw;
     }
     .img-cont {
       display: flex;
       justify-content: right;
     }
     h3 {
-      font-size: 2.6rem;
+      font-size: 3rem;
       line-height: 3rem;
     }
     .texts {
@@ -82,6 +86,12 @@ export const WelcomeStyles = styled.div`
       width: 70%;
     }
   }
+  // working on this
+  // @media (min-width: 1120px) {
+  //   .texts {
+  //     width: 100%;
+  //   }
+  // }
 `;
 
 // choose us comp

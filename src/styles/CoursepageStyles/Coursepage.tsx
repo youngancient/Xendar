@@ -46,7 +46,7 @@ export const CourseCatalogStyles = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 1rem;
-    min-height: 40vh;
+    // min-height: 35vh;
   }
   @media screen and (max-width: 360px) {
     .group {
@@ -61,16 +61,36 @@ export const CourseCatalogStyles = styled.div`
     }
   }
   @media screen and (min-width: 490px) {
+  
     .group {
       margin-top: 1.5rem;
-      justify-content: unset;
-      column-gap: 0.5rem;
-      row-gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(168px, 100%), 1fr));
+      gap: 1.5rem;
+    }
+    .group img{
+      width: 100%;
+      height: 105px
     }
   }
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 728px) {
+    .group img{
+      width: 100%;
+      height: 140px
+    }
     .group {
-      column-gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+      gap: 1.5rem;
+    }
+  }
+  @media screen and (min-width: 998px) {
+    .group img{
+      width: 100%;
+      height: 240px
+    }
+    .group{
+      grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
     }
   }
 `;

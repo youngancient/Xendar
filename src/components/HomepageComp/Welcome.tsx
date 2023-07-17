@@ -23,17 +23,19 @@ const Welcome: FunctionComponent = () => {
                     width={475.544}
                     height={369.739}
                     className="desktop"
+                    sizes="100%"
                   />
                   <Image
                     src="/assets/welcome.png"
                     alt="welcome"
                     width={380}
                     height={300}
+                    sizes="100%"
                     className="tab fill-img"
                   />
                 </TabOnly>
               </div>
-              <div className="one">
+              <div className="one txxt">
                 <motion.div className="texts"
                 variants={welcomeTextVariants}
                 initial = "initial"
