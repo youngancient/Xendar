@@ -99,9 +99,9 @@ export const AboutHeroStyles = styled.div`
       height: 25.15694rem;
     }
     h1 {
-      font-size: 3.5rem;
-      line-height: 4.5rem;
-      width: 85%;
+      font-size: 3vw;
+      line-height: 4rem;
+      width: 72%;
     }
     .hero-p {
       width: 90%;
@@ -212,11 +212,14 @@ export const TeamStyle = styled.div`
       overflow-x: scroll;
       gap : 2.5rem;
       flex-direction: row;
+      position: relative;
     }
     .team::-webkit-scrollbar {
       display: none;
     }
     margin-top: 2rem;
+  }
+  @media (max-width: 998px) {
   }
   @media screen and (min-width: 998px) {
     margin-top: 2.5rem;

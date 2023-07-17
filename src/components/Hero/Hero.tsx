@@ -40,6 +40,7 @@ const Hero: FunctionComponent = () => {
               src="/assets/hero.png"
               width={700}
               height={500}
+              sizes="100%"
               className="desktop"
             />
             <Image
@@ -48,6 +49,7 @@ const Hero: FunctionComponent = () => {
               width={400}
               height={300}
               className="tab"
+              sizes="100%"
             />
             <Image
               alt="hero img"

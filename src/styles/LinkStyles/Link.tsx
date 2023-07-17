@@ -28,7 +28,7 @@ export const PageLinkStyle = styled.p<ILink>`
       props.$ispageactive &&
       css`
         color: var(--purple, #7d26cd);
-        border-bottom: 2px solid #7d26cd;
+        border-bottom: 4px solid #7d26cd;
       `};
   }
 `;

@@ -70,7 +70,7 @@ export const FaqCompStyles = styled.div<IFaqComp>`
 
 export const FaqArrowStyles = styled.div<IFaqArrow>`
   cursor: pointer;
-  transition : 0.5s;
+  transition : 0.3s;
   ${(props) =>
     props.$showAnswer &&
     css`

@@ -16,9 +16,11 @@ import { FaqArrowStyles } from "@/styles/HomepageStyles/FaqStyles";
 import Link from "next/link";
 import {
   ContactSvgStyle,
+  FooterLogoStyle,
   HeroMagnifyingGlassStyle,
   IMenu,
   IconStyle,
+  LogoStyle,
   MenuStyle,
   NavMagnifyingGlassStyle,
 } from "@/styles/IconsStyles/icons";
@@ -26,6 +28,25 @@ import React, { FunctionComponent, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { XtraSmall } from "@/styles/SectionHeadStyles/Small";
 import { SmallsvgStyles } from "@/styles/ContactpageStyles/Contact";
+
+export const Logo = () => {
+  return (
+    <LogoStyle>
+      <h2>
+        <strong>X</strong>endar
+      </h2>
+    </LogoStyle>
+  );
+};
+export const FooterLogo = () => {
+  return (
+    <FooterLogoStyle>
+      <h2>
+        <strong>X</strong>endar
+      </h2>
+    </FooterLogoStyle>
+  );
+};
 
 export const Heart: FunctionComponent = () => {
   const dispatch = useAppDispatch();

@@ -81,3 +81,38 @@ export const ContactSvgStyle = styled.div`
   border-radius: 4rem;
   background: var(--purple-100, #e5d4f5);
 `;
+
+export const LogoStyle = styled.div`
+  width: 82px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: rgba(42, 13, 68,0.75);
+  strong{
+    color: #7d26cd;
+    opacity: 1;
+    font-weight: 800;
+    font-size: 1.8rem;
+  }
+`
+export const FooterLogoStyle = styled.div`
+  width: 82px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: #F9F7F7;
+  strong{
+    color: #7d26cd;
+    opacity: 1;
+    font-weight: 800;
+    font-size: 1.8rem;
+  }
+`
