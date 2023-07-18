@@ -71,27 +71,21 @@ export const WelcomeStyles = styled.div`
     .welcome {
       flex-direction: row;
       gap: 10rem;
-      // gap: 6vw;
     }
     .img-cont {
       display: flex;
       justify-content: right;
     }
     h3 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 3rem;
+      width: 85%;
     }
     .texts {
       gap: 1.5rem;
       width: 70%;
     }
   }
-  // working on this
-  // @media (min-width: 1120px) {
-  //   .texts {
-  //     width: 100%;
-  //   }
-  // }
 `;
 
 // choose us comp
