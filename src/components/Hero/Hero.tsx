@@ -11,6 +11,7 @@ const Hero: FunctionComponent = () => {
     words: ["Start", "Begin"],
     loop: true,
     typeSpeed: 100,
+    delaySpeed: 4800,
   });
   return (
     <DesktopMobile>
