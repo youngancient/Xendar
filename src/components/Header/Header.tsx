@@ -35,12 +35,6 @@ const Header: FunctionComponent = () => {
     <HeaderStyle>
       <div className="logo">
         <Link href={"/"}>
-          {/* <Image
-          src={"/assets/logo-two.png"}
-          alt="Xendar logo"
-          width={82}
-          height={40}
-        /> */}
         <Logo />
         </Link>
       </div>

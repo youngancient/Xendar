@@ -317,10 +317,10 @@ export const LoaderStyle = styled.div<ILoaderStyle>`
   border-radius: 50%;
   width: 10.03219rem;
   height: 10.03219rem;
-  border: 0.8rem solid #e5d4f5;
+  border: 0.8rem solid #7d26cd;
   border-bottom: 0.8rem solid #7d26cd;
-  border-right: 0.8rem solid #be92e6;
-  border-top: 0.8rem solid #a86ede;
+  border-right: 0.8rem solid #e5d4f5;
+  border-top: 0.8rem solid transparent;
   animation: spin 0.75s linear infinite;
   ${(props) =>
     props.size == "small" &&
