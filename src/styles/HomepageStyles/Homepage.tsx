@@ -79,7 +79,6 @@ export const WelcomeStyles = styled.div`
     h3 {
       font-size: 2.5rem;
       line-height: 3rem;
-      width: 85%;
     }
     .texts {
       gap: 1.5rem;
