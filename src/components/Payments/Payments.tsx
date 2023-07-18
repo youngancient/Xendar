@@ -44,7 +44,7 @@ import {
   PaymentButtonStyles,
 } from "@/styles/HeroStyles/HeroSearch";
 import { useForm } from "react-hook-form";
-import { LoadingDone, Paypal, Tick, VisaCard } from "../Icons/Icons";
+import { LoadingDone, Logo, Paypal, Tick, VisaCard } from "../Icons/Icons";
 import { EachFormVariants } from "@/Animations/PaymentVariants";
 import { PageLinkStyle } from "@/styles/LinkStyles/Link";
 import {
@@ -936,12 +936,7 @@ export const CompletionComp: FunctionComponent<ICompletion> = ({
   return (
     <CompletionCompStyle>
       <div className="logo">
-        <Image
-          src={"/assets/logo-two.png"}
-          alt="Xendar logo"
-          width={82}
-          height={40}
-        />
+        <Logo />
       </div>
       <AnimatePresence mode="wait">
         {!isLoadingDone && (
