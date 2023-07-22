@@ -1599,22 +1599,22 @@ export const Reasons: IReason[] = [
   {
     img: "/assets/two.png",
     head: "On-site & Remote Learning",
-    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+    text: "We are fully an online learning platform but for special cases, we can go the extra mile to provide on-site service",
   },
   {
     img: "/assets/three.png",
     head: "Certificate",
-    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+    text: "On graduation, every student will be awarded our prestigious certificate of completion",
   },
   {
     img: "/assets/four.png",
     head: "Community",
-    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+    text: "We are an inclusive and diverse community, we do not discrimate any age group, gender, race and ethnic group",
   },
   {
     img: "/assets/five.png",
     head: "Job Opportunites",
-    text: "We give our students real life accessments to help them improve their knowledge on core areas",
+    text: "We give insider recommendations to companies for our students and you gain access to our talent pool",
   },
 ];
 
@@ -1693,10 +1693,10 @@ export const TeamMembers: ITeamMember[] = [
     desc: "Tobi has built a reputation in the startup ecosystem",
   },
   {
-    name: "Dev. Richard Michael",
-    image: "/assets/richard.png",
+    name: "Dev. Jude Tochy",
+    image: "/assets/jude.jpg",
     post: "Head of Development",
-    desc: "Michael has built a reputation in the dev community",
+    desc: "Jude has built a reputation in the dev community",
   },
   {
     name: "Dev. Micheal Ajala",
