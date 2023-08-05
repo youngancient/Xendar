@@ -1717,7 +1717,7 @@ export const Contacts: IReachout[] = [
   {
     name: "Call",
     deet: "+234 813 556 7894",
-    note: "You can call us anytime, anyday",
+    note: "Have more questions? call us anytime, anyday",
     svg: "phone",
     link: "tel:08149756765",
   },
@@ -1735,6 +1735,7 @@ export interface ITab {
   name: string;
   isSelected: boolean;
 }
+
 export const Tabs: ITab[] = [
   { num: 0, name: "OVERVIEW", isSelected: true },
   { num: 1, name: "SYLLABUS", isSelected: false },
