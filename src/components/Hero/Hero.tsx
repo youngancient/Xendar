@@ -22,7 +22,7 @@ const Hero: FunctionComponent = () => {
             your career in <strong>Tech</strong>
           </h1>
           <p className="hero-p">
-            Xendar is an E-Learning organization that specializes in helping
+            Xendar is an inclusive E-Learning platform that specializes in helping
             people kickstart their journey into the evolving world of technology
           </p>
           <HeroSearch />

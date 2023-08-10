@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer/Footer'
 import Hero from '@/components/Hero/Hero'
 import {Chooseus} from '@/components/HomepageComp/Chooseus'
 import Cta from '@/components/HomepageComp/Cta'
@@ -9,7 +8,6 @@ import Stats from '@/components/HomepageComp/Stats'
 import { Testimonials } from '@/components/HomepageComp/Testimonials'
 import Welcome from '@/components/HomepageComp/Welcome'
 import Head from 'next/head'
-
 // issues
 // There's an issue with the mobile nav ooo, make sure u fix it
 
