@@ -1,7 +1,5 @@
-import * as dotenv from 'dotenv';
 import { Bugfender } from "@bugfender/sdk";
 
-dotenv.config();
 
 const NextBugFender = {
     init : ()=>{
